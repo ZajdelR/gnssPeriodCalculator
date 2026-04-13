@@ -4,12 +4,12 @@ A comprehensive Python library for calculating and analyzing GNSS (Global Naviga
 
 ## Overview
 
-This repository provides a complete framework for identifying and analyzing characteristic signals in GNSS time series data. The library implements state-of-the-art methods from recent geodetic research to calculate orbital frequencies, draconitic harmonics, and subdaily aliasing effects for GPS, GLONASS, and Galileo constellations.
+This repository provides a complete framework for identifying and analyzing characteristic signals in GNSS time series data. The library implements state-of-the-art methods from recent geodetic research to calculate orbital frequencies, draconitic harmonics, and subdaily aliasing effects for GPS, GLONASS, Galileo, and BDS-3 MEO constellations.
 
 ## Features
 
 ### Core Capabilities
-- **Multi-GNSS Support**: GPS, GLONASS, and Galileo frequency calculations
+- **Multi-GNSS Support**: GPS, GLONASS, Galileo, and BDS-3 MEO frequency calculations
 - **Dynamic Peak Calculation**: Automated orbital peak identification across multiple period bands
 - **Extended Harmonics**: Up to 15 draconitic harmonics for each constellation
 - **Subdaily Aliasing**: Advanced aliasing mechanism for daily solution analysis
@@ -63,6 +63,7 @@ frequencies = create_gnss_frequencies()
 
 # Access specific frequencies
 gps_orbital = frequencies['gps']['orbital_frequency']
+bds_meo_orbital = frequencies['bds_3_meo']['orbital_frequency']
 tidal_m2 = frequencies['tides']['M_2']
 ```
 
@@ -103,6 +104,7 @@ summary = get_frequency_summary()
 The `main.py` script generates a comprehensive report:
 
 ```
+Generating frequency report...
 ================================================================================
 COMPREHENSIVE GNSS AND TIDAL FREQUENCY REPORT
 ================================================================================
@@ -319,6 +321,85 @@ draconitic_frequency          :    0.0028104 cpd ( 355.821 days)
     n-1_m4      :    5.8168982 cpd (   4.126 hrs) -> aliased:    5.461 days
     n0_m4       :    6.8196349 cpd (   3.519 hrs) -> aliased:    5.544 days
     n1_m4       :    7.8223715 cpd (   3.068 hrs) -> aliased:    5.630 days
+BDS-3 MEO FREQUENCIES
+----------------------------------------
+orbital_frequency             :    1.8592320 cpd (   0.538 days)
+nodal_precession_frequency    :   -0.0000900 cpd (-11111.111 days)
+ground_repeat_frequency       :    0.1449480 cpd (   6.899 days)
+sun_arg_lat_frequency         :    1.8563820 cpd (   0.539 days)
+draconitic_frequency          :    0.0028150 cpd ( 355.240 days)
+  BDS-3 MEO Draconitic Harmonics:
+     1f_d^BDS-3 MEO          :    0.0028150 cpd ( 355.240 days)
+     2f_d^BDS-3 MEO          :    0.0056300 cpd ( 177.620 days)
+     3f_d^BDS-3 MEO          :    0.0084450 cpd ( 118.413 days)
+     4f_d^BDS-3 MEO          :    0.0112600 cpd (  88.810 days)
+     5f_d^BDS-3 MEO          :    0.0140750 cpd (  71.048 days)
+     6f_d^BDS-3 MEO          :    0.0168900 cpd (  59.207 days)
+     7f_d^BDS-3 MEO          :    0.0197050 cpd (  50.749 days)
+     8f_d^BDS-3 MEO          :    0.0225200 cpd (  44.405 days)
+     9f_d^BDS-3 MEO          :    0.0253350 cpd (  39.471 days)
+    10f_d^BDS-3 MEO          :    0.0281500 cpd (  35.524 days)
+    11f_d^BDS-3 MEO          :    0.0309650 cpd (  32.295 days)
+    12f_d^BDS-3 MEO          :    0.0337800 cpd (  29.603 days)
+    13f_d^BDS-3 MEO          :    0.0365950 cpd (  27.326 days)
+    14f_d^BDS-3 MEO          :    0.0394100 cpd (  25.374 days)
+    15f_d^BDS-3 MEO          :    0.0422250 cpd (  23.683 days)
+  BDS-3 MEO Orbital Peaks (Rebischung et al. 2024 method):
+    8d_peaks:
+      1f_u+3f_d           :    0.1351730 cpd (   7.398 days)
+      1f_u+2f_d           :    0.1379880 cpd (   7.247 days)
+      1f_u+1f_d           :    0.1408030 cpd (   7.102 days)
+      1f_u+0f_d           :    0.1436180 cpd (   6.963 days)
+      1f_u-1f_d           :    0.1464330 cpd (   6.829 days)
+      1f_u-2f_d           :    0.1492480 cpd (   6.700 days)
+      1f_u-3f_d           :    0.1520630 cpd (   6.576 days)
+      1f_u-4f_d           :    0.1548780 cpd (   6.457 days)
+      1f_u-5f_d           :    0.1576930 cpd (   6.341 days)
+      1f_u-6f_d           :    0.1605080 cpd (   6.230 days)
+    4d_peaks:
+      2f_u+3f_d           :    0.2787910 cpd (   3.587 days)
+      2f_u+2f_d           :    0.2816060 cpd (   3.551 days)
+      2f_u+1f_d           :    0.2844210 cpd (   3.516 days)
+      2f_u+0f_d           :    0.2872360 cpd (   3.481 days)
+      2f_u-1f_d           :    0.2900510 cpd (   3.448 days)
+      2f_u-2f_d           :    0.2928660 cpd (   3.415 days)
+      2f_u-3f_d           :    0.2956810 cpd (   3.382 days)
+      2f_u-4f_d           :    0.2984960 cpd (   3.350 days)
+      2f_u-5f_d           :    0.3013110 cpd (   3.319 days)
+      2f_u-6f_d           :    0.3041260 cpd (   3.288 days)
+    2-7d_peaks:
+      3f_u-1f_d           :    0.4336690 cpd (   2.306 days)
+      4f_u+3f_d           :    0.4339730 cpd (   2.304 days)
+      3f_u-2f_d           :    0.4364840 cpd (   2.291 days)
+      4f_u+4f_d           :    0.4367880 cpd (   2.289 days)
+      3f_u-3f_d           :    0.4392990 cpd (   2.276 days)
+      4f_u+5f_d           :    0.4396030 cpd (   2.275 days)
+      3f_u-4f_d           :    0.4421140 cpd (   2.262 days)
+      4f_u+6f_d           :    0.4424180 cpd (   2.260 days)
+      3f_u-5f_d           :    0.4449290 cpd (   2.248 days)
+      3f_u-6f_d           :    0.4477440 cpd (   2.233 days)
+  BDS-3 MEO Orbital Signals (Zajdel et al. 2022 method):
+    n-4_m1      :    2.1517145 cpd (  11.154 hrs) -> aliased:    6.591 days
+    n-3_m1      :    1.1489779 cpd (  20.888 hrs) -> aliased:    6.712 days
+    n-2_m1      :    0.1462413 cpd (   6.838 days) -> aliased:    6.838 days
+    n-1_m1      :    0.8564954 cpd (   1.168 days) -> aliased:    6.968 days
+    n0_m1       :    1.8592320 cpd (  12.909 hrs) -> aliased:    7.104 days
+    n1_m1       :    2.8619686 cpd (   8.386 hrs) -> aliased:    7.245 days
+    n2_m1       :    3.8647053 cpd (   6.210 hrs) -> aliased:    7.391 days
+    n-4_m2      :    0.2924825 cpd (   3.419 days) -> aliased:    3.419 days
+    n-3_m2      :    0.7102541 cpd (   1.408 days) -> aliased:    3.451 days
+    n-2_m2      :    1.7129907 cpd (  14.011 hrs) -> aliased:    3.484 days
+    n-1_m2      :    2.7157274 cpd (   8.837 hrs) -> aliased:    3.518 days
+    n0_m2       :    3.7184640 cpd (   6.454 hrs) -> aliased:    3.552 days
+    n1_m2       :    4.7212006 cpd (   5.083 hrs) -> aliased:    3.587 days
+    n2_m2       :    5.7239373 cpd (   4.193 hrs) -> aliased:    3.622 days
+    n-2_m3      :    3.5722227 cpd (   6.719 hrs) -> aliased:    2.338 days
+    n-1_m3      :    4.5749594 cpd (   5.246 hrs) -> aliased:    2.353 days
+    n0_m3       :    5.5776960 cpd (   4.303 hrs) -> aliased:    2.368 days
+    n1_m3       :    6.5804326 cpd (   3.647 hrs) -> aliased:    2.383 days
+    n-1_m4      :    6.4341914 cpd (   3.730 hrs) -> aliased:    2.303 days
+    n0_m4       :    7.4369280 cpd (   3.227 hrs) -> aliased:    2.289 days
+    n1_m4       :    8.4396646 cpd (   2.844 hrs) -> aliased:    2.274 days
 TIDAL FREQUENCIES
 ----------------------------------------
 145_545                       :    0.9293886 cpd (   1.076 days)
@@ -345,41 +426,49 @@ ANNUAL HARMONICS
 12f_annual                  :    0.0328536 cpd (  30.438 days)
 ALIAS FREQUENCIES
 ----------------------------------------
+145_545_bds_3_meo             :    0.0597006 cpd (  16.750 days)
 145_545_daily                 :    0.0706114 cpd (  14.162 days)
 145_545_galileo               :    0.0152532 cpd (  65.560 days)
 145_545_glonass               :    0.0519106 cpd (  19.264 days)
 145_545_gps                   :    0.0734621 cpd (  13.612 days)
+2N_2_bds_3_meo                :    0.0246336 cpd (  40.595 days)
 2N_2_daily                    :    0.1403096 cpd (   7.127 days)
 2N_2_galileo                  :    0.0314196 cpd (  31.827 days)
 2N_2_glonass                  :    0.0206196 cpd (  48.498 days)
 2N_2_gps                      :    0.1460110 cpd (   6.849 days)
+M_2_bds_3_meo                 :    0.0479494 cpd (  20.855 days)
 M_2_daily                     :    0.0677266 cpd (  14.765 days)
 M_2_galileo                   :    0.0024320 cpd ( 411.184 days)
 M_2_glonass                   :    0.0519634 cpd (  19.244 days)
 M_2_gps                       :    0.0734280 cpd (  13.619 days)
+M_f_bds_3_meo                 :    0.0717453 cpd (  13.938 days)
 M_f_daily                     :    0.0732027 cpd (  13.661 days)
 M_f_galileo                   :    0.0283679 cpd (  35.251 days)
 M_f_glonass                   :    0.0521513 cpd (  19.175 days)
 M_f_gps                       :    0.0732027 cpd (  13.661 days)
+M_m_bds_3_meo                 :    0.0362920 cpd (  27.554 days)
 M_m_daily                     :    0.0362920 cpd (  27.554 days)
 M_m_galileo                   :    0.0362920 cpd (  27.554 days)
 M_m_glonass                   :    0.0362920 cpd (  27.554 days)
 M_m_gps                       :    0.0362920 cpd (  27.554 days)
+OO_1_bds_3_meo                :    0.0597318 cpd (  16.742 days)
 OO_1_daily                    :    0.0705802 cpd (  14.168 days)
 OO_1_galileo                  :    0.0152844 cpd (  65.426 days)
 OO_1_glonass                  :    0.0519418 cpd (  19.252 days)
 OO_1_gps                      :    0.0734309 cpd (  13.618 days)
+O_1_bds_3_meo                 :    0.0598477 cpd (  16.709 days)
 O_1_daily                     :    0.0704643 cpd (  14.192 days)
 O_1_galileo                   :    0.0154003 cpd (  64.934 days)
 O_1_glonass                   :    0.0520577 cpd (  19.209 days)
 O_1_gps                       :    0.0733150 cpd (  13.640 days)
+μ_2_bds_3_meo                 :    0.0197767 cpd (  50.565 days)
 μ_2_daily                     :    0.1354527 cpd (   7.383 days)
 μ_2_galileo                   :    0.0362765 cpd (  27.566 days)
 μ_2_glonass                   :    0.0157627 cpd (  63.441 days)
 μ_2_gps                       :    0.1411541 cpd (   7.084 days)
 SUMMARY STATISTICS
 ----------------------------------------
-Total number of frequencies: 422
+Total number of frequencies: 563
 Frequency range: 0.0000419 to 572848.3230030 cpd
 Period range: 0.000 to 23868.680 days
 Frequencies by category:
@@ -394,9 +483,13 @@ Frequencies by category:
     draconitic_harmonics: 15
     orbital_peaks: 30
     orbital_signals: 21
+  BDS_3_MEO: 66 frequencies
+    draconitic_harmonics: 15
+    orbital_peaks: 30
+    orbital_signals: 21
   TIDES: 8 frequencies
   ANNUAL: 12 frequencies
-  ALIASES: 32 frequencies
+  ALIASES: 40 frequencies
 ================================================================================
 ```
 
@@ -422,6 +515,24 @@ Structured data export to `gnss_frequencies.json`:
         "aliased_period_days": 2.175
       }
     }
+  },
+  "bds_3_meo": {
+    "orbital_frequency": 1.859232,
+    "ground_repeat_frequency": 0.144948,
+    "sun_arg_lat_frequency": 1.856382,
+    "draconitic_frequency": 0.002815,
+    "draconitic_harmonics": {
+      "1": 0.002815,
+      "2": 0.00563
+    },
+    "orbital_signals": {
+      "n0_m1": {
+        "orbital_period_hours": 12.908555790778127,
+        "frequency_cpd": 1.859232,
+        "aliased_frequency_cpd": 0.140768,
+        "aliased_period_days": 7.104
+      }
+    }
   }
 }
 ```
@@ -438,7 +549,7 @@ P_nm = (T_S × T_E) / (n × T_E + m × T_S)
 ```
 
 Where:
-- `T_S`: Satellite revolution period (~12h for GPS, ~11.26h for GLONASS, ~14.08h for Galileo)
+- `T_S`: Satellite revolution period (~12h for GPS, ~11.26h for GLONASS, ~14.08h for Galileo, ~12.91h for BDS-3 MEO)
 - `T_E`: Earth rotation period (~23.9345 hr)
 - `n, m`: Integer coefficients for various orbital combinations
 
@@ -463,6 +574,7 @@ Orbital peaks are calculated through systematic analysis of sun argument of lati
 - **GPS**: 12-hour orbital period, ~351-day draconitic period
 - **GLONASS**: 11.26-hour orbital period, ~354-day draconitic period  
 - **Galileo**: 14.08-hour orbital period, ~356-day draconitic period
+- **BDS-3 MEO**: 12.91-hour orbital period, ~355-day draconitic period
 
 #### Tidal Frequencies
 Major tidal constituents including:
