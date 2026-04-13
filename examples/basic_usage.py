@@ -13,6 +13,10 @@ import json
 import sys
 import os
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
 # Add parent directory to path to import gnss_frequencies
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -122,12 +126,12 @@ def example_4_constellation_comparison():
 
     frequencies = create_gnss_frequencies()
 
-    constellations = ['gps', 'glonass', 'galileo']
+    constellations = ['gps', 'glonass', 'galileo', 'bds_3_meo']
     parameters = ['orbital_frequency', 'draconitic_frequency', 'ground_repeat_frequency']
 
     print("Constellation frequency comparison:")
-    print("Parameter                    GPS        GLONASS     Galileo     Units")
-    print("-" * 70)
+    print("Parameter                    GPS        GLONASS     Galileo     BDS-3 MEO  Units")
+    print("-" * 82)
 
     for param in parameters:
         print(f"{param:<25s}", end="")

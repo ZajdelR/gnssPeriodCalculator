@@ -19,11 +19,16 @@ Version: 1.0.0
 
 import json
 import os
+import sys
 from gnss_frequencies import (
     create_gnss_frequencies,
     cpd_to_days,
     get_frequency_summary
 )
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
 
 
 def print_frequency_report():
@@ -164,6 +169,46 @@ def print_frequency_report():
             f"    {signal_name:<12s}: {freq_cpd:12.7f} cpd ({orbital_period_display:8.3f} {period_unit}) -> aliased: {aliased_period:8.3f} days")
     print()
 
+    # BDS-3 MEO frequencies
+    print("BDS-3 MEO FREQUENCIES")
+    print("-" * 40)
+    bds_3_meo = frequencies["bds_3_meo"]
+    base_freqs = {k: v for k, v in bds_3_meo.items()
+                  if k not in ["draconitic_harmonics", "orbital_peaks", "orbital_signals"]}
+    for name, freq in base_freqs.items():
+        period = cpd_to_days(freq)
+        print(f"{name:30s}: {freq:12.7f} cpd ({period:8.3f} days)")
+
+    print("\n  BDS-3 MEO Draconitic Harmonics:")
+    for harmonic, freq in bds_3_meo["draconitic_harmonics"].items():
+        period = cpd_to_days(freq)
+        print(f"    {harmonic:2d}f_d^BDS-3 MEO{'':<10s}: {freq:12.7f} cpd ({period:8.3f} days)")
+
+    print("\n  BDS-3 MEO Orbital Peaks (Rebischung et al. 2024 method):")
+    for category, peaks in bds_3_meo["orbital_peaks"].items():
+        print(f"    {category}:")
+        for peak_name, freq in sorted(peaks.items(), key=lambda x: x[1]):
+            period = cpd_to_days(freq)
+            print(f"      {peak_name:<20s}: {freq:12.7f} cpd ({period:8.3f} days)")
+
+    print("\n  BDS-3 MEO Orbital Signals (Zajdel et al. 2022 method):")
+    for signal_name, signal_data in bds_3_meo["orbital_signals"].items():
+        orbital_period = signal_data["orbital_period_hours"]
+        freq_cpd = signal_data["frequency_cpd"]
+        aliased_period = signal_data["aliased_period_days"]
+
+        # Show period in days if frequency < 1 cpd, otherwise in hours
+        if freq_cpd < 1.0:
+            orbital_period_display = orbital_period / 24.0
+            period_unit = "days"
+        else:
+            orbital_period_display = orbital_period
+            period_unit = "hrs"
+
+        print(
+            f"    {signal_name:<12s}: {freq_cpd:12.7f} cpd ({orbital_period_display:8.3f} {period_unit}) -> aliased: {aliased_period:8.3f} days")
+    print()
+
     # Tidal frequencies
     print("TIDAL FREQUENCIES")
     print("-" * 40)
@@ -276,7 +321,7 @@ def main():
     Main execution function that runs the complete GNSS frequencies analysis.
     """
     print("GNSS Frequencies Calculator v1.0.0")
-    print("Comprehensive frequency analysis for GPS, GLONASS, and Galileo")
+    print("Comprehensive frequency analysis for GPS, GLONASS, Galileo, and BDS-3 MEO")
     print()
 
     # Generate and print the frequency report
@@ -297,7 +342,7 @@ def main():
         print("ANALYSIS COMPLETE")
         print("=" * 80)
         print(f"✓ Generated {summary['total_frequencies']} frequencies across all categories")
-        print(f"✓ Calculated orbital signals for 3 GNSS constellations")
+        print(f"✓ Calculated orbital signals for 4 GNSS constellations")
         print(f"✓ Included {summary['categories']['annual']} annual harmonics")
         print(f"✓ Computed {summary['categories']['aliases']} alias frequencies")
         print("✓ Saved complete database to gnss_frequencies.json")

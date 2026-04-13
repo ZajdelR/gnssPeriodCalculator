@@ -210,6 +210,7 @@ def calculate_orbital_signals_table():
     T_S_GPS = 11.967  # GPS ~12 hours
     T_S_GLONASS = 11.264  # GLONASS ~11.26 hours
     T_S_GALILEO = 14.077  # Galileo ~14.08 hours
+    T_S_BDS_3_MEO = 12.908555790778127  # BDS-3 MEO ~12.91 hours
 
     # Define n,m combinations for significant orbital signals
     # Based on the patterns in Table 4
@@ -223,13 +224,15 @@ def calculate_orbital_signals_table():
     orbital_signals = {
         "gps": {},
         "glonass": {},
-        "galileo": {}
+        "galileo": {},
+        "bds_3_meo": {}
     }
 
     constellation_periods = {
         "gps": T_S_GPS,
         "glonass": T_S_GLONASS,
-        "galileo": T_S_GALILEO
+        "galileo": T_S_GALILEO,
+        "bds_3_meo": T_S_BDS_3_MEO
     }
 
     for constellation, T_S in constellation_periods.items():
@@ -290,6 +293,13 @@ def create_gnss_frequencies():
     galileo_sun_arg_lat = 1.7238896
     galileo_draconitic = 0.0028104
 
+    # BDS-3 MEO parameters
+    bds_meo_orbital_freq = 1.8592320
+    bds_meo_nodal_precession = -0.0000900
+    bds_meo_ground_repeat = 0.1449480
+    bds_meo_sun_arg_lat = 1.8563820
+    bds_meo_draconitic = 0.0028150
+
     # Tide frequencies
     tides = {
         "145_545": 0.9293886,
@@ -339,6 +349,17 @@ def create_gnss_frequencies():
             "orbital_signals": {},  # Will be populated below
         },
 
+        "bds_3_meo": {
+            "orbital_frequency": bds_meo_orbital_freq,
+            "nodal_precession_frequency": bds_meo_nodal_precession,
+            "ground_repeat_frequency": bds_meo_ground_repeat,
+            "sun_arg_lat_frequency": bds_meo_sun_arg_lat,
+            "draconitic_frequency": bds_meo_draconitic,
+            "draconitic_harmonics": calculate_draconitic_harmonics(bds_meo_draconitic, 15),
+            "orbital_peaks": calculate_orbital_peaks(bds_meo_sun_arg_lat, bds_meo_draconitic),
+            "orbital_signals": {},  # Will be populated below
+        },
+
         "tides": tides,
 
         "annual": calculate_annual_harmonics(earth_orbital_freq, 12),
@@ -355,12 +376,13 @@ def create_gnss_frequencies():
         aliases[f"{tide_name}_gps"] = calculate_alias_frequency(tide_freq, gps_ground_repeat)
         aliases[f"{tide_name}_galileo"] = calculate_alias_frequency(tide_freq, galileo_ground_repeat)
         aliases[f"{tide_name}_glonass"] = calculate_alias_frequency(tide_freq, glonass_ground_repeat)
+        aliases[f"{tide_name}_bds_3_meo"] = calculate_alias_frequency(tide_freq, bds_meo_ground_repeat)
 
     gnss_frequencies["aliases"] = aliases
 
     # Add orbital signals calculated using Zajdel et al. equations
     orbital_signals = calculate_orbital_signals_table()
-    for constellation in ["gps", "glonass", "galileo"]:
+    for constellation in ["gps", "glonass", "galileo", "bds_3_meo"]:
         gnss_frequencies[constellation]["orbital_signals"] = orbital_signals[constellation]
 
     return gnss_frequencies
@@ -421,6 +443,11 @@ def get_frequency_summary():
                 "draconitic_harmonics": len(frequencies["galileo"]["draconitic_harmonics"]),
                 "orbital_peaks": sum(len(peaks) for peaks in frequencies["galileo"]["orbital_peaks"].values()),
                 "orbital_signals": len(frequencies["galileo"]["orbital_signals"])
+            },
+            "bds_3_meo": {
+                "draconitic_harmonics": len(frequencies["bds_3_meo"]["draconitic_harmonics"]),
+                "orbital_peaks": sum(len(peaks) for peaks in frequencies["bds_3_meo"]["orbital_peaks"].values()),
+                "orbital_signals": len(frequencies["bds_3_meo"]["orbital_signals"])
             },
             "tides": len(frequencies["tides"]),
             "annual": len(frequencies["annual"]),
