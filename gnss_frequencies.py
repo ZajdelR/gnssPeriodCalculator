@@ -126,60 +126,34 @@ def calculate_draconitic_harmonics(base_freq, max_harmonic=12):
     return {i: i * base_freq for i in range(1, max_harmonic + 1)}
 
 
-def calculate_orbital_peaks(sun_arg_lat_freq, draconitic_freq, harmonics_range=(-6, 7)):
+def calculate_orbital_peaks(sun_arg_lat_freq, draconitic_freq, harmonics_range=(-3, 4)):
     """
-    Calculate orbital peaks for various period bands.
+    Calculate orbital peaks using the Rebischung-style linear combinations
+    m*f_u + k*f_d for fixed harmonic ranges.
     Based on the method from Rebischung et al. (2024).
 
     Args:
         sun_arg_lat_freq (float): Sun argument of latitude frequency
         draconitic_freq (float): Draconitic frequency
-        harmonics_range (tuple): Range of draconitic harmonics to consider
+        harmonics_range (tuple): Range of draconitic harmonics to consider,
+            interpreted as Python ``range(start, stop)``
 
     Returns:
-        dict: Dictionary of peak frequencies organized by period bands
+        dict: Dictionary containing all requested combinations
     """
-    peaks = {
-        "8d_peaks": {},
-        "4d_peaks": {},
-        "2-7d_peaks": {},
-        "2d_peaks": {},
-        "1d_peaks": {}
-    }
+    peaks = {"all_peaks": {}}
 
     min_harm, max_harm = harmonics_range
 
-    # Calculate peaks for different multiples of sun argument of latitude frequency
-    for mult in range(1, 5):  # 1f_u, 2f_u, 3f_u, 4f_u
+    # Generate the complete fixed Rebischung term set:
+    # 1f_u..4f_u combined with -3f_d..+3f_d.
+    for mult in range(1, 5):
         base_freq = mult * sun_arg_lat_freq
 
         for k in range(min_harm, max_harm):
             combined_freq = base_freq + k * draconitic_freq
             alias_freq = abs(combined_freq - round(combined_freq))
-
-            # Categorize by period (approximate)
-            period_days = 1.0 / alias_freq if alias_freq > 0 else float('inf')
-
-            if 6 < period_days <= 12:
-                peaks["8d_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
-            elif 3 < period_days <= 6:
-                peaks["4d_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
-            elif 2 < period_days <= 3.5:
-                peaks["2-7d_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
-            elif 1.5 < period_days <= 2.5:
-                peaks["2d_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
-            elif 0.5 < period_days <= 1.5:
-                peaks["1d_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
-
-    # Remove empty categories and sort by frequency
-    for category in list(peaks.keys()):
-        if not peaks[category]:
-            del peaks[category]
-        else:
-            # Keep only the most significant peaks (top 10 per category)
-            sorted_peaks = dict(sorted(peaks[category].items(),
-                                       key=lambda x: x[1], reverse=True)[:10])
-            peaks[category] = sorted_peaks
+            peaks["all_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
 
     return peaks
 
@@ -322,8 +296,10 @@ def create_gnss_frequencies():
             "orbital_frequency": gps_orbital_freq,
             "nodal_precession_frequency": gps_nodal_precession,
             "ground_repeat_frequency": gps_ground_repeat,
+            "sun_arg_lat_frequency": gps_orbital_freq,
             "draconitic_frequency": gps_draconitic,
             "draconitic_harmonics": calculate_draconitic_harmonics(gps_draconitic, 15),
+            "orbital_peaks": calculate_orbital_peaks(gps_orbital_freq, gps_draconitic),
             "orbital_signals": {},  # Will be populated below
         },
 
@@ -432,6 +408,7 @@ def get_frequency_summary():
         "categories": {
             "gps": {
                 "draconitic_harmonics": len(frequencies["gps"]["draconitic_harmonics"]),
+                "orbital_peaks": sum(len(peaks) for peaks in frequencies["gps"]["orbital_peaks"].values()),
                 "orbital_signals": len(frequencies["gps"]["orbital_signals"])
             },
             "glonass": {

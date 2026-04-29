@@ -61,7 +61,7 @@ def print_frequency_report():
     print("GPS FREQUENCIES")
     print("-" * 40)
     gps = frequencies["gps"]
-    base_freqs = {k: v for k, v in gps.items() if k not in ["draconitic_harmonics", "orbital_signals"]}
+    base_freqs = {k: v for k, v in gps.items() if k not in ["draconitic_harmonics", "orbital_peaks", "orbital_signals"]}
     for name, freq in base_freqs.items():
         period = cpd_to_days(freq)
         print(f"{name:30s}: {freq:12.7f} cpd ({period:8.3f} days)")
@@ -70,6 +70,13 @@ def print_frequency_report():
     for harmonic, freq in gps["draconitic_harmonics"].items():
         period = cpd_to_days(freq)
         print(f"    {harmonic:2d}f_d^GPS{'':<15s}: {freq:12.7f} cpd ({period:8.3f} days)")
+
+    print("\n  GPS Orbital Peaks (Rebischung et al. 2024 method):")
+    for category, peaks in gps["orbital_peaks"].items():
+        print(f"    {category}:")
+        for peak_name, freq in peaks.items():
+            period = cpd_to_days(freq)
+            print(f"      {peak_name:<20s}: {freq:12.7f} cpd ({period:8.3f} days)")
 
     print("\n  GPS Orbital Signals (Zajdel et al. 2022 method):")
     for signal_name, signal_data in gps["orbital_signals"].items():
@@ -107,7 +114,7 @@ def print_frequency_report():
     print("\n  GLONASS Orbital Peaks (Rebischung et al. 2024 method):")
     for category, peaks in glonass["orbital_peaks"].items():
         print(f"    {category}:")
-        for peak_name, freq in sorted(peaks.items(), key=lambda x: x[1]):
+        for peak_name, freq in peaks.items():
             period = cpd_to_days(freq)
             print(f"      {peak_name:<20s}: {freq:12.7f} cpd ({period:8.3f} days)")
 
@@ -147,7 +154,7 @@ def print_frequency_report():
     print("\n  Galileo Orbital Peaks (Rebischung et al. 2024 method):")
     for category, peaks in galileo["orbital_peaks"].items():
         print(f"    {category}:")
-        for peak_name, freq in sorted(peaks.items(), key=lambda x: x[1]):
+        for peak_name, freq in peaks.items():
             period = cpd_to_days(freq)
             print(f"      {peak_name:<20s}: {freq:12.7f} cpd ({period:8.3f} days)")
 
@@ -187,7 +194,7 @@ def print_frequency_report():
     print("\n  BDS-3 MEO Orbital Peaks (Rebischung et al. 2024 method):")
     for category, peaks in bds_3_meo["orbital_peaks"].items():
         print(f"    {category}:")
-        for peak_name, freq in sorted(peaks.items(), key=lambda x: x[1]):
+        for peak_name, freq in peaks.items():
             period = cpd_to_days(freq)
             print(f"      {peak_name:<20s}: {freq:12.7f} cpd ({period:8.3f} days)")
 
