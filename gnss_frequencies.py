@@ -1,66 +1,60 @@
 """
 GNSS Frequencies Library
 
-A comprehensive library for calculating and analyzing GNSS frequencies, orbital signals,
-and tidal frequencies with advanced aliasing mechanisms.
-
-References:
-- Zajdel, R., Kazmierski, K., & Sośnica, K. (2022). Orbital artifacts in multi‐GNSS
-  precise point positioning time series. Journal of Geophysical Research: Solid Earth,
-  127(2), 19. https://doi.org/10.1029/2021JB022994
-- Rebischung, P., Altamimi, Z., Métivier, L., Collilieux, X., Gobron, K., & Chanard, K.
-  (2024). Analysis of the IGS contribution to ITRF2020. Journal of Geodesy, 98(6), 49.
-  https://doi.org/10.1007/s00190-024-01870-1
-
-Author: Radoslaw Zajdel
-Date: 12.06.2025
-Version: 1.0.0
+A library for calculating and analyzing GNSS frequencies, orbital signals,
+and tidal frequencies.
 """
 
+import json
 import math
+from pathlib import Path
+
+
+SECONDS_PER_DAY = 86400.0
+EARTH_GRAVITATIONAL_PARAMETER_KM3_S2 = 398600.4418
+EARTH_EQUATORIAL_RADIUS_KM = 6378.1363
+EARTH_J2 = 1.08262668e-3
+EARTH_SIDEREAL_ROTATION_CPD = 1.0027378
+EARTH_ORBITAL_FREQUENCY_CPD = 0.0027378
+CONSTELLATION_CONFIG_PATH = Path(__file__).with_name("constellations.yaml")
+DEFAULT_DRACONITIC_HARMONICS = 15
+DEFAULT_ORBITAL_PEAK_HARMONICS = (-4, 5)
+
+TIDES = {
+    "145_545": 0.9293886,
+    "OO_1": 0.9294198,
+    "O_1": 0.9295357,
+    "2N_2": 1.8596904,
+    "mu_2": 1.8645473,
+    "M_2": 1.9322734,
+    "M_m": 0.0362920,
+    "M_f": 0.0732027,
+}
+
+ORBITAL_SIGNAL_COMBINATIONS = [
+    (-4, 1), (-3, 1), (-2, 1), (-1, 1), (0, 1), (1, 1), (2, 1),
+    (-4, 2), (-3, 2), (-2, 2), (-1, 2), (0, 2), (1, 2), (2, 2),
+    (-2, 3), (-1, 3), (0, 3), (1, 3),
+    (-1, 4), (0, 4), (1, 4),
+]
 
 
 def cpd_to_days(frequency_cpd):
-    """
-    Convert a frequency in cycles per day (cpd) to a period in days.
-
-    Args:
-        frequency_cpd (float): Frequency in cycles per day
-
-    Returns:
-        float: Period in days
-    """
+    """Convert a frequency in cycles per day to a period in days."""
     if frequency_cpd == 0:
-        return float('inf')  # Avoid division by zero
+        return float("inf")
     return 1.0 / frequency_cpd
 
 
 def days_to_cpd(period_days):
-    """
-    Convert a period in days to a frequency in cycles per day (cpd).
-
-    Args:
-        period_days (float): Period in days
-
-    Returns:
-        float: Frequency in cycles per day
-    """
+    """Convert a period in days to a frequency in cycles per day."""
     if period_days == 0:
-        return float('inf')  # Avoid division by zero
+        return float("inf")
     return 1.0 / period_days
 
 
 def calculate_alias_frequency(freq, reference_freq):
-    """
-    Calculate alias frequency for a given frequency with respect to a reference frequency.
-
-    Args:
-        freq (float): Input frequency in cpd
-        reference_freq (float): Reference frequency in cpd
-
-    Returns:
-        float: Alias frequency
-    """
+    """Calculate an aliased frequency with respect to a reference frequency."""
     if reference_freq == 0:
         return abs(freq - round(freq))
     ratio = freq / reference_freq
@@ -68,368 +62,225 @@ def calculate_alias_frequency(freq, reference_freq):
 
 
 def calculate_subdaily_aliasing(freq_cpd, sampling_interval_hours=24):
-    """
-    Calculate aliased signal frequency for subdaily signals using equation (8)
-    from Zajdel et al. (2022).
-
-    Args:
-        freq_cpd (float): Original signal frequency in cycles per day
-        sampling_interval_hours (float): Sampling interval in hours (default 24 hr)
-
-    Returns:
-        float: Aliased frequency in cycles per day
-    """
-    # Convert sampling interval to days
-    T = sampling_interval_hours / 24.0
-
-    # Calculate aliased frequency using equation (8)
-    # f' = abs(f - (1/T) * floor(f * T + 0.5))
-    aliased_freq = abs(freq_cpd - (1 / T) * math.floor(freq_cpd * T + 0.5))
-
-    return aliased_freq
+    """Calculate aliased subdaily frequency using the Zajdel et al. formulation."""
+    sample_period_days = sampling_interval_hours / 24.0
+    return abs(freq_cpd - (1 / sample_period_days) * math.floor(freq_cpd * sample_period_days + 0.5))
 
 
 def calculate_orbital_period(n, m, T_S, T_E):
-    """
-    Calculate orbital period using equation (7) from Zajdel et al. (2022).
-
-    Args:
-        n (int): Integer coefficient for satellite revolution period
-        m (int): Integer coefficient for Earth rotation period
-        T_S (float): Satellite revolution period in hours
-        T_E (float): Earth rotation period in hours (~23.9345 hr)
-
-    Returns:
-        float: Orbital period P_nm in hours
-    """
+    """Calculate orbital period using equation (7) from Zajdel et al. (2022)."""
     if n == 0 and m == 0:
-        return float('inf')
+        return float("inf")
 
     denominator = n / T_E + m / T_S
     if abs(denominator) < 1e-10:
-        return float('inf')
+        return float("inf")
 
     return abs(1.0 / denominator)
 
 
 def calculate_draconitic_harmonics(base_freq, max_harmonic=12):
-    """
-    Calculate draconitic frequency harmonics.
-
-    Args:
-        base_freq (float): Base draconitic frequency
-        max_harmonic (int): Maximum harmonic number
-
-    Returns:
-        dict: Dictionary of harmonic frequencies
-    """
+    """Calculate draconitic frequency harmonics."""
     return {i: i * base_freq for i in range(1, max_harmonic + 1)}
 
 
 def calculate_orbital_peaks(sun_arg_lat_freq, draconitic_freq, harmonics_range=(-4, 5)):
-    """
-    Calculate orbital peaks using the Rebischung-style linear combinations
-    m*f_u + k*f_d for fixed coefficient ranges.
-    Based on the method from Rebischung et al. (2024).
-
-    Args:
-        sun_arg_lat_freq (float): Sun argument of latitude frequency
-        draconitic_freq (float): Draconitic frequency
-        harmonics_range (tuple): Range of integer coefficients to consider for
-            both ``f_u`` and ``f_d``, interpreted as Python ``range(start, stop)``
-
-    Returns:
-        dict: Dictionary containing all requested combinations
-    """
+    """Calculate Rebischung-style orbital peak combinations."""
     peaks = {"all_peaks": {}}
-
     min_coeff, max_coeff = harmonics_range
 
-    # Generate the positive Rebischung f_u coefficients only:
-    # +1f_u..+4f_u combined with -4f_d..+4f_d by default.
     for m in range(1, 5):
         base_freq = m * sun_arg_lat_freq
-
         for k in range(min_coeff, max_coeff):
             combined_freq = base_freq + k * draconitic_freq
-            alias_freq = abs(combined_freq - round(combined_freq))
-            peaks["all_peaks"][f"{m:+d}f_u{k:+d}f_d"] = alias_freq
+            peaks["all_peaks"][f"{m:+d}f_u{k:+d}f_d"] = abs(combined_freq - round(combined_freq))
 
     return peaks
 
 
 def calculate_annual_harmonics(base_freq, max_harmonic=12):
-    """
-    Calculate annual frequency harmonics.
-
-    Args:
-        base_freq (float): Base annual frequency
-        max_harmonic (int): Maximum harmonic number
-
-    Returns:
-        dict: Dictionary of annual harmonic frequencies
-    """
+    """Calculate annual frequency harmonics."""
     return {i: i * base_freq for i in range(1, max_harmonic + 1)}
 
 
-def calculate_orbital_signals_table():
+def load_constellation_definitions(config_path=CONSTELLATION_CONFIG_PATH):
     """
-    Calculate orbital signals and their aliasing periods based on Zajdel et al. (2022).
-    Returns orbital signals with the most significant power in subdaily solutions.
+    Load constellation orbital parameters.
+
+    The file is stored in JSON syntax, which is valid YAML 1.2.
     """
-    # Earth rotation period in hours
-    T_E = 23.9345
+    with open(config_path, "r", encoding="utf-8") as config_file:
+        definitions = json.load(config_file)
+    return definitions
 
-    # Satellite revolution periods in hours (approximate values)
-    T_S_GPS = 11.967  # GPS ~12 hours
-    T_S_GLONASS = 11.264  # GLONASS ~11.26 hours
-    T_S_GALILEO = 14.077  # Galileo ~14.08 hours
-    T_S_BDS_3_MEO = 12.908555790778127  # BDS-3 MEO ~12.91 hours
 
-    # Define n,m combinations for significant orbital signals
-    # Based on the patterns in Table 4
-    nm_combinations = [
-        (-4, 1), (-3, 1), (-2, 1), (-1, 1), (0, 1), (1, 1), (2, 1),
-        (-4, 2), (-3, 2), (-2, 2), (-1, 2), (0, 2), (1, 2), (2, 2),
-        (-2, 3), (-1, 3), (0, 3), (1, 3),
-        (-1, 4), (0, 4), (1, 4)
-    ]
+def calculate_constellation_dynamics(semi_major_axis_km, eccentricity, inclination_deg, repeat_cycle_days):
+    """Calculate derived orbital frequencies and periods from constellation parameters."""
+    inclination_rad = math.radians(inclination_deg)
+    mean_motion_rad_s = math.sqrt(EARTH_GRAVITATIONAL_PARAMETER_KM3_S2 / semi_major_axis_km ** 3)
+    orbital_frequency = mean_motion_rad_s * SECONDS_PER_DAY / (2.0 * math.pi)
 
-    orbital_signals = {
-        "gps": {},
-        "glonass": {},
-        "galileo": {},
-        "bds_3_meo": {}
+    semi_latus_rectum_km = semi_major_axis_km * (1.0 - eccentricity ** 2)
+    nodal_precession_rad_s = (
+        -1.5
+        * EARTH_J2
+        * (EARTH_EQUATORIAL_RADIUS_KM / semi_latus_rectum_km) ** 2
+        * mean_motion_rad_s
+        * math.cos(inclination_rad)
+    )
+    nodal_precession_frequency = nodal_precession_rad_s * SECONDS_PER_DAY / (2.0 * math.pi)
+    draconitic_frequency = EARTH_ORBITAL_FREQUENCY_CPD - nodal_precession_frequency
+    revolution_period_days = cpd_to_days(orbital_frequency)
+
+    return {
+        "orbital_frequency": orbital_frequency,
+        "nodal_precession_frequency": nodal_precession_frequency,
+        "ground_repeat_frequency": days_to_cpd(repeat_cycle_days),
+        "sun_arg_lat_frequency": orbital_frequency - draconitic_frequency,
+        "draconitic_frequency": draconitic_frequency,
+        "satellite_revolution_period_days": revolution_period_days,
+        "satellite_revolution_period_hours": revolution_period_days * 24.0,
     }
 
-    constellation_periods = {
-        "gps": T_S_GPS,
-        "glonass": T_S_GLONASS,
-        "galileo": T_S_GALILEO,
-        "bds_3_meo": T_S_BDS_3_MEO
-    }
 
-    for constellation, T_S in constellation_periods.items():
+def calculate_orbital_signals_table(revolution_periods_hours):
+    """Calculate orbital signals and their aliasing periods for each constellation."""
+    earth_rotation_period_hours = 23.9345
+    orbital_signals = {}
+
+    for constellation, revolution_period_hours in revolution_periods_hours.items():
         signals = {}
+        for n, m in ORBITAL_SIGNAL_COMBINATIONS:
+            orbital_period_hours = calculate_orbital_period(n, m, revolution_period_hours, earth_rotation_period_hours)
+            if orbital_period_hours == float("inf") or orbital_period_hours <= 0:
+                continue
 
-        for n, m in nm_combinations:
-            # Calculate orbital period
-            P_nm = calculate_orbital_period(n, m, T_S, T_E)
-
-            if P_nm != float('inf') and P_nm > 0:
-                # Convert to frequency in cpd
-                freq_cpd = 24.0 / P_nm
-
-                # Calculate aliasing period for 24-hour sampling
-                aliased_freq_cpd = calculate_subdaily_aliasing(freq_cpd, 24)
-                aliased_period_days = 1.0 / aliased_freq_cpd if aliased_freq_cpd > 0 else float('inf')
-
-                signals[f"n{n}_m{m}"] = {
-                    "orbital_period_hours": P_nm,
-                    "frequency_cpd": freq_cpd,
-                    "aliased_frequency_cpd": aliased_freq_cpd,
-                    "aliased_period_days": aliased_period_days
-                }
+            frequency_cpd = 24.0 / orbital_period_hours
+            aliased_frequency_cpd = calculate_subdaily_aliasing(frequency_cpd, 24)
+            signals[f"n{n}_m{m}"] = {
+                "orbital_period_hours": orbital_period_hours,
+                "frequency_cpd": frequency_cpd,
+                "aliased_frequency_cpd": aliased_frequency_cpd,
+                "aliased_period_days": cpd_to_days(aliased_frequency_cpd),
+            }
 
         orbital_signals[constellation] = signals
 
     return orbital_signals
 
 
+def build_constellation_entry(name, definition):
+    """Build one constellation block from its YAML definition."""
+    dynamics = calculate_constellation_dynamics(
+        semi_major_axis_km=definition["semi_major_axis_km"],
+        eccentricity=definition["eccentricity"],
+        inclination_deg=definition["inclination_deg"],
+        repeat_cycle_days=definition["repeat_cycle_days"],
+    )
+    draconitic_frequency = dynamics["draconitic_frequency"]
+    sun_arg_lat_frequency = dynamics["sun_arg_lat_frequency"]
+
+    return {
+        "display_name": definition.get("display_name", name),
+        "orbital_parameters": {
+            "semi_major_axis_km": definition["semi_major_axis_km"],
+            "eccentricity": definition["eccentricity"],
+            "inclination_deg": definition["inclination_deg"],
+            "repeat_cycle_days": definition["repeat_cycle_days"],
+        },
+        **dynamics,
+        "draconitic_harmonics": calculate_draconitic_harmonics(
+            draconitic_frequency, DEFAULT_DRACONITIC_HARMONICS
+        ),
+        "orbital_peaks": calculate_orbital_peaks(
+            sun_arg_lat_frequency, draconitic_frequency, DEFAULT_ORBITAL_PEAK_HARMONICS
+        ),
+        "orbital_signals": {},
+    }
+
+
 def create_gnss_frequencies():
-    """
-    Create the complete GNSS frequencies dictionary with calculated values.
-
-    Returns:
-        dict: Comprehensive GNSS frequencies dictionary
-    """
-    # Base frequencies
-    earth_angular_speed = 1.0027378  # ω_E
-    earth_orbital_freq = 0.0027378  # f_E
-
-    # GPS parameters
-    gps_orbital_freq = 2.0057014
-    gps_nodal_precession = -0.0001075
-    gps_ground_repeat = 1.0028507
-    gps_draconitic = 0.0028453
-
-    # GLONASS parameters
-    glonass_orbital_freq = 2.1310182
-    glonass_nodal_precession = -0.0000922
-    glonass_ground_repeat = 0.1253540
-    glonass_sun_arg_lat = 2.1281882
-    glonass_draconitic = 0.0028300
-
-    # Galileo parameters
-    galileo_orbital_freq = 1.70475
-    galileo_nodal_precession = -0.0000707
-    galileo_ground_repeat = 0.1015706
-    galileo_sun_arg_lat = 1.70197
-    galileo_draconitic = 0.0028104
-
-    # BDS-3 MEO parameters
-    bds_meo_orbital_freq = 1.8592320
-    bds_meo_nodal_precession = -0.0000900
-    bds_meo_ground_repeat = 0.1449480
-    bds_meo_sun_arg_lat = 1.8563820
-    bds_meo_draconitic = 0.0028150
-
-    # Tide frequencies
-    tides = {
-        "145_545": 0.9293886,
-        "OO_1": 0.9294198,
-        "O_1": 0.9295357,
-        "2N_2": 1.8596904,
-        "μ_2": 1.8645473,
-        "M_2": 1.9322734,
-        "M_m": 0.0362920,
-        "M_f": 0.0732027
+    """Create the complete GNSS frequencies dictionary with calculated values."""
+    constellation_definitions = load_constellation_definitions()
+    constellation_entries = {
+        name: build_constellation_entry(name, definition)
+        for name, definition in constellation_definitions.items()
     }
 
-    gnss_frequencies = {
+    frequencies = {
         "earth": {
-            "angular_speed": earth_angular_speed,
-            "orbital_frequency": earth_orbital_freq,
+            "angular_speed": EARTH_SIDEREAL_ROTATION_CPD,
+            "orbital_frequency": EARTH_ORBITAL_FREQUENCY_CPD,
         },
-
-        "gps": {
-            "orbital_frequency": gps_orbital_freq,
-            "nodal_precession_frequency": gps_nodal_precession,
-            "ground_repeat_frequency": gps_ground_repeat,
-            "sun_arg_lat_frequency": gps_orbital_freq,
-            "draconitic_frequency": gps_draconitic,
-            "draconitic_harmonics": calculate_draconitic_harmonics(gps_draconitic, 15),
-            "orbital_peaks": calculate_orbital_peaks(gps_orbital_freq, gps_draconitic),
-            "orbital_signals": {},  # Will be populated below
-        },
-
-        "glonass": {
-            "orbital_frequency": glonass_orbital_freq,
-            "nodal_precession_frequency": glonass_nodal_precession,
-            "ground_repeat_frequency": glonass_ground_repeat,
-            "sun_arg_lat_frequency": glonass_sun_arg_lat,
-            "draconitic_frequency": glonass_draconitic,
-            "draconitic_harmonics": calculate_draconitic_harmonics(glonass_draconitic, 15),
-            "orbital_peaks": calculate_orbital_peaks(glonass_sun_arg_lat, glonass_draconitic),
-            "orbital_signals": {},  # Will be populated below
-        },
-
-        "galileo": {
-            "orbital_frequency": galileo_orbital_freq,
-            "nodal_precession_frequency": galileo_nodal_precession,
-            "ground_repeat_frequency": galileo_ground_repeat,
-            "sun_arg_lat_frequency": galileo_sun_arg_lat,
-            "draconitic_frequency": galileo_draconitic,
-            "draconitic_harmonics": calculate_draconitic_harmonics(galileo_draconitic, 15),
-            "orbital_peaks": calculate_orbital_peaks(galileo_sun_arg_lat, galileo_draconitic),
-            "orbital_signals": {},  # Will be populated below
-        },
-
-        "bds_3_meo": {
-            "orbital_frequency": bds_meo_orbital_freq,
-            "nodal_precession_frequency": bds_meo_nodal_precession,
-            "ground_repeat_frequency": bds_meo_ground_repeat,
-            "sun_arg_lat_frequency": bds_meo_sun_arg_lat,
-            "draconitic_frequency": bds_meo_draconitic,
-            "draconitic_harmonics": calculate_draconitic_harmonics(bds_meo_draconitic, 15),
-            "orbital_peaks": calculate_orbital_peaks(bds_meo_sun_arg_lat, bds_meo_draconitic),
-            "orbital_signals": {},  # Will be populated below
-        },
-
-        "tides": tides,
-
-        "annual": calculate_annual_harmonics(earth_orbital_freq, 12),
-
-        "aliases": {}
+        **constellation_entries,
+        "tides": dict(TIDES),
+        "annual": calculate_annual_harmonics(EARTH_ORBITAL_FREQUENCY_CPD, 12),
+        "aliases": {},
     }
 
-    # Calculate aliases dynamically
     aliases = {}
-
-    # Tidal aliases
-    for tide_name, tide_freq in tides.items():
+    for tide_name, tide_freq in TIDES.items():
         aliases[f"{tide_name}_daily"] = calculate_alias_frequency(tide_freq, 1.0)
-        aliases[f"{tide_name}_gps"] = calculate_alias_frequency(tide_freq, gps_ground_repeat)
-        aliases[f"{tide_name}_galileo"] = calculate_alias_frequency(tide_freq, galileo_ground_repeat)
-        aliases[f"{tide_name}_glonass"] = calculate_alias_frequency(tide_freq, glonass_ground_repeat)
-        aliases[f"{tide_name}_bds_3_meo"] = calculate_alias_frequency(tide_freq, bds_meo_ground_repeat)
+        for constellation_name, constellation_data in constellation_entries.items():
+            aliases[f"{tide_name}_{constellation_name}"] = calculate_alias_frequency(
+                tide_freq,
+                constellation_data["ground_repeat_frequency"],
+            )
+    frequencies["aliases"] = aliases
 
-    gnss_frequencies["aliases"] = aliases
+    orbital_signals = calculate_orbital_signals_table({
+        name: data["satellite_revolution_period_hours"]
+        for name, data in constellation_entries.items()
+    })
+    for constellation_name, signals in orbital_signals.items():
+        frequencies[constellation_name]["orbital_signals"] = signals
 
-    # Add orbital signals calculated using Zajdel et al. equations
-    orbital_signals = calculate_orbital_signals_table()
-    for constellation in ["gps", "glonass", "galileo", "bds_3_meo"]:
-        gnss_frequencies[constellation]["orbital_signals"] = orbital_signals[constellation]
-
-    return gnss_frequencies
+    return frequencies
 
 
 def get_frequency_summary():
-    """
-    Get a summary of all available frequency categories.
-
-    Returns:
-        dict: Summary statistics of the frequency database
-    """
+    """Get a summary of all available frequency categories."""
     frequencies = create_gnss_frequencies()
+    constellation_names = list(load_constellation_definitions().keys())
 
-    def count_frequencies(d, prefix=""):
+    def count_frequencies(data):
         count = 0
-        for k, v in d.items():
-            if isinstance(v, dict):
-                count += count_frequencies(v, f"{prefix}{k}.")
-            elif isinstance(v, (int, float)):
-                if v > 0:  # Only count positive frequencies
-                    count += 1
+        for key, value in data.items():
+            if isinstance(value, dict):
+                count += count_frequencies(value)
+            elif isinstance(value, (int, float)) and value > 0 and "satellite_revolution_period" not in str(key):
+                count += 1
         return count
 
-    total_frequencies = count_frequencies(frequencies)
+    def collect_frequencies(data, collected):
+        for key, value in data.items():
+            if isinstance(value, dict):
+                collect_frequencies(value, collected)
+            elif isinstance(value, (int, float)) and value > 0 and "satellite_revolution_period" not in str(key):
+                collected.append(value)
 
-    # Collect all frequencies for range calculation
     all_freqs = []
+    collect_frequencies(frequencies, all_freqs)
 
-    def collect_frequencies(d):
-        for k, v in d.items():
-            if isinstance(v, dict):
-                collect_frequencies(v)
-            elif isinstance(v, (int, float)) and v > 0:
-                all_freqs.append(v)
+    categories = {
+        name: {
+            "draconitic_harmonics": len(frequencies[name]["draconitic_harmonics"]),
+            "orbital_peaks": sum(len(peaks) for peaks in frequencies[name]["orbital_peaks"].values()),
+            "orbital_signals": len(frequencies[name]["orbital_signals"]),
+        }
+        for name in constellation_names
+    }
+    categories["tides"] = len(frequencies["tides"])
+    categories["annual"] = len(frequencies["annual"])
+    categories["aliases"] = len(frequencies["aliases"])
 
-    collect_frequencies(frequencies)
-
-    summary = {
-        "total_frequencies": total_frequencies,
+    return {
+        "total_frequencies": count_frequencies(frequencies),
         "frequency_range": {
             "min_cpd": min(all_freqs) if all_freqs else 0,
             "max_cpd": max(all_freqs) if all_freqs else 0,
             "min_period_days": cpd_to_days(max(all_freqs)) if all_freqs else 0,
-            "max_period_days": cpd_to_days(min(all_freqs)) if all_freqs else 0
+            "max_period_days": cpd_to_days(min(all_freqs)) if all_freqs else 0,
         },
-        "categories": {
-            "gps": {
-                "draconitic_harmonics": len(frequencies["gps"]["draconitic_harmonics"]),
-                "orbital_peaks": sum(len(peaks) for peaks in frequencies["gps"]["orbital_peaks"].values()),
-                "orbital_signals": len(frequencies["gps"]["orbital_signals"])
-            },
-            "glonass": {
-                "draconitic_harmonics": len(frequencies["glonass"]["draconitic_harmonics"]),
-                "orbital_peaks": sum(len(peaks) for peaks in frequencies["glonass"]["orbital_peaks"].values()),
-                "orbital_signals": len(frequencies["glonass"]["orbital_signals"])
-            },
-            "galileo": {
-                "draconitic_harmonics": len(frequencies["galileo"]["draconitic_harmonics"]),
-                "orbital_peaks": sum(len(peaks) for peaks in frequencies["galileo"]["orbital_peaks"].values()),
-                "orbital_signals": len(frequencies["galileo"]["orbital_signals"])
-            },
-            "bds_3_meo": {
-                "draconitic_harmonics": len(frequencies["bds_3_meo"]["draconitic_harmonics"]),
-                "orbital_peaks": sum(len(peaks) for peaks in frequencies["bds_3_meo"]["orbital_peaks"].values()),
-                "orbital_signals": len(frequencies["bds_3_meo"]["orbital_signals"])
-            },
-            "tides": len(frequencies["tides"]),
-            "annual": len(frequencies["annual"]),
-            "aliases": len(frequencies["aliases"])
-        }
+        "categories": categories,
     }
-
-    return summary

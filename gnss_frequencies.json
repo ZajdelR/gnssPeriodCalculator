@@ -4,770 +4,806 @@
     "orbital_frequency": 0.0027378
   },
   "gps": {
-    "orbital_frequency": 2.0057014,
-    "nodal_precession_frequency": -0.0001075,
-    "ground_repeat_frequency": 1.0028507,
-    "sun_arg_lat_frequency": 2.0057014,
-    "draconitic_frequency": 0.0028453,
+    "display_name": "GPS",
+    "orbital_parameters": {
+      "semi_major_axis_km": 26560.0,
+      "eccentricity": 0.02,
+      "inclination_deg": 55.0,
+      "repeat_cycle_days": 0.9972695663290856
+    },
+    "orbital_frequency": 2.005675437459987,
+    "nodal_precession_frequency": -0.00010782038971401267,
+    "ground_repeat_frequency": 1.0027379093507938,
+    "sun_arg_lat_frequency": 2.002829817070273,
+    "draconitic_frequency": 0.0028456203897140125,
+    "satellite_revolution_period_days": 0.4985851555655549,
+    "satellite_revolution_period_hours": 11.966043733573317,
     "draconitic_harmonics": {
-      "1": 0.0028453,
-      "2": 0.0056906,
-      "3": 0.008535899999999999,
-      "4": 0.0113812,
-      "5": 0.0142265,
-      "6": 0.017071799999999998,
-      "7": 0.0199171,
-      "8": 0.0227624,
-      "9": 0.025607699999999997,
-      "10": 0.028453,
-      "11": 0.0312983,
-      "12": 0.034143599999999996,
-      "13": 0.0369889,
-      "14": 0.0398342,
-      "15": 0.042679499999999995
+      "1": 0.0028456203897140125,
+      "2": 0.005691240779428025,
+      "3": 0.008536861169142037,
+      "4": 0.01138248155885605,
+      "5": 0.014228101948570063,
+      "6": 0.017073722338284074,
+      "7": 0.01991934272799809,
+      "8": 0.0227649631177121,
+      "9": 0.02561058350742611,
+      "10": 0.028456203897140125,
+      "11": 0.03130182428685414,
+      "12": 0.03414744467656815,
+      "13": 0.03699306506628216,
+      "14": 0.03983868545599618,
+      "15": 0.04268430584571019
     },
     "orbital_peaks": {
       "all_peaks": {
-        "+1f_u-4f_d": 0.005679800000000013,
-        "+1f_u-3f_d": 0.002834500000000073,
-        "+1f_u-2f_d": 1.0800000000088517e-05,
-        "+1f_u-1f_d": 0.002856099999999806,
-        "+1f_u+0f_d": 0.005701399999999968,
-        "+1f_u+1f_d": 0.00854670000000013,
-        "+1f_u+2f_d": 0.011391999999999847,
-        "+1f_u+3f_d": 0.014237300000000008,
-        "+1f_u+4f_d": 0.01708260000000017,
-        "+2f_u-4f_d": 2.1600000000177033e-05,
-        "+2f_u-3f_d": 0.0028668999999998945,
-        "+2f_u-2f_d": 0.005712199999999612,
-        "+2f_u-1f_d": 0.008557500000000218,
-        "+2f_u+0f_d": 0.011402799999999935,
-        "+2f_u+1f_d": 0.014248099999999653,
-        "+2f_u+2f_d": 0.01709340000000026,
-        "+2f_u+3f_d": 0.019938699999999976,
-        "+2f_u+4f_d": 0.022783999999999693,
-        "+3f_u-4f_d": 0.005723000000000589,
-        "+3f_u-3f_d": 0.008568300000000306,
-        "+3f_u-2f_d": 0.011413600000000024,
-        "+3f_u-1f_d": 0.01425890000000063,
-        "+3f_u+0f_d": 0.017104200000000347,
-        "+3f_u+1f_d": 0.019949500000000064,
-        "+3f_u+2f_d": 0.02279480000000067,
-        "+3f_u+3f_d": 0.025640100000000388,
-        "+3f_u+4f_d": 0.028485400000000105,
-        "+4f_u-4f_d": 0.011424399999999224,
-        "+4f_u-3f_d": 0.01426969999999983,
-        "+4f_u-2f_d": 0.017115000000000435,
-        "+4f_u-1f_d": 0.019960299999999265,
-        "+4f_u+0f_d": 0.02280559999999987,
-        "+4f_u+1f_d": 0.025650900000000476,
-        "+4f_u+2f_d": 0.028496199999999305,
-        "+4f_u+3f_d": 0.03134149999999991,
-        "+4f_u+4f_d": 0.03418680000000052
+        "+1f_u-4f_d": 0.008552664488583162,
+        "+1f_u-3f_d": 0.0057070440988691296,
+        "+1f_u-2f_d": 0.0028614237091550976,
+        "+1f_u-1f_d": 1.580331944106561e-05,
+        "+1f_u+0f_d": 0.0028298170702729664,
+        "+1f_u+1f_d": 0.005675437459986998,
+        "+1f_u+2f_d": 0.00852105784970103,
+        "+1f_u+3f_d": 0.011366678239415062,
+        "+1f_u+4f_d": 0.014212298629129094,
+        "+2f_u-4f_d": 0.005722847418310195,
+        "+2f_u-3f_d": 0.002877227028596163,
+        "+2f_u-2f_d": 3.160663888213122e-05,
+        "+2f_u-1f_d": 0.002814013750832345,
+        "+2f_u+0f_d": 0.005659634140545933,
+        "+2f_u+1f_d": 0.00850525453025952,
+        "+2f_u+2f_d": 0.011350874919973997,
+        "+2f_u+3f_d": 0.014196495309687585,
+        "+2f_u+4f_d": 0.01704211569940206,
+        "+3f_u-4f_d": 0.002893030348037229,
+        "+3f_u-3f_d": 4.740995832275274e-05,
+        "+3f_u-2f_d": 0.002798210431390835,
+        "+3f_u-1f_d": 0.005643830821105311,
+        "+3f_u+0f_d": 0.008489451210818899,
+        "+3f_u+1f_d": 0.011335071600532487,
+        "+3f_u+2f_d": 0.014180691990246963,
+        "+3f_u+3f_d": 0.01702631237996055,
+        "+3f_u+4f_d": 0.019871932769675027,
+        "+4f_u-4f_d": 6.321327776426244e-05,
+        "+4f_u-3f_d": 0.0027824071119493254,
+        "+4f_u-2f_d": 0.00562802750166469,
+        "+4f_u-1f_d": 0.008473647891378278,
+        "+4f_u+0f_d": 0.011319268281091865,
+        "+4f_u+1f_d": 0.014164888670805453,
+        "+4f_u+2f_d": 0.01701050906051904,
+        "+4f_u+3f_d": 0.019856129450234405,
+        "+4f_u+4f_d": 0.022701749839947993
       }
     },
     "orbital_signals": {
       "n-4_m1": {
-        "orbital_period_hours": 11.967500010445608,
-        "frequency_cpd": 2.0054313748946773,
-        "aliased_frequency_cpd": 0.0054313748946772655,
-        "aliased_period_days": 184.11544395140126
+        "orbital_period_hours": 11.9684565096525,
+        "frequency_cpd": 2.0052711041431386,
+        "aliased_frequency_cpd": 0.005271104143138583,
+        "aliased_period_days": 189.7135728767006
       },
       "n-3_m1": {
-        "orbital_period_hours": 23.935500062674958,
-        "frequency_cpd": 1.002694739493896,
-        "aliased_frequency_cpd": 0.0026947394938960922,
-        "aliased_period_days": 371.09338482072934
+        "orbital_period_hours": 23.939326525208777,
+        "frequency_cpd": 1.0025344687423572,
+        "aliased_frequency_cpd": 0.0025344687423571877,
+        "aliased_period_days": 394.5600051354147
       },
       "n-2_m1": {
-        "orbital_period_hours": 572848.3230030163,
-        "frequency_cpd": 4.1895906885414114e-05,
-        "aliased_frequency_cpd": 4.1895906885414114e-05,
-        "aliased_period_days": 23868.68012512568
+        "orbital_period_hours": 118713.93723898556,
+        "frequency_cpd": 0.0002021666584243187,
+        "aliased_frequency_cpd": 0.0002021666584243187,
+        "aliased_period_days": 4946.414051624398
       },
       "n-1_m1": {
-        "orbital_period_hours": 23.933500020889916,
-        "frequency_cpd": 1.0027785313076667,
-        "aliased_frequency_cpd": 0.0027785313076666984,
-        "aliased_period_days": 359.9023690108285
+        "orbital_period_hours": 23.929675420597825,
+        "frequency_cpd": 1.0029388020592056,
+        "aliased_frequency_cpd": 0.002938802059205603,
+        "aliased_period_days": 340.27470372411307
       },
       "n0_m1": {
-        "orbital_period_hours": 11.967,
-        "frequency_cpd": 2.0055151667084483,
-        "aliased_frequency_cpd": 0.005515166708448316,
-        "aliased_period_days": 181.31818181817908
+        "orbital_period_hours": 11.966043733573319,
+        "frequency_cpd": 2.005675437459987,
+        "aliased_frequency_cpd": 0.005675437459986998,
+        "aliased_period_days": 176.19787145047508
       },
       "n1_m1": {
-        "orbital_period_hours": 7.978055554781834,
-        "frequency_cpd": 3.0082518021092293,
-        "aliased_frequency_cpd": 0.008251802109229267,
-        "aliased_period_days": 121.18564972390034
+        "orbital_period_hours": 7.9776305302411075,
+        "frequency_cpd": 3.0084120728607684,
+        "aliased_frequency_cpd": 0.008412072860768394,
+        "aliased_period_days": 118.87676397380322
       },
       "n2_m1": {
-        "orbital_period_hours": 5.98356249934717,
-        "frequency_cpd": 4.010988437510011,
-        "aliased_frequency_cpd": 0.010988437510010662,
-        "aliased_period_days": 91.00474922744769
+        "orbital_period_hours": 5.983323418194015,
+        "frequency_cpd": 4.011148708261549,
+        "aliased_frequency_cpd": 0.011148708261549345,
+        "aliased_period_days": 89.69649008117727
       },
       "n-4_m2": {
-        "orbital_period_hours": 286424.16150150815,
-        "frequency_cpd": 8.379181377082823e-05,
-        "aliased_frequency_cpd": 8.379181377082823e-05,
-        "aliased_period_days": 11934.34006256284
+        "orbital_period_hours": 59356.96861949278,
+        "frequency_cpd": 0.0004043333168486374,
+        "aliased_frequency_cpd": 0.0004043333168486374,
+        "aliased_period_days": 2473.207025812199
       },
       "n-3_m2": {
-        "orbital_period_hours": 23.932500125334236,
-        "frequency_cpd": 1.002820427214552,
-        "aliased_frequency_cpd": 0.0028204272145520015,
-        "aliased_period_days": 354.5562157535913
+        "orbital_period_hours": 23.924852785825824,
+        "frequency_cpd": 1.0031409687176298,
+        "aliased_frequency_cpd": 0.0031409687176298107,
+        "aliased_period_days": 318.3731166716632
       },
       "n-2_m2": {
-        "orbital_period_hours": 11.966750010444958,
-        "frequency_cpd": 2.0055570626153334,
-        "aliased_frequency_cpd": 0.005557062615333397,
-        "aliased_period_days": 179.95118450541426
+        "orbital_period_hours": 11.964837710298912,
+        "frequency_cpd": 2.005877604118411,
+        "aliased_frequency_cpd": 0.005877604118411206,
+        "aliased_period_days": 170.13735186205653
       },
       "n-1_m2": {
-        "orbital_period_hours": 7.977944445991867,
-        "frequency_cpd": 3.008293698016115,
-        "aliased_frequency_cpd": 0.008293698016114792,
-        "aliased_period_days": 120.57347615707535
+        "orbital_period_hours": 7.977094465867928,
+        "frequency_cpd": 3.008614239519193,
+        "aliased_frequency_cpd": 0.008614239519193045,
+        "aliased_period_days": 116.08685801827772
       },
       "n0_m2": {
-        "orbital_period_hours": 5.9835,
-        "frequency_cpd": 4.011030333416897,
-        "aliased_frequency_cpd": 0.011030333416896632,
-        "aliased_period_days": 90.65909090908954
+        "orbital_period_hours": 5.983021866786659,
+        "frequency_cpd": 4.011350874919974,
+        "aliased_frequency_cpd": 0.011350874919973997,
+        "aliased_period_days": 88.09893572523754
       },
       "n1_m2": {
-        "orbital_period_hours": 4.786819999665753,
-        "frequency_cpd": 5.013766968817678,
-        "aliased_frequency_cpd": 0.013766968817678027,
-        "aliased_period_days": 72.63763092975921
+        "orbital_period_hours": 4.786513986961648,
+        "frequency_cpd": 5.014087510320755,
+        "aliased_frequency_cpd": 0.014087510320755392,
+        "aliased_period_days": 70.98486370062717
       },
       "n2_m2": {
-        "orbital_period_hours": 3.989027777390917,
-        "frequency_cpd": 6.0165036042184585,
-        "aliased_frequency_cpd": 0.016503604218458534,
-        "aliased_period_days": 60.59282486195017
+        "orbital_period_hours": 3.9888152651205537,
+        "frequency_cpd": 6.016824145721537,
+        "aliased_frequency_cpd": 0.016824145721536787,
+        "aliased_period_days": 59.43838198690161
       },
       "n-2_m3": {
-        "orbital_period_hours": 5.9834375019584485,
-        "frequency_cpd": 4.011072229323783,
-        "aliased_frequency_cpd": 0.0110722293237826,
-        "aliased_period_days": 90.3160484449188
+        "orbital_period_hours": 5.9827203457733376,
+        "frequency_cpd": 4.011553041578399,
+        "aliased_frequency_cpd": 0.011553041578398648,
+        "aliased_period_days": 86.55729257217895
       },
       "n-1_m3": {
-        "orbital_period_hours": 4.786780000501365,
-        "frequency_cpd": 5.013808864724564,
-        "aliased_frequency_cpd": 0.013808864724563996,
-        "aliased_period_days": 72.4172493500601
+        "orbital_period_hours": 4.786321003787442,
+        "frequency_cpd": 5.01428967697918,
+        "aliased_frequency_cpd": 0.014289676979180044,
+        "aliased_period_days": 69.9805881866324
       },
       "n0_m3": {
-        "orbital_period_hours": 3.989,
-        "frequency_cpd": 6.0165455001253445,
-        "aliased_frequency_cpd": 0.016545500125344503,
-        "aliased_period_days": 60.43939393939465
+        "orbital_period_hours": 3.988681244524439,
+        "frequency_cpd": 6.017026312379961,
+        "aliased_frequency_cpd": 0.01702631237996144,
+        "aliased_period_days": 58.7326238168235
       },
       "n1_m3": {
-        "orbital_period_hours": 3.4191530610417744,
-        "frequency_cpd": 7.019282135526127,
-        "aliased_frequency_cpd": 0.019282135526126787,
-        "aliased_period_days": 51.86147554273884
+        "orbital_period_hours": 3.4189188692742767,
+        "frequency_cpd": 7.019762947780743,
+        "aliased_frequency_cpd": 0.019762947780742834,
+        "aliased_period_days": 50.59973902144333
       },
       "n-1_m4": {
-        "orbital_period_hours": 3.4191326533048434,
-        "frequency_cpd": 7.019324031433011,
-        "aliased_frequency_cpd": 0.01932403143301098,
-        "aliased_period_days": 51.74903608838648
+        "orbital_period_hours": 3.418820408471131,
+        "frequency_cpd": 7.019965114439167,
+        "aliased_frequency_cpd": 0.019965114439166598,
+        "aliased_period_days": 50.0873662931903
       },
       "n0_m4": {
-        "orbital_period_hours": 2.99175,
-        "frequency_cpd": 8.022060666833793,
-        "aliased_frequency_cpd": 0.022060666833793263,
-        "aliased_period_days": 45.32954545454477
+        "orbital_period_hours": 2.9915109333933296,
+        "frequency_cpd": 8.022701749839948,
+        "aliased_frequency_cpd": 0.022701749839947993,
+        "aliased_period_days": 44.04946786261877
       },
       "n1_m4": {
-        "orbital_period_hours": 2.6593395060582146,
-        "frequency_cpd": 9.024797302234575,
-        "aliased_frequency_cpd": 0.02479730223457466,
-        "aliased_period_days": 40.326967447519706
+        "orbital_period_hours": 2.659150611370537,
+        "frequency_cpd": 9.02543838524073,
+        "aliased_frequency_cpd": 0.02543838524072939,
+        "aliased_period_days": 39.31067127637097
       }
     }
   },
   "glonass": {
-    "orbital_frequency": 2.1310182,
-    "nodal_precession_frequency": -9.22e-05,
-    "ground_repeat_frequency": 0.125354,
-    "sun_arg_lat_frequency": 2.1281882,
-    "draconitic_frequency": 0.00283,
+    "display_name": "GLONASS",
+    "orbital_parameters": {
+      "semi_major_axis_km": 25480.0,
+      "eccentricity": 0.01,
+      "inclination_deg": 64.8,
+      "repeat_cycle_days": 7.978156530632685
+    },
+    "orbital_frequency": 2.1345367013515286,
+    "nodal_precession_frequency": -9.249830056324054e-05,
+    "ground_repeat_frequency": 0.12534223866884922,
+    "sun_arg_lat_frequency": 2.1317064030509654,
+    "draconitic_frequency": 0.0028302983005632403,
+    "satellite_revolution_period_days": 0.46848573714700154,
+    "satellite_revolution_period_hours": 11.243657691528037,
     "draconitic_harmonics": {
-      "1": 0.00283,
-      "2": 0.00566,
-      "3": 0.008490000000000001,
-      "4": 0.01132,
-      "5": 0.01415,
-      "6": 0.016980000000000002,
-      "7": 0.01981,
-      "8": 0.02264,
-      "9": 0.02547,
-      "10": 0.0283,
-      "11": 0.03113,
-      "12": 0.033960000000000004,
-      "13": 0.03679,
-      "14": 0.03962,
-      "15": 0.04245
+      "1": 0.0028302983005632403,
+      "2": 0.005660596601126481,
+      "3": 0.008490894901689722,
+      "4": 0.011321193202252961,
+      "5": 0.0141514915028162,
+      "6": 0.016981789803379443,
+      "7": 0.019812088103942683,
+      "8": 0.022642386404505922,
+      "9": 0.02547268470506916,
+      "10": 0.0283029830056324,
+      "11": 0.031133281306195644,
+      "12": 0.03396357960675889,
+      "13": 0.03679387790732212,
+      "14": 0.039624176207885366,
+      "15": 0.0424544745084486
     },
     "orbital_peaks": {
       "all_peaks": {
-        "+1f_u-4f_d": 0.11686819999999987,
-        "+1f_u-3f_d": 0.11969819999999975,
-        "+1f_u-2f_d": 0.12252819999999964,
-        "+1f_u-1f_d": 0.12535819999999998,
-        "+1f_u+0f_d": 0.12818819999999986,
-        "+1f_u+1f_d": 0.13101819999999975,
-        "+1f_u+2f_d": 0.13384820000000008,
-        "+1f_u+3f_d": 0.13667819999999997,
-        "+1f_u+4f_d": 0.13950819999999986,
-        "+2f_u-4f_d": 0.24505639999999929,
-        "+2f_u-3f_d": 0.24788639999999962,
-        "+2f_u-2f_d": 0.25071639999999995,
-        "+2f_u-1f_d": 0.2535463999999994,
-        "+2f_u+0f_d": 0.2563763999999997,
-        "+2f_u+1f_d": 0.25920640000000006,
-        "+2f_u+2f_d": 0.2620363999999995,
-        "+2f_u+3f_d": 0.26486639999999984,
-        "+2f_u+4f_d": 0.26769640000000017,
-        "+3f_u-4f_d": 0.3732445999999987,
-        "+3f_u-3f_d": 0.37607459999999904,
-        "+3f_u-2f_d": 0.37890459999999937,
-        "+3f_u-1f_d": 0.3817345999999988,
-        "+3f_u+0f_d": 0.38456459999999915,
-        "+3f_u+1f_d": 0.3873945999999995,
-        "+3f_u+2f_d": 0.3902245999999989,
-        "+3f_u+3f_d": 0.39305459999999925,
-        "+3f_u+4f_d": 0.3958845999999996,
-        "+4f_u-4f_d": 0.4985672000000001,
-        "+4f_u-3f_d": 0.49573720000000066,
-        "+4f_u-2f_d": 0.4929072000000012,
-        "+4f_u-1f_d": 0.4900772,
-        "+4f_u+0f_d": 0.48724720000000055,
-        "+4f_u+1f_d": 0.4844172000000011,
-        "+4f_u+2f_d": 0.4815871999999999,
-        "+4f_u+3f_d": 0.47875720000000044,
-        "+4f_u+4f_d": 0.475927200000001
+        "+1f_u-4f_d": 0.12038520984871237,
+        "+1f_u-3f_d": 0.12321550814927562,
+        "+1f_u-2f_d": 0.12604580644983887,
+        "+1f_u-1f_d": 0.12887610475040212,
+        "+1f_u+0f_d": 0.13170640305096537,
+        "+1f_u+1f_d": 0.13453670135152862,
+        "+1f_u+2f_d": 0.13736699965209187,
+        "+1f_u+3f_d": 0.14019729795265512,
+        "+1f_u+4f_d": 0.14302759625321837,
+        "+2f_u-4f_d": 0.25209161289967774,
+        "+2f_u-3f_d": 0.254921911200241,
+        "+2f_u-2f_d": 0.25775220950080424,
+        "+2f_u-1f_d": 0.2605825078013675,
+        "+2f_u+0f_d": 0.26341280610193074,
+        "+2f_u+1f_d": 0.266243104402494,
+        "+2f_u+2f_d": 0.26907340270305724,
+        "+2f_u+3f_d": 0.2719037010036205,
+        "+2f_u+4f_d": 0.27473399930418374,
+        "+3f_u-4f_d": 0.3837980159506431,
+        "+3f_u-3f_d": 0.38662831425120636,
+        "+3f_u-2f_d": 0.3894586125517696,
+        "+3f_u-1f_d": 0.39228891085233286,
+        "+3f_u+0f_d": 0.3951192091528961,
+        "+3f_u+1f_d": 0.39794950745345936,
+        "+3f_u+2f_d": 0.4007798057540226,
+        "+3f_u+3f_d": 0.40361010405458586,
+        "+3f_u+4f_d": 0.4064404023551491,
+        "+4f_u-4f_d": 0.4844955809983915,
+        "+4f_u-3f_d": 0.4816652826978274,
+        "+4f_u-2f_d": 0.478834984397265,
+        "+4f_u-1f_d": 0.4760046860967009,
+        "+4f_u+0f_d": 0.4731743877961385,
+        "+4f_u+1f_d": 0.47034408949557616,
+        "+4f_u+2f_d": 0.467513791195012,
+        "+4f_u+3f_d": 0.46468349289444966,
+        "+4f_u+4f_d": 0.4618531945938855
       }
     },
     "orbital_signals": {
       "n-4_m1": {
-        "orbital_period_hours": 12.764160121203513,
-        "frequency_cpd": 1.880264723421307,
-        "aliased_frequency_cpd": 0.11973527657869298,
-        "aliased_period_days": 8.351757548601604
+        "orbital_period_hours": 12.79038272192283,
+        "frequency_cpd": 1.8764098402515967,
+        "aliased_frequency_cpd": 0.12359015974840326,
+        "aliased_period_days": 8.091259061690142
       },
       "n-3_m1": {
-        "orbital_period_hours": 27.349551914785696,
-        "frequency_cpd": 0.8775280880205257,
-        "aliased_frequency_cpd": 0.12247191197947427,
-        "aliased_period_days": 8.165137490199347
+        "orbital_period_hours": 27.470225556589124,
+        "frequency_cpd": 0.8736732048508156,
+        "aliased_frequency_cpd": 0.12632679514918443,
+        "aliased_period_days": 7.915976961333179
       },
       "n-2_m1": {
-        "orbital_period_hours": 191.6802047635973,
-        "frequency_cpd": 0.12520854738025577,
-        "aliased_frequency_cpd": 0.12520854738025577,
-        "aliased_period_days": 7.98667519848322
+        "orbital_period_hours": 185.95507571533656,
+        "frequency_cpd": 0.12906343054996594,
+        "aliased_frequency_cpd": 0.12906343054996594,
+        "aliased_period_days": 7.74812815480569
       },
       "n-1_m1": {
-        "orbital_period_hours": 21.27762976993804,
-        "frequency_cpd": 1.1279451827810372,
-        "aliased_frequency_cpd": 0.12794518278103717,
-        "aliased_period_days": 7.815847210999573
+        "orbital_period_hours": 21.205158686608886,
+        "frequency_cpd": 1.1318000659507472,
+        "aliased_frequency_cpd": 0.13180006595074722,
+        "aliased_period_days": 7.587249617717894
       },
       "n0_m1": {
-        "orbital_period_hours": 11.264,
-        "frequency_cpd": 2.1306818181818183,
-        "aliased_frequency_cpd": 0.13068181818181834,
-        "aliased_period_days": 7.652173913043469
+        "orbital_period_hours": 11.243657691528037,
+        "frequency_cpd": 2.1345367013515286,
+        "aliased_frequency_cpd": 0.13453670135152862,
+        "aliased_period_days": 7.432915999531736
       },
       "n1_m1": {
-        "orbital_period_hours": 7.659366393454265,
-        "frequency_cpd": 3.1334184535826,
-        "aliased_frequency_cpd": 0.13341845358260018,
-        "aliased_period_days": 7.495215040705698
+        "orbital_period_hours": 7.649955048177181,
+        "frequency_cpd": 3.1372733367523096,
+        "aliased_frequency_cpd": 0.13727333675230957,
+        "aliased_period_days": 7.28473586829436
       },
       "n2_m1": {
-        "orbital_period_hours": 5.802490352434758,
-        "frequency_cpd": 4.136155088983381,
-        "aliased_frequency_cpd": 0.13615508898338113,
-        "aliased_period_days": 7.344565726236339
+        "orbital_period_hours": 5.797087485641573,
+        "frequency_cpd": 4.140009972153091,
+        "aliased_frequency_cpd": 0.1400099721530914,
+        "aliased_period_days": 7.142348395774037
       },
       "n-4_m2": {
-        "orbital_period_hours": 95.84010238179864,
-        "frequency_cpd": 0.25041709476051155,
-        "aliased_frequency_cpd": 0.25041709476051155,
-        "aliased_period_days": 3.99333759924161
+        "orbital_period_hours": 92.97753785766828,
+        "frequency_cpd": 0.2581268610999319,
+        "aliased_frequency_cpd": 0.2581268610999319,
+        "aliased_period_days": 3.874064077402845
       },
       "n-3_m2": {
-        "orbital_period_hours": 19.151680613767134,
-        "frequency_cpd": 1.2531537301612927,
-        "aliased_frequency_cpd": 0.2531537301612927,
-        "aliased_period_days": 3.9501689323829696
+        "orbital_period_hours": 19.034574374313664,
+        "frequency_cpd": 1.260863496500713,
+        "aliased_frequency_cpd": 0.26086349650071305,
+        "aliased_period_days": 3.833422511828007
       },
       "n-2_m2": {
-        "orbital_period_hours": 10.63881488496902,
-        "frequency_cpd": 2.2558903655620743,
-        "aliased_frequency_cpd": 0.25589036556207434,
-        "aliased_period_days": 3.9079236054997866
+        "orbital_period_hours": 10.602579343304443,
+        "frequency_cpd": 2.2636001319014944,
+        "aliased_frequency_cpd": 0.26360013190149445,
+        "aliased_period_days": 3.793624808858947
       },
       "n-1_m2": {
-        "orbital_period_hours": 7.365065100396119,
-        "frequency_cpd": 3.2586270009628557,
-        "aliased_frequency_cpd": 0.25862700096285574,
-        "aliased_period_days": 3.866572307906942
+        "orbital_period_hours": 7.347680814866501,
+        "frequency_cpd": 3.266336767302276,
+        "aliased_frequency_cpd": 0.26633676730227585,
+        "aliased_period_days": 3.7546449561921036
       },
       "n0_m2": {
-        "orbital_period_hours": 5.632,
-        "frequency_cpd": 4.261363636363637,
-        "aliased_frequency_cpd": 0.2613636363636367,
-        "aliased_period_days": 3.8260869565217344
+        "orbital_period_hours": 5.621828845764019,
+        "frequency_cpd": 4.269073402703057,
+        "aliased_frequency_cpd": 0.26907340270305724,
+        "aliased_period_days": 3.716457999765868
       },
       "n1_m2": {
-        "orbital_period_hours": 4.559183670708403,
-        "frequency_cpd": 5.264100271764418,
-        "aliased_frequency_cpd": 0.2641002717644181,
-        "aliased_period_days": 3.786440632261132
+        "orbital_period_hours": 4.552516085847492,
+        "frequency_cpd": 5.271810038103838,
+        "aliased_frequency_cpd": 0.27181003810383775,
+        "aliased_period_days": 3.679039990487683
       },
       "n2_m2": {
-        "orbital_period_hours": 3.8296831967271325,
-        "frequency_cpd": 6.2668369071652,
-        "aliased_frequency_cpd": 0.26683690716520037,
-        "aliased_period_days": 3.747607520352849
+        "orbital_period_hours": 3.8249775240885904,
+        "frequency_cpd": 6.274546673504619,
+        "aliased_frequency_cpd": 0.27454667350461914,
+        "aliased_period_days": 3.64236793414718
       },
       "n-2_m3": {
-        "orbital_period_hours": 5.471242463293116,
-        "frequency_cpd": 4.386572183743893,
-        "aliased_frequency_cpd": 0.3865721837438931,
-        "aliased_period_days": 2.5868389968340484
+        "orbital_period_hours": 5.456856143843237,
+        "frequency_cpd": 4.398136833253024,
+        "aliased_frequency_cpd": 0.39813683325302396,
+        "aliased_period_days": 2.511699286472397
       },
       "n-1_m3": {
-        "orbital_period_hours": 4.45326122614161,
-        "frequency_cpd": 5.389308819144674,
-        "aliased_frequency_cpd": 0.38930881914467363,
-        "aliased_period_days": 2.5686548848213566
+        "orbital_period_hours": 4.443725656469068,
+        "frequency_cpd": 5.4008734686538045,
+        "aliased_frequency_cpd": 0.40087346865380447,
+        "aliased_period_days": 2.4945527159932928
       },
       "n0_m3": {
-        "orbital_period_hours": 3.7546666666666666,
-        "frequency_cpd": 6.392045454545455,
-        "aliased_frequency_cpd": 0.39204545454545503,
-        "aliased_period_days": 2.550724637681156
+        "orbital_period_hours": 3.7478858971760123,
+        "frequency_cpd": 6.403610104054586,
+        "aliased_frequency_cpd": 0.40361010405458586,
+        "aliased_period_days": 2.4776386665105785
       },
       "n1_m3": {
-        "orbital_period_hours": 3.245531742257802,
-        "frequency_cpd": 7.394782089946236,
-        "aliased_frequency_cpd": 0.3947820899462364,
-        "aliased_period_days": 2.53304297602808
+        "orbital_period_hours": 3.2404640026028355,
+        "frequency_cpd": 7.406346739455367,
+        "aliased_frequency_cpd": 0.40634673945536726,
+        "aliased_period_days": 2.460952440126172
       },
       "n-1_m4": {
-        "orbital_period_hours": 3.191493335227407,
-        "frequency_cpd": 7.519990637326492,
-        "aliased_frequency_cpd": 0.480009362673508,
-        "aliased_period_days": 2.0832926975221904
+        "orbital_period_hours": 3.1849626574452303,
+        "frequency_cpd": 7.535410170005333,
+        "aliased_frequency_cpd": 0.4645898299946669,
+        "aliased_period_days": 2.1524362683778056
       },
       "n0_m4": {
-        "orbital_period_hours": 2.816,
-        "frequency_cpd": 8.522727272727273,
-        "aliased_frequency_cpd": 0.4772727272727266,
-        "aliased_period_days": 2.095238095238098
+        "orbital_period_hours": 2.8109144228820093,
+        "frequency_cpd": 8.538146805406114,
+        "aliased_frequency_cpd": 0.4618531945938855,
+        "aliased_period_days": 2.1651901766735966
       },
       "n1_m4": {
-        "orbital_period_hours": 2.5195623259378324,
-        "frequency_cpd": 9.525463908128057,
-        "aliased_frequency_cpd": 0.47453609187194346,
-        "aliased_period_days": 2.107321270454295
+        "orbital_period_hours": 2.515490326330856,
+        "frequency_cpd": 9.540883440806898,
+        "aliased_frequency_cpd": 0.45911655919310235,
+        "aliased_period_days": 2.1780961282631597
       }
     }
   },
   "galileo": {
-    "orbital_frequency": 1.70475,
-    "nodal_precession_frequency": -7.07e-05,
-    "ground_repeat_frequency": 0.1015706,
-    "sun_arg_lat_frequency": 1.70197,
-    "draconitic_frequency": 0.0028104,
+    "display_name": "Galileo",
+    "orbital_parameters": {
+      "semi_major_axis_km": 29600.0,
+      "eccentricity": 0.002,
+      "inclination_deg": 56.0,
+      "repeat_cycle_days": 9.845364494583873
+    },
+    "orbital_frequency": 1.7047676494801511,
+    "nodal_precession_frequency": -7.187940528251217e-05,
+    "ground_repeat_frequency": 0.10157064276798686,
+    "sun_arg_lat_frequency": 1.7019579700748686,
+    "draconitic_frequency": 0.0028096794052825122,
+    "satellite_revolution_period_days": 0.5865902020753023,
+    "satellite_revolution_period_hours": 14.078164849807255,
     "draconitic_harmonics": {
-      "1": 0.0028104,
-      "2": 0.0056208,
-      "3": 0.0084312,
-      "4": 0.0112416,
-      "5": 0.014051999999999999,
-      "6": 0.0168624,
-      "7": 0.019672799999999997,
-      "8": 0.0224832,
-      "9": 0.0252936,
-      "10": 0.028103999999999997,
-      "11": 0.030914399999999998,
-      "12": 0.0337248,
-      "13": 0.0365352,
-      "14": 0.039345599999999994,
-      "15": 0.042156
+      "1": 0.0028096794052825122,
+      "2": 0.0056193588105650245,
+      "3": 0.008429038215847538,
+      "4": 0.011238717621130049,
+      "5": 0.01404839702641256,
+      "6": 0.016858076431695075,
+      "7": 0.019667755836977587,
+      "8": 0.022477435242260098,
+      "9": 0.02528711464754261,
+      "10": 0.02809679405282512,
+      "11": 0.030906473458107635,
+      "12": 0.03371615286339015,
+      "13": 0.03652583226867266,
+      "14": 0.03933551167395517,
+      "15": 0.042145191079237684
     },
     "orbital_peaks": {
       "all_peaks": {
-        "+1f_u-4f_d": 0.3092716,
-        "+1f_u-3f_d": 0.3064612,
-        "+1f_u-2f_d": 0.3036508,
-        "+1f_u-1f_d": 0.3008404,
-        "+1f_u+0f_d": 0.29803,
-        "+1f_u+1f_d": 0.2952196,
-        "+1f_u+2f_d": 0.29240920000000004,
-        "+1f_u+3f_d": 0.28959880000000005,
-        "+1f_u+4f_d": 0.28678840000000005,
-        "+2f_u-4f_d": 0.3926984,
-        "+2f_u-3f_d": 0.3955088,
-        "+2f_u-2f_d": 0.3983192,
-        "+2f_u-1f_d": 0.4011296,
-        "+2f_u+0f_d": 0.40393999999999997,
-        "+2f_u+1f_d": 0.40675039999999996,
-        "+2f_u+2f_d": 0.40956079999999995,
-        "+2f_u+3f_d": 0.41237119999999994,
-        "+2f_u+4f_d": 0.41518159999999993,
-        "+3f_u-4f_d": 0.09466839999999976,
-        "+3f_u-3f_d": 0.09747879999999931,
-        "+3f_u-2f_d": 0.10028919999999975,
-        "+3f_u-1f_d": 0.10309959999999929,
-        "+3f_u+0f_d": 0.10590999999999973,
-        "+3f_u+1f_d": 0.10872040000000016,
-        "+3f_u+2f_d": 0.11153079999999971,
-        "+3f_u+3f_d": 0.11434120000000014,
-        "+3f_u+4f_d": 0.11715159999999969,
-        "+4f_u-4f_d": 0.20336160000000003,
-        "+4f_u-3f_d": 0.20055120000000048,
-        "+4f_u-2f_d": 0.19774080000000005,
-        "+4f_u-1f_d": 0.1949304000000005,
-        "+4f_u+0f_d": 0.19212000000000007,
-        "+4f_u+1f_d": 0.18930959999999963,
-        "+4f_u+2f_d": 0.1864992000000001,
-        "+4f_u+3f_d": 0.18368879999999965,
-        "+4f_u+4f_d": 0.1808784000000001
+        "+1f_u-4f_d": 0.30928074754626156,
+        "+1f_u-3f_d": 0.306471068140979,
+        "+1f_u-2f_d": 0.3036613887356965,
+        "+1f_u-1f_d": 0.30085170933041394,
+        "+1f_u+0f_d": 0.2980420299251314,
+        "+1f_u+1f_d": 0.29523235051984886,
+        "+1f_u+2f_d": 0.2924226711145663,
+        "+1f_u+3f_d": 0.2896129917092838,
+        "+1f_u+4f_d": 0.28680331230400125,
+        "+2f_u-4f_d": 0.39267722252860704,
+        "+2f_u-3f_d": 0.3954869019338898,
+        "+2f_u-2f_d": 0.3982965813391721,
+        "+2f_u-1f_d": 0.4011062607444549,
+        "+2f_u+0f_d": 0.4039159401497372,
+        "+2f_u+1f_d": 0.4067256195550195,
+        "+2f_u+2f_d": 0.4095352989603023,
+        "+2f_u+3f_d": 0.4123449783655846,
+        "+2f_u+4f_d": 0.41515465777086735,
+        "+3f_u-4f_d": 0.09463519260347564,
+        "+3f_u-3f_d": 0.09744487200875795,
+        "+3f_u-2f_d": 0.10025455141404116,
+        "+3f_u-1f_d": 0.10306423081932348,
+        "+3f_u+0f_d": 0.1058739102246058,
+        "+3f_u+1f_d": 0.10868358962988811,
+        "+3f_u+2f_d": 0.11149326903517043,
+        "+3f_u+3f_d": 0.11430294844045363,
+        "+3f_u+4f_d": 0.11711262784573595,
+        "+4f_u-4f_d": 0.20340683732165576,
+        "+4f_u-3f_d": 0.20059715791637345,
+        "+4f_u-2f_d": 0.19778747851109024,
+        "+4f_u-1f_d": 0.19497779910580793,
+        "+4f_u+0f_d": 0.1921681197005256,
+        "+4f_u+1f_d": 0.1893584402952433,
+        "+4f_u+2f_d": 0.18654876088996097,
+        "+4f_u+3f_d": 0.18373908148467777,
+        "+4f_u+4f_d": 0.18092940207939545
       }
     },
     "orbital_signals": {
       "n-4_m1": {
-        "orbital_period_hours": 10.4074615503421,
-        "frequency_cpd": 2.306037825257313,
-        "aliased_frequency_cpd": 0.30603782525731305,
-        "aliased_period_days": 3.2675699455098783
+        "orbital_period_hours": 10.4068249353833,
+        "frequency_cpd": 2.3061788921229742,
+        "aliased_frequency_cpd": 0.3061788921229742,
+        "aliased_period_days": 3.266064466646376
       },
       "n-3_m1": {
-        "orbital_period_hours": 18.414776405323416,
-        "frequency_cpd": 1.303301189856532,
-        "aliased_frequency_cpd": 0.3033011898565321,
-        "aliased_period_days": 3.297052677152441
+        "orbital_period_hours": 18.412783440329417,
+        "frequency_cpd": 1.303442256722193,
+        "aliased_frequency_cpd": 0.30344225672219305,
+        "aliased_period_days": 3.2955199147346126
       },
       "n-2_m1": {
-        "orbital_period_hours": 79.84973492119914,
-        "frequency_cpd": 0.3005645544557505,
-        "aliased_frequency_cpd": 0.3005645544557505,
-        "aliased_period_days": 3.3270722883832975
+        "orbital_period_hours": 79.81227585482152,
+        "frequency_cpd": 0.30070562132141154,
+        "aliased_frequency_cpd": 0.30070562132141154,
+        "aliased_period_days": 3.325511493950897
       },
       "n-1_m1": {
-        "orbital_period_hours": 34.1796557443571,
-        "frequency_cpd": 0.7021720809450308,
-        "aliased_frequency_cpd": 0.2978279190549692,
-        "aliased_period_days": 3.357643578792333
+        "orbital_period_hours": 34.18652384107723,
+        "frequency_cpd": 0.7020310140793697,
+        "aliased_frequency_cpd": 0.29796898592063026,
+        "aliased_period_days": 3.356053976256338
       },
       "n0_m1": {
-        "orbital_period_hours": 14.077000000000002,
-        "frequency_cpd": 1.704908716345812,
-        "aliased_frequency_cpd": 0.2950912836541879,
-        "aliased_period_days": 3.3887818969667762
+        "orbital_period_hours": 14.078164849807255,
+        "frequency_cpd": 1.7047676494801511,
+        "aliased_frequency_cpd": 0.29523235051984886,
+        "aliased_period_days": 3.3871626813226507
       },
       "n1_m1": {
-        "orbital_period_hours": 8.863790076687318,
-        "frequency_cpd": 2.707645351746594,
-        "aliased_frequency_cpd": 0.29235464825340607,
-        "aliased_period_days": 3.420503166186103
+        "orbital_period_hours": 8.864251899440834,
+        "frequency_cpd": 2.7075042848809323,
+        "aliased_frequency_cpd": 0.2924957151190677,
+        "aliased_period_days": 3.4188535021544677
       },
       "n2_m1": {
-        "orbital_period_hours": 6.468336705798785,
-        "frequency_cpd": 3.710381987147375,
-        "aliased_frequency_cpd": 0.2896180128526251,
-        "aliased_period_days": 3.452823911573689
+        "orbital_period_hours": 6.468582638072384,
+        "frequency_cpd": 3.710240920281714,
+        "aliased_frequency_cpd": 0.28975907971828585,
+        "aliased_period_days": 3.4511429321636298
       },
       "n-4_m2": {
-        "orbital_period_hours": 39.92486746059957,
-        "frequency_cpd": 0.601129108911501,
-        "aliased_frequency_cpd": 0.39887089108849905,
-        "aliased_period_days": 2.5070769071943286
+        "orbital_period_hours": 39.90613792741076,
+        "frequency_cpd": 0.6014112426428231,
+        "aliased_frequency_cpd": 0.3985887573571769,
+        "aliased_period_days": 2.5088514955375327
       },
       "n-3_m2": {
-        "orbital_period_hours": 59.7598362007805,
-        "frequency_cpd": 0.4016075264892802,
-        "aliased_frequency_cpd": 0.4016075264892802,
-        "aliased_period_days": 2.4899931750325206
+        "orbital_period_hours": 59.80184766049567,
+        "frequency_cpd": 0.4013253927579581,
+        "aliased_frequency_cpd": 0.4013253927579581,
+        "aliased_period_days": 2.4917436525206527
       },
       "n-2_m2": {
-        "orbital_period_hours": 17.08982787217855,
-        "frequency_cpd": 1.4043441618900616,
-        "aliased_frequency_cpd": 0.4043441618900616,
-        "aliased_period_days": 2.4731406911518437
+        "orbital_period_hours": 17.093261920538616,
+        "frequency_cpd": 1.4040620281587395,
+        "aliased_frequency_cpd": 0.4040620281587395,
+        "aliased_period_days": 2.474867545849027
       },
       "n-1_m2": {
-        "orbital_period_hours": 9.970583466500948,
-        "frequency_cpd": 2.4070807972908432,
-        "aliased_frequency_cpd": 0.40708079729084323,
-        "aliased_period_days": 2.4565147917933827
+        "orbital_period_hours": 9.9717522547172,
+        "frequency_cpd": 2.4067986635595213,
+        "aliased_frequency_cpd": 0.4067986635595213,
+        "aliased_period_days": 2.458218498679221
       },
       "n0_m2": {
-        "orbital_period_hours": 7.038500000000001,
-        "frequency_cpd": 3.409817432691624,
-        "aliased_frequency_cpd": 0.4098174326916242,
-        "aliased_period_days": 2.440110937770847
+        "orbital_period_hours": 7.0390824249036275,
+        "frequency_cpd": 3.4095352989603023,
+        "aliased_frequency_cpd": 0.4095352989603023,
+        "aliased_period_days": 2.441791959175987
       },
       "n1_m2": {
-        "orbital_period_hours": 5.439026837891067,
-        "frequency_cpd": 4.412554068092406,
-        "aliased_frequency_cpd": 0.4125540680924056,
-        "aliased_period_days": 2.423924710338854
+        "orbital_period_hours": 5.439374625370933,
+        "frequency_cpd": 4.412271934361083,
+        "aliased_frequency_cpd": 0.4122719343610832,
+        "aliased_period_days": 2.4255834963632585
       },
       "n2_m2": {
-        "orbital_period_hours": 4.431895038343659,
-        "frequency_cpd": 5.415290703493188,
-        "aliased_frequency_cpd": 0.41529070349318786,
-        "aliased_period_days": 2.407951807224607
+        "orbital_period_hours": 4.432125949720417,
+        "frequency_cpd": 5.415008569761865,
+        "aliased_frequency_cpd": 0.4150085697618646,
+        "aliased_period_days": 2.4095887961393383
       },
       "n-2_m3": {
-        "orbital_period_hours": 7.718896127103404,
-        "frequency_cpd": 3.109252878235874,
-        "aliased_frequency_cpd": 0.10925287823587393,
-        "aliased_period_days": 9.15307693625268
+        "orbital_period_hours": 7.719946889540646,
+        "frequency_cpd": 3.1088296776388904,
+        "aliased_frequency_cpd": 0.1088296776388904,
+        "aliased_period_days": 9.188670054855045
       },
       "n-1_m3": {
-        "orbital_period_hours": 5.836590759876313,
-        "frequency_cpd": 4.111989513636655,
-        "aliased_frequency_cpd": 0.11198951363665532,
-        "aliased_period_days": 8.929407473314445
+        "orbital_period_hours": 5.837191516012994,
+        "frequency_cpd": 4.111566313039672,
+        "aliased_frequency_cpd": 0.11156631303967224,
+        "aliased_period_days": 8.963279082678
       },
       "n0_m3": {
-        "orbital_period_hours": 4.692333333333333,
-        "frequency_cpd": 5.114726149037438,
-        "aliased_frequency_cpd": 0.11472614903743761,
-        "aliased_period_days": 8.716408668730601
+        "orbital_period_hours": 4.692721616602419,
+        "frequency_cpd": 5.114302948440454,
+        "aliased_frequency_cpd": 0.11430294844045363,
+        "aliased_period_days": 8.748680708975343
       },
       "n1_m3": {
-        "orbital_period_hours": 3.9231950966750313,
-        "frequency_cpd": 6.117462784438218,
-        "aliased_frequency_cpd": 0.11746278443821812,
-        "aliased_period_days": 8.513334710926845
+        "orbital_period_hours": 3.923466518575158,
+        "frequency_cpd": 6.117039583841234,
+        "aliased_frequency_cpd": 0.11703958384123414,
+        "aliased_period_days": 8.544117871749393
       },
       "n-1_m4": {
-        "orbital_period_hours": 4.125910244792496,
-        "frequency_cpd": 5.816898229982468,
-        "aliased_frequency_cpd": 0.18310177001753214,
-        "aliased_period_days": 5.461443654554782
+        "orbital_period_hours": 4.126310517012064,
+        "frequency_cpd": 5.816333962519823,
+        "aliased_frequency_cpd": 0.18366603748017685,
+        "aliased_period_days": 5.444664749779504
       },
       "n0_m4": {
-        "orbital_period_hours": 3.5192500000000004,
-        "frequency_cpd": 6.819634865383248,
-        "aliased_frequency_cpd": 0.18036513461675163,
-        "aliased_period_days": 5.544308782985399
+        "orbital_period_hours": 3.5195412124518137,
+        "frequency_cpd": 6.8190705979206045,
+        "aliased_frequency_cpd": 0.18092940207939545,
+        "aliased_period_days": 5.527017657203001
       },
       "n1_m4": {
-        "orbital_period_hours": 3.068123266402586,
-        "frequency_cpd": 7.822371500784031,
-        "aliased_frequency_cpd": 0.17762849921596935,
-        "aliased_period_days": 5.629727236416897
+        "orbital_period_hours": 3.0683446017128246,
+        "frequency_cpd": 7.821807233321386,
+        "aliased_frequency_cpd": 0.17819276667861406,
+        "aliased_period_days": 5.611900071138049
       }
     }
   },
   "bds_3_meo": {
-    "orbital_frequency": 1.859232,
-    "nodal_precession_frequency": -9e-05,
-    "ground_repeat_frequency": 0.144948,
-    "sun_arg_lat_frequency": 1.856382,
-    "draconitic_frequency": 0.002815,
+    "display_name": "BDS-3 (MEO)",
+    "orbital_parameters": {
+      "semi_major_axis_km": 27906.0,
+      "eccentricity": 0.002,
+      "inclination_deg": 55.0,
+      "repeat_cycle_days": 6.898682772091631
+    },
+    "orbital_frequency": 1.8623288757794796,
+    "nodal_precession_frequency": -9.061780731453364e-05,
+    "ground_repeat_frequency": 0.14495520855741673,
+    "sun_arg_lat_frequency": 1.859500457972165,
+    "draconitic_frequency": 0.0028284178073145335,
+    "satellite_revolution_period_days": 0.5369620870972368,
+    "satellite_revolution_period_hours": 12.887090090333682,
     "draconitic_harmonics": {
-      "1": 0.002815,
-      "2": 0.00563,
-      "3": 0.008445,
-      "4": 0.01126,
-      "5": 0.014074999999999999,
-      "6": 0.01689,
-      "7": 0.019705,
-      "8": 0.02252,
-      "9": 0.025334999999999996,
-      "10": 0.028149999999999998,
-      "11": 0.030965,
-      "12": 0.03378,
-      "13": 0.036594999999999996,
-      "14": 0.03941,
-      "15": 0.042225
+      "1": 0.0028284178073145335,
+      "2": 0.005656835614629067,
+      "3": 0.0084852534219436,
+      "4": 0.011313671229258134,
+      "5": 0.014142089036572669,
+      "6": 0.0169705068438872,
+      "7": 0.019798924651201734,
+      "8": 0.02262734245851627,
+      "9": 0.025455760265830803,
+      "10": 0.028284178073145337,
+      "11": 0.031112595880459868,
+      "12": 0.0339410136877744,
+      "13": 0.03676943149508893,
+      "14": 0.03959784930240347,
+      "15": 0.042426267109718
     },
     "orbital_peaks": {
       "all_peaks": {
-        "+1f_u-4f_d": 0.15487800000000007,
-        "+1f_u-3f_d": 0.15206300000000006,
-        "+1f_u-2f_d": 0.14924800000000005,
-        "+1f_u-1f_d": 0.14643300000000004,
-        "+1f_u+0f_d": 0.14361800000000002,
-        "+1f_u+1f_d": 0.140803,
-        "+1f_u+2f_d": 0.137988,
-        "+1f_u+3f_d": 0.135173,
-        "+1f_u+4f_d": 0.13235799999999998,
-        "+2f_u-4f_d": 0.2984960000000001,
-        "+2f_u-3f_d": 0.2956810000000001,
-        "+2f_u-2f_d": 0.29286600000000007,
-        "+2f_u-1f_d": 0.29005100000000006,
-        "+2f_u+0f_d": 0.28723600000000005,
-        "+2f_u+1f_d": 0.28442100000000003,
-        "+2f_u+2f_d": 0.281606,
-        "+2f_u+3f_d": 0.278791,
-        "+2f_u+4f_d": 0.275976,
-        "+3f_u-4f_d": 0.4421140000000001,
-        "+3f_u-3f_d": 0.4392990000000001,
-        "+3f_u-2f_d": 0.4364840000000001,
-        "+3f_u-1f_d": 0.4336690000000001,
-        "+3f_u+0f_d": 0.43085400000000007,
-        "+3f_u+1f_d": 0.42803900000000006,
-        "+3f_u+2f_d": 0.42522400000000005,
-        "+3f_u+3f_d": 0.42240900000000003,
-        "+3f_u+4f_d": 0.419594,
-        "+4f_u-4f_d": 0.41426799999999986,
-        "+4f_u-3f_d": 0.41708299999999987,
-        "+4f_u-2f_d": 0.4198979999999999,
-        "+4f_u-1f_d": 0.4227129999999999,
-        "+4f_u+0f_d": 0.4255279999999999,
-        "+4f_u+1f_d": 0.4283429999999999,
-        "+4f_u+2f_d": 0.43115799999999993,
-        "+4f_u+3f_d": 0.43397299999999994,
-        "+4f_u+4f_d": 0.43678799999999995
+        "+1f_u-4f_d": 0.15181321325709307,
+        "+1f_u-3f_d": 0.1489847954497785,
+        "+1f_u-2f_d": 0.14615637764246414,
+        "+1f_u-1f_d": 0.14332795983514957,
+        "+1f_u+0f_d": 0.140499542027835,
+        "+1f_u+1f_d": 0.1376711242205204,
+        "+1f_u+2f_d": 0.13484270641320584,
+        "+1f_u+3f_d": 0.13201428860589148,
+        "+1f_u+4f_d": 0.1291858707985769,
+        "+2f_u-4f_d": 0.2923127552849283,
+        "+2f_u-3f_d": 0.2894843374776137,
+        "+2f_u-2f_d": 0.28665591967029913,
+        "+2f_u-1f_d": 0.28382750186298455,
+        "+2f_u+0f_d": 0.28099908405567,
+        "+2f_u+1f_d": 0.2781706662483554,
+        "+2f_u+2f_d": 0.2753422484410408,
+        "+2f_u+3f_d": 0.27251383063372625,
+        "+2f_u+4f_d": 0.2696854128264117,
+        "+3f_u-4f_d": 0.43281229731276305,
+        "+3f_u-3f_d": 0.42998387950544803,
+        "+3f_u-2f_d": 0.4271554616981339,
+        "+3f_u-1f_d": 0.4243270438908189,
+        "+3f_u+0f_d": 0.42149862608350475,
+        "+3f_u+1f_d": 0.4186702082761906,
+        "+3f_u+2f_d": 0.4158417904688756,
+        "+3f_u+3f_d": 0.41301337266156146,
+        "+3f_u+4f_d": 0.41018495485424644,
+        "+4f_u-4f_d": 0.42668816065940174,
+        "+4f_u-3f_d": 0.42951657846671676,
+        "+4f_u-2f_d": 0.4323449962740309,
+        "+4f_u-1f_d": 0.4351734140813459,
+        "+4f_u+0f_d": 0.43800183188866004,
+        "+4f_u+1f_d": 0.4408302496959742,
+        "+4f_u+2f_d": 0.4436586675032892,
+        "+4f_u+3f_d": 0.4464870853106033,
+        "+4f_u+4f_d": 0.44931550311791835
       }
     },
     "orbital_signals": {
       "n-4_m1": {
-        "orbital_period_hours": 11.153895898346677,
-        "frequency_cpd": 2.151714541603125,
-        "aliased_frequency_cpd": 0.15171454160312514,
-        "aliased_period_days": 6.5913259825543395
+        "orbital_period_hours": 11.16997238817726,
+        "frequency_cpd": 2.1486176658236458,
+        "aliased_frequency_cpd": 0.14861766582364577,
+        "aliased_period_days": 6.7286751844604415
       },
       "n-3_m1": {
-        "orbital_period_hours": 20.888130111505742,
-        "frequency_cpd": 1.148977906202344,
-        "aliased_frequency_cpd": 0.14897790620234397,
-        "aliased_period_days": 6.712404714842652
+        "orbital_period_hours": 20.944582694717685,
+        "frequency_cpd": 1.1458810304228646,
+        "aliased_frequency_cpd": 0.1458810304228646,
+        "aliased_period_days": 6.854900853807415
       },
       "n-2_m1": {
-        "orbital_period_hours": 164.1123594485585,
-        "frequency_cpd": 0.14624127080156246,
-        "aliased_frequency_cpd": 0.14624127080156246,
-        "aliased_period_days": 6.8380149770232705
+        "orbital_period_hours": 167.6628693446047,
+        "frequency_cpd": 0.1431443950220831,
+        "aliased_frequency_cpd": 0.1431443950220831,
+        "aliased_period_days": 6.985952889358529
       },
       "n-1_m1": {
-        "orbital_period_hours": 28.02116741312471,
-        "frequency_cpd": 0.8564953645992188,
-        "aliased_frequency_cpd": 0.14350463540078118,
-        "aliased_period_days": 6.968416018111123
+        "orbital_period_hours": 27.920214809555127,
+        "frequency_cpd": 0.8595922403786982,
+        "aliased_frequency_cpd": 0.1404077596213018,
+        "aliased_period_days": 7.122113497837524
       },
       "n0_m1": {
-        "orbital_period_hours": 12.908555790778125,
-        "frequency_cpd": 1.8592320000000004,
-        "aliased_frequency_cpd": 0.14076799999999956,
-        "aliased_period_days": 7.103887247101636
+        "orbital_period_hours": 12.887090090333682,
+        "frequency_cpd": 1.8623288757794796,
+        "aliased_frequency_cpd": 0.1376711242205204,
+        "aliased_period_days": 7.263687324861302
       },
       "n1_m1": {
-        "orbital_period_hours": 8.385836135006809,
-        "frequency_cpd": 2.8619686354007814,
-        "aliased_frequency_cpd": 0.1380313645992186,
-        "aliased_period_days": 7.244730231448143
+        "orbital_period_hours": 8.376771807257288,
+        "frequency_cpd": 2.8650655111802608,
+        "aliased_frequency_cpd": 0.13493448881973924,
+        "aliased_period_days": 7.4110037303799565
       },
       "n2_m1": {
-        "orbital_period_hours": 6.210046644778751,
-        "frequency_cpd": 3.8647052708015632,
-        "aliased_frequency_cpd": 0.13529472919843677,
-        "aliased_period_days": 7.3912709380814094
+        "orbital_period_hours": 6.205074378278342,
+        "frequency_cpd": 3.867802146581043,
+        "aliased_frequency_cpd": 0.13219785341895696,
+        "aliased_period_days": 7.564419346741085
       },
       "n-4_m2": {
-        "orbital_period_hours": 82.05617972427925,
-        "frequency_cpd": 0.2924825416031249,
-        "aliased_frequency_cpd": 0.2924825416031249,
-        "aliased_period_days": 3.4190074885116353
+        "orbital_period_hours": 83.83143467230235,
+        "frequency_cpd": 0.2862887900441662,
+        "aliased_frequency_cpd": 0.2862887900441662,
+        "aliased_period_days": 3.4929764446792646
       },
       "n-3_m2": {
-        "orbital_period_hours": 33.790723924834346,
-        "frequency_cpd": 0.7102540937976562,
-        "aliased_frequency_cpd": 0.28974590620234375,
-        "aliased_period_days": 3.4512998409773945
+        "orbital_period_hours": 33.49860028967481,
+        "frequency_cpd": 0.7164478453566151,
+        "aliased_frequency_cpd": 0.2835521546433849,
+        "aliased_period_days": 3.526688066460543
       },
       "n-2_m2": {
-        "orbital_period_hours": 14.010583706562356,
-        "frequency_cpd": 1.7129907291984376,
-        "aliased_frequency_cpd": 0.28700927080156236,
-        "aliased_period_days": 3.4842080090555614
+        "orbital_period_hours": 13.960107404777563,
+        "frequency_cpd": 1.7191844807573964,
+        "aliased_frequency_cpd": 0.2808155192426036,
+        "aliased_period_days": 3.561056748918762
       },
       "n-1_m2": {
-        "orbital_period_hours": 8.83741141060449,
-        "frequency_cpd": 2.715727364599219,
-        "aliased_frequency_cpd": 0.28427263540078096,
-        "aliased_period_days": 3.5177497777447093
+        "orbital_period_hours": 8.81730181581254,
+        "frequency_cpd": 2.7219211161581782,
+        "aliased_frequency_cpd": 0.2780788838418218,
+        "aliased_period_days": 3.596101890889439
       },
       "n0_m2": {
-        "orbital_period_hours": 6.454277895389063,
-        "frequency_cpd": 3.718464000000001,
-        "aliased_frequency_cpd": 0.2815359999999991,
-        "aliased_period_days": 3.551943623550818
+        "orbital_period_hours": 6.443545045166841,
+        "frequency_cpd": 3.724657751558959,
+        "aliased_frequency_cpd": 0.2753422484410408,
+        "aliased_period_days": 3.631843662430651
       },
       "n1_m2": {
-        "orbital_period_hours": 5.083452675161018,
-        "frequency_cpd": 4.721200635400781,
-        "aliased_frequency_cpd": 0.2787993645992186,
-        "aliased_period_days": 3.5868087484256868
+        "orbital_period_hours": 5.076792422100997,
+        "frequency_cpd": 4.727394386959741,
+        "aliased_frequency_cpd": 0.272605613040259,
+        "aliased_period_days": 3.6683030435338755
       },
       "n2_m2": {
-        "orbital_period_hours": 4.192918067503404,
-        "frequency_cpd": 5.723937270801563,
-        "aliased_frequency_cpd": 0.2760627291984372,
-        "aliased_period_days": 3.6223651157240715
+        "orbital_period_hours": 4.188385903628644,
+        "frequency_cpd": 5.7301310223605215,
+        "aliased_frequency_cpd": 0.2698689776394785,
+        "aliased_period_days": 3.7055018651899783
       },
       "n-2_m3": {
-        "orbital_period_hours": 6.718506044942305,
-        "frequency_cpd": 3.5722227291984376,
-        "aliased_frequency_cpd": 0.42777727080156236,
-        "aliased_period_days": 2.337665108120905
+        "orbital_period_hours": 6.7010778994292695,
+        "frequency_cpd": 3.5815133565368757,
+        "aliased_frequency_cpd": 0.41848664346312425,
+        "aliased_period_days": 2.3895625239664713
       },
       "n-1_m3": {
-        "orbital_period_hours": 5.245948234144038,
-        "frequency_cpd": 4.574959364599219,
-        "aliased_frequency_cpd": 0.42504063540078096,
-        "aliased_period_days": 2.3527162269016375
+        "orbital_period_hours": 5.235316582256403,
+        "frequency_cpd": 4.584249991937657,
+        "aliased_frequency_cpd": 0.41575000806234286,
+        "aliased_period_days": 2.405291594967443
       },
       "n0_m3": {
-        "orbital_period_hours": 4.302851930259376,
-        "frequency_cpd": 5.577696,
-        "aliased_frequency_cpd": 0.42230399999999957,
-        "aliased_period_days": 2.3679624157005406
+        "orbital_period_hours": 4.2956966967778945,
+        "frequency_cpd": 5.5869866273384385,
+        "aliased_frequency_cpd": 0.41301337266156146,
+        "aliased_period_days": 2.4212291082870996
       },
       "n1_m3": {
-        "orbital_period_hours": 3.6471766112895216,
-        "frequency_cpd": 6.580432635400782,
-        "aliased_frequency_cpd": 0.4195673645992182,
-        "aliased_period_days": 2.3834074915603276
+        "orbital_period_hours": 3.642034580678835,
+        "frequency_cpd": 6.58972326273922,
+        "aliased_frequency_cpd": 0.41027673726078007,
+        "aliased_period_days": 2.437379234992746
       },
       "n-1_m4": {
-        "orbital_period_hours": 3.730072458218678,
-        "frequency_cpd": 6.4341913645992195,
-        "aliased_frequency_cpd": 0.4341913645992195,
-        "aliased_period_days": 2.303131940274884
+        "orbital_period_hours": 3.72290489148997,
+        "frequency_cpd": 6.446578867717136,
+        "aliased_frequency_cpd": 0.44657886771713606,
+        "aliased_period_days": 2.2392461271441126
       },
       "n0_m4": {
-        "orbital_period_hours": 3.2271389476945314,
-        "frequency_cpd": 7.436928000000002,
-        "aliased_frequency_cpd": 0.43692800000000176,
-        "aliased_period_days": 2.2887066061227386
+        "orbital_period_hours": 3.2217725225834206,
+        "frequency_cpd": 7.449315503117918,
+        "aliased_frequency_cpd": 0.44931550311791835,
+        "aliased_period_days": 2.2256076032559244
       },
       "n1_m4": {
-        "orbital_period_hours": 2.843714891149853,
-        "frequency_cpd": 8.439664635400783,
-        "aliased_frequency_cpd": 0.43966463540078315,
-        "aliased_period_days": 2.274460849207111
+        "orbital_period_hours": 2.8395470835567065,
+        "frequency_cpd": 8.4520521385187,
+        "aliased_frequency_cpd": 0.45205213851870063,
+        "aliased_period_days": 2.2121342092901783
       }
     }
   },
@@ -776,7 +812,7 @@
     "OO_1": 0.9294198,
     "O_1": 0.9295357,
     "2N_2": 1.8596904,
-    "\u03bc_2": 1.8645473,
+    "mu_2": 1.8645473,
     "M_2": 1.9322734,
     "M_m": 0.036292,
     "M_f": 0.0732027
@@ -797,44 +833,44 @@
   },
   "aliases": {
     "145_545_daily": 0.07061139999999999,
-    "145_545_gps": 0.07346209999999997,
-    "145_545_galileo": 0.015253200000000078,
-    "145_545_glonass": 0.05191060000000003,
-    "145_545_bds_3_meo": 0.05970059999999999,
+    "145_545_gps": 0.07334930935079376,
+    "145_545_glonass": 0.051992929318055436,
+    "145_545_galileo": 0.015252815088118266,
+    "145_545_bds_3_meo": 0.059657348655499653,
     "OO_1_daily": 0.07058019999999998,
-    "OO_1_gps": 0.07343089999999997,
-    "OO_1_galileo": 0.015284400000000087,
-    "OO_1_glonass": 0.05194180000000004,
-    "OO_1_bds_3_meo": 0.0597318,
+    "OO_1_gps": 0.07331810935079375,
+    "OO_1_glonass": 0.052024129318055445,
+    "OO_1_galileo": 0.015284015088118275,
+    "OO_1_bds_3_meo": 0.05968854865549966,
     "O_1_daily": 0.07046430000000004,
-    "O_1_gps": 0.07331500000000002,
-    "O_1_galileo": 0.015400300000000033,
-    "O_1_glonass": 0.052057699999999985,
-    "O_1_bds_3_meo": 0.05984769999999995,
+    "O_1_gps": 0.0732022093507938,
+    "O_1_glonass": 0.05214002931805539,
+    "O_1_galileo": 0.015399915088118221,
+    "O_1_bds_3_meo": 0.05980444865549961,
     "2N_2_daily": 0.14030959999999992,
-    "2N_2_gps": 0.1460109999999999,
-    "2N_2_galileo": 0.031419600000000214,
-    "2N_2_glonass": 0.02061959999999985,
-    "2N_2_bds_3_meo": 0.02463359999999981,
-    "\u03bc_2_daily": 0.1354527000000001,
-    "\u03bc_2_gps": 0.14115410000000006,
-    "\u03bc_2_galileo": 0.036276500000000045,
-    "\u03bc_2_glonass": 0.01576270000000002,
-    "\u03bc_2_bds_3_meo": 0.01977669999999998,
+    "2N_2_gps": 0.14578541870158745,
+    "2N_2_glonass": 0.020443180032738262,
+    "2N_2_galileo": 0.03141883017623659,
+    "2N_2_bds_3_meo": 0.02472731124641725,
+    "mu_2_daily": 0.1354527000000001,
+    "mu_2_gps": 0.14092851870158762,
+    "mu_2_glonass": 0.015586280032738431,
+    "mu_2_galileo": 0.03627573017623642,
+    "mu_2_bds_3_meo": 0.01987041124641742,
     "M_2_daily": 0.06772660000000008,
-    "M_2_gps": 0.07342800000000005,
-    "M_2_galileo": 0.0024319999999999897,
-    "M_2_glonass": 0.05196339999999999,
-    "M_2_bds_3_meo": 0.04794940000000003,
+    "M_2_gps": 0.07320241870158761,
+    "M_2_glonass": 0.05213981996726158,
+    "M_2_galileo": 0.0024311874082496576,
+    "M_2_bds_3_meo": 0.04785568875358259,
     "M_m_daily": 0.036292,
     "M_m_gps": 0.036292,
-    "M_m_galileo": 0.036292,
     "M_m_glonass": 0.036292,
+    "M_m_galileo": 0.036292,
     "M_m_bds_3_meo": 0.036292,
     "M_f_daily": 0.0732027,
     "M_f_gps": 0.0732027,
-    "M_f_galileo": 0.0283679,
-    "M_f_glonass": 0.0521513,
-    "M_f_bds_3_meo": 0.0717453
+    "M_f_glonass": 0.052139538668849225,
+    "M_f_galileo": 0.028367942767986862,
+    "M_f_bds_3_meo": 0.07175250855741673
   }
 }
