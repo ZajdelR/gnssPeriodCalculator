@@ -126,34 +126,34 @@ def calculate_draconitic_harmonics(base_freq, max_harmonic=12):
     return {i: i * base_freq for i in range(1, max_harmonic + 1)}
 
 
-def calculate_orbital_peaks(sun_arg_lat_freq, draconitic_freq, harmonics_range=(-3, 4)):
+def calculate_orbital_peaks(sun_arg_lat_freq, draconitic_freq, harmonics_range=(-4, 5)):
     """
     Calculate orbital peaks using the Rebischung-style linear combinations
-    m*f_u + k*f_d for fixed harmonic ranges.
+    m*f_u + k*f_d for fixed coefficient ranges.
     Based on the method from Rebischung et al. (2024).
 
     Args:
         sun_arg_lat_freq (float): Sun argument of latitude frequency
         draconitic_freq (float): Draconitic frequency
-        harmonics_range (tuple): Range of draconitic harmonics to consider,
-            interpreted as Python ``range(start, stop)``
+        harmonics_range (tuple): Range of integer coefficients to consider for
+            both ``f_u`` and ``f_d``, interpreted as Python ``range(start, stop)``
 
     Returns:
         dict: Dictionary containing all requested combinations
     """
     peaks = {"all_peaks": {}}
 
-    min_harm, max_harm = harmonics_range
+    min_coeff, max_coeff = harmonics_range
 
-    # Generate the complete fixed Rebischung term set:
-    # 1f_u..4f_u combined with -3f_d..+3f_d.
-    for mult in range(1, 5):
-        base_freq = mult * sun_arg_lat_freq
+    # Generate the positive Rebischung f_u coefficients only:
+    # +1f_u..+4f_u combined with -4f_d..+4f_d by default.
+    for m in range(1, 5):
+        base_freq = m * sun_arg_lat_freq
 
-        for k in range(min_harm, max_harm):
+        for k in range(min_coeff, max_coeff):
             combined_freq = base_freq + k * draconitic_freq
             alias_freq = abs(combined_freq - round(combined_freq))
-            peaks["all_peaks"][f"{mult}f_u{k:+d}f_d"] = alias_freq
+            peaks["all_peaks"][f"{m:+d}f_u{k:+d}f_d"] = alias_freq
 
     return peaks
 
@@ -261,10 +261,10 @@ def create_gnss_frequencies():
     glonass_draconitic = 0.0028300
 
     # Galileo parameters
-    galileo_orbital_freq = 1.7267000
-    galileo_nodal_precession = -0.0000726
+    galileo_orbital_freq = 1.70475
+    galileo_nodal_precession = -0.0000707
     galileo_ground_repeat = 0.1015706
-    galileo_sun_arg_lat = 1.7238896
+    galileo_sun_arg_lat = 1.70197
     galileo_draconitic = 0.0028104
 
     # BDS-3 MEO parameters

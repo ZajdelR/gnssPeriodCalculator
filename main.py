@@ -3,7 +3,7 @@
 GNSS Frequencies Calculator - Main Script
 
 This script demonstrates the usage of the GNSS frequencies library by generating
-a comprehensive frequency report and saving the results to JSON format.
+a comprehensive frequency report and saving the results to JSON and CSV formats.
 
 Usage:
     python main.py
@@ -11,14 +11,17 @@ Usage:
 Output:
     - Console report with all frequency calculations
     - gnss_frequencies.json file with structured data
+    - rebischung_orbital_peaks.csv file with Rebischung orbital peaks
 
 Author: Radoslaw Zajdel
 Date: 12.06.2025
 Version: 1.0.0
 """
 
+import csv
 import json
 import os
+import re
 import sys
 from gnss_frequencies import (
     create_gnss_frequencies,
@@ -288,6 +291,61 @@ def save_frequencies_to_json(filename="gnss_frequencies.json"):
         return False
 
 
+def _parse_rebischung_peak_name(peak_name):
+    """Extract integer fu and fd coefficients from labels like ``+1f_u-4f_d``."""
+    match = re.fullmatch(r"([+-]?\d+)f_u([+-]?\d+)f_d", peak_name)
+    if not match:
+        raise ValueError(f"Invalid Rebischung peak label: {peak_name}")
+    return int(match.group(1)), int(match.group(2))
+
+
+def save_rebischung_peaks_to_csv(filename="rebischung_orbital_peaks.csv"):
+    """
+    Save Rebischung orbital peaks for all GNSS constellations to a CSV file.
+
+    Args:
+        filename (str): Output filename
+    """
+    frequencies = create_gnss_frequencies()
+    constellation_order = [
+        ("gps", "GPS"),
+        ("glonass", "GLONASS"),
+        ("galileo", "Galileo"),
+        ("bds_3_meo", "BDS-3 MEO"),
+    ]
+
+    try:
+        with open(filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "constellation",
+                "fu",
+                "fd",
+                "orbital period in cpd",
+                "oorbital period in days",
+            ])
+
+            for constellation_key, constellation_name in constellation_order:
+                peaks = frequencies[constellation_key]["orbital_peaks"]["all_peaks"]
+                for peak_name, freq_cpd in peaks.items():
+                    fu, fd = _parse_rebischung_peak_name(peak_name)
+                    writer.writerow([
+                        constellation_name,
+                        fu,
+                        fd,
+                        f"{freq_cpd:.7f}",
+                        f"{cpd_to_days(freq_cpd):.3f}",
+                    ])
+
+        file_size = os.path.getsize(filename)
+        print(f"\nRebischung orbital peaks saved to '{filename}'")
+        print(f"File size: {file_size:,} bytes ({file_size / 1024:.1f} KB)")
+        return True
+    except Exception as e:
+        print(f"\nError saving Rebischung peaks CSV file: {e}")
+        return False
+
+
 def print_usage_examples():
     """Print examples of how to use the library."""
     print("\n" + "=" * 80)
@@ -337,9 +395,13 @@ def main():
 
     # Save frequencies to JSON
     print("\nSaving frequencies to JSON file...")
-    success = save_frequencies_to_json()
+    json_success = save_frequencies_to_json()
 
-    if success:
+    # Save Rebischung orbital peaks to CSV
+    print("\nSaving Rebischung orbital peaks to CSV file...")
+    csv_success = save_rebischung_peaks_to_csv()
+
+    if json_success and csv_success:
         # Print usage examples
         print_usage_examples()
 
@@ -356,6 +418,7 @@ def main():
         print()
         print("Files created:")
         print("- gnss_frequencies.json (frequency database)")
+        print("- rebischung_orbital_peaks.csv (Rebischung orbital peaks table)")
         print()
         print("Ready for analysis! See usage examples above.")
     else:
