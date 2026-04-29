@@ -1,0 +1,30 @@
+{
+  "gps": {
+    "display_name": "GPS",
+    "semi_major_axis_km": 26560.0,
+    "eccentricity": 0.02,
+    "inclination_deg": 55.0,
+    "repeat_cycle_days": 0.9972695663290856
+  },
+  "glonass": {
+    "display_name": "GLONASS",
+    "semi_major_axis_km": 25480.0,
+    "eccentricity": 0.01,
+    "inclination_deg": 64.8,
+    "repeat_cycle_days": 7.978156530632685
+  },
+  "galileo": {
+    "display_name": "Galileo",
+    "semi_major_axis_km": 29600.0,
+    "eccentricity": 0.002,
+    "inclination_deg": 56.0,
+    "repeat_cycle_days": 9.845364494583873
+  },
+  "bds_3_meo": {
+    "display_name": "BDS-3 (MEO)",
+    "semi_major_axis_km": 27906.0,
+    "eccentricity": 0.002,
+    "inclination_deg": 55.0,
+    "repeat_cycle_days": 6.898682772091631
+  }
+}
