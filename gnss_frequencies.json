@@ -9,13 +9,18 @@
       "semi_major_axis_km": 26560.0,
       "eccentricity": 0.02,
       "inclination_deg": 55.0,
-      "repeat_cycle_days": 0.9972695663290856
+      "repeat": {
+        "earth_rotations": 1,
+        "satellite_revolutions": 2
+      }
     },
     "orbital_frequency": 2.005675437459987,
     "nodal_precession_frequency": -0.00010782038971401267,
-    "ground_repeat_frequency": 1.0027379093507938,
+    "ground_repeat_frequency": 1.002845620389714,
     "sun_arg_lat_frequency": 2.002829817070273,
     "draconitic_frequency": 0.0028456203897140125,
+    "repeat_cycle_days": 0.9971624541885039,
+    "repeat_revolutions": 1.9999842415232019,
     "satellite_revolution_period_days": 0.4985851555655549,
     "satellite_revolution_period_hours": 11.966043733573317,
     "draconitic_harmonics": {
@@ -210,13 +215,18 @@
       "semi_major_axis_km": 25480.0,
       "eccentricity": 0.01,
       "inclination_deg": 64.8,
-      "repeat_cycle_days": 7.978156530632685
+      "repeat": {
+        "earth_rotations": 8,
+        "satellite_revolutions": 17
+      }
     },
     "orbital_frequency": 2.1345367013515286,
     "nodal_precession_frequency": -9.249830056324054e-05,
-    "ground_repeat_frequency": 0.12534223866884922,
+    "ground_repeat_frequency": 0.1253537872875704,
     "sun_arg_lat_frequency": 2.1317064030509654,
     "draconitic_frequency": 0.0028302983005632403,
+    "repeat_cycle_days": 7.977421517436324,
+    "repeat_revolutions": 17.028099011119235,
     "satellite_revolution_period_days": 0.46848573714700154,
     "satellite_revolution_period_hours": 11.243657691528037,
     "draconitic_harmonics": {
@@ -411,13 +421,18 @@
       "semi_major_axis_km": 29600.0,
       "eccentricity": 0.002,
       "inclination_deg": 56.0,
-      "repeat_cycle_days": 9.845364494583873
+      "repeat": {
+        "earth_rotations": 10,
+        "satellite_revolutions": 17
+      }
     },
     "orbital_frequency": 1.7047676494801511,
     "nodal_precession_frequency": -7.187940528251217e-05,
-    "ground_repeat_frequency": 0.10157064276798686,
+    "ground_repeat_frequency": 0.10028096794052825,
     "sun_arg_lat_frequency": 1.7019579700748686,
     "draconitic_frequency": 0.0028096794052825122,
+    "repeat_cycle_days": 9.971981927747757,
+    "repeat_revolutions": 16.99991219162509,
     "satellite_revolution_period_days": 0.5865902020753023,
     "satellite_revolution_period_hours": 14.078164849807255,
     "draconitic_harmonics": {
@@ -612,13 +627,18 @@
       "semi_major_axis_km": 27906.0,
       "eccentricity": 0.002,
       "inclination_deg": 55.0,
-      "repeat_cycle_days": 6.898682772091631
+      "repeat": {
+        "earth_rotations": 7,
+        "satellite_revolutions": 13
+      }
     },
     "orbital_frequency": 1.8623288757794796,
     "nodal_precession_frequency": -9.061780731453364e-05,
-    "ground_repeat_frequency": 0.14495520855741673,
+    "ground_repeat_frequency": 0.1432612025439021,
     "sun_arg_lat_frequency": 1.859500457972165,
     "draconitic_frequency": 0.0028284178073145335,
+    "repeat_cycle_days": 6.980256917036224,
+    "repeat_revolutions": 12.999534016956007,
     "satellite_revolution_period_days": 0.5369620870972368,
     "satellite_revolution_period_hours": 12.887090090333682,
     "draconitic_harmonics": {
@@ -833,35 +853,35 @@
   },
   "aliases": {
     "145_545_daily": 0.07061139999999999,
-    "145_545_gps": 0.07334930935079376,
-    "145_545_glonass": 0.051992929318055436,
-    "145_545_galileo": 0.015252815088118266,
-    "145_545_bds_3_meo": 0.059657348655499653,
+    "145_545_gps": 0.07345702038971402,
+    "145_545_glonass": 0.051912088987007166,
+    "145_545_galileo": 0.02685988853524579,
+    "145_545_bds_3_meo": 0.06982138473658739,
     "OO_1_daily": 0.07058019999999998,
-    "OO_1_gps": 0.07331810935079375,
-    "OO_1_glonass": 0.052024129318055445,
-    "OO_1_galileo": 0.015284015088118275,
-    "OO_1_bds_3_meo": 0.05968854865549966,
+    "OO_1_gps": 0.07342582038971401,
+    "OO_1_glonass": 0.051943288987007175,
+    "OO_1_galileo": 0.0268910885352458,
+    "OO_1_bds_3_meo": 0.0698525847365874,
     "O_1_daily": 0.07046430000000004,
-    "O_1_gps": 0.0732022093507938,
-    "O_1_glonass": 0.05214002931805539,
-    "O_1_galileo": 0.015399915088118221,
-    "O_1_bds_3_meo": 0.05980444865549961,
+    "O_1_gps": 0.07330992038971407,
+    "O_1_glonass": 0.05205918898700712,
+    "O_1_galileo": 0.027006988535245746,
+    "O_1_bds_3_meo": 0.06996848473658734,
     "2N_2_daily": 0.14030959999999992,
-    "2N_2_gps": 0.14578541870158745,
-    "2N_2_glonass": 0.020443180032738262,
-    "2N_2_galileo": 0.03141883017623659,
-    "2N_2_bds_3_meo": 0.02472731124641725,
+    "2N_2_gps": 0.146000840779428,
+    "2N_2_glonass": 0.020616409313556128,
+    "2N_2_galileo": 0.04564799087003668,
+    "2N_2_bds_3_meo": 0.00270523307072712,
     "mu_2_daily": 0.1354527000000001,
-    "mu_2_gps": 0.14092851870158762,
-    "mu_2_glonass": 0.015586280032738431,
-    "mu_2_galileo": 0.03627573017623642,
-    "mu_2_bds_3_meo": 0.01987041124641742,
+    "mu_2_gps": 0.14114394077942816,
+    "mu_2_glonass": 0.015759509313556297,
+    "mu_2_galileo": 0.04079109087003685,
+    "mu_2_bds_3_meo": 0.002151666929272711,
     "M_2_daily": 0.06772660000000008,
-    "M_2_gps": 0.07320241870158761,
-    "M_2_glonass": 0.05213981996726158,
-    "M_2_galileo": 0.0024311874082496576,
-    "M_2_bds_3_meo": 0.04785568875358259,
+    "M_2_gps": 0.07341784077942815,
+    "M_2_glonass": 0.051966590686443714,
+    "M_2_galileo": 0.02693500912996316,
+    "M_2_bds_3_meo": 0.06987776692927272,
     "M_m_daily": 0.036292,
     "M_m_gps": 0.036292,
     "M_m_glonass": 0.036292,
@@ -869,8 +889,8 @@
     "M_m_bds_3_meo": 0.036292,
     "M_f_daily": 0.0732027,
     "M_f_gps": 0.0732027,
-    "M_f_glonass": 0.052139538668849225,
-    "M_f_galileo": 0.028367942767986862,
-    "M_f_bds_3_meo": 0.07175250855741673
+    "M_f_glonass": 0.05215108728757041,
+    "M_f_galileo": 0.027078267940528256,
+    "M_f_bds_3_meo": 0.0700585025439021
   }
 }

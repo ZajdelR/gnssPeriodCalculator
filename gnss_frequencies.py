@@ -114,7 +114,7 @@ def load_constellation_definitions(config_path=CONSTELLATION_CONFIG_PATH):
     return definitions
 
 
-def calculate_constellation_dynamics(semi_major_axis_km, eccentricity, inclination_deg, repeat_cycle_days):
+def calculate_constellation_dynamics(semi_major_axis_km, eccentricity, inclination_deg, repeat):
     """Calculate derived orbital frequencies and periods from constellation parameters."""
     inclination_rad = math.radians(inclination_deg)
     mean_motion_rad_s = math.sqrt(EARTH_GRAVITATIONAL_PARAMETER_KM3_S2 / semi_major_axis_km ** 3)
@@ -131,6 +131,8 @@ def calculate_constellation_dynamics(semi_major_axis_km, eccentricity, inclinati
     nodal_precession_frequency = nodal_precession_rad_s * SECONDS_PER_DAY / (2.0 * math.pi)
     draconitic_frequency = EARTH_ORBITAL_FREQUENCY_CPD - nodal_precession_frequency
     revolution_period_days = cpd_to_days(orbital_frequency)
+    repeat_cycle_days = repeat["earth_rotations"] / (EARTH_SIDEREAL_ROTATION_CPD - nodal_precession_frequency)
+    repeat_revolutions = orbital_frequency * repeat_cycle_days
 
     return {
         "orbital_frequency": orbital_frequency,
@@ -138,6 +140,8 @@ def calculate_constellation_dynamics(semi_major_axis_km, eccentricity, inclinati
         "ground_repeat_frequency": days_to_cpd(repeat_cycle_days),
         "sun_arg_lat_frequency": orbital_frequency - draconitic_frequency,
         "draconitic_frequency": draconitic_frequency,
+        "repeat_cycle_days": repeat_cycle_days,
+        "repeat_revolutions": repeat_revolutions,
         "satellite_revolution_period_days": revolution_period_days,
         "satellite_revolution_period_hours": revolution_period_days * 24.0,
     }
@@ -175,7 +179,7 @@ def build_constellation_entry(name, definition):
         semi_major_axis_km=definition["semi_major_axis_km"],
         eccentricity=definition["eccentricity"],
         inclination_deg=definition["inclination_deg"],
-        repeat_cycle_days=definition["repeat_cycle_days"],
+        repeat=definition["repeat"],
     )
     draconitic_frequency = dynamics["draconitic_frequency"]
     sun_arg_lat_frequency = dynamics["sun_arg_lat_frequency"]
@@ -186,7 +190,7 @@ def build_constellation_entry(name, definition):
             "semi_major_axis_km": definition["semi_major_axis_km"],
             "eccentricity": definition["eccentricity"],
             "inclination_deg": definition["inclination_deg"],
-            "repeat_cycle_days": definition["repeat_cycle_days"],
+            "repeat": definition["repeat"],
         },
         **dynamics,
         "draconitic_harmonics": calculate_draconitic_harmonics(
@@ -242,13 +246,24 @@ def get_frequency_summary():
     """Get a summary of all available frequency categories."""
     frequencies = create_gnss_frequencies()
     constellation_names = list(load_constellation_definitions().keys())
+    non_frequency_keys = {
+        "semi_major_axis_km",
+        "eccentricity",
+        "inclination_deg",
+        "earth_rotations",
+        "satellite_revolutions",
+        "repeat_cycle_days",
+        "repeat_revolutions",
+        "satellite_revolution_period_days",
+        "satellite_revolution_period_hours",
+    }
 
     def count_frequencies(data):
         count = 0
         for key, value in data.items():
             if isinstance(value, dict):
                 count += count_frequencies(value)
-            elif isinstance(value, (int, float)) and value > 0 and "satellite_revolution_period" not in str(key):
+            elif isinstance(value, (int, float)) and value > 0 and str(key) not in non_frequency_keys:
                 count += 1
         return count
 
@@ -256,7 +271,7 @@ def get_frequency_summary():
         for key, value in data.items():
             if isinstance(value, dict):
                 collect_frequencies(value, collected)
-            elif isinstance(value, (int, float)) and value > 0 and "satellite_revolution_period" not in str(key):
+            elif isinstance(value, (int, float)) and value > 0 and str(key) not in non_frequency_keys:
                 collected.append(value)
 
     all_freqs = []

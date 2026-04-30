@@ -24,6 +24,8 @@ if hasattr(sys.stdout, "reconfigure"):
 EXCLUDED_DETAIL_KEYS = {
     "display_name",
     "orbital_parameters",
+    "repeat_cycle_days",
+    "repeat_revolutions",
     "draconitic_harmonics",
     "orbital_peaks",
     "orbital_signals",
@@ -58,6 +60,11 @@ def print_constellation_report(constellation):
         f"{'satellite_revolution_period':30s}: "
         f"{constellation['satellite_revolution_period_hours']:12.3f} hrs "
         f"({constellation['satellite_revolution_period_days']:8.3f} days)"
+    )
+    print(
+        f"{'repeat_cycle_days':30s}: "
+        f"{constellation['repeat_cycle_days']:12.3f} days "
+        f"({constellation['repeat_revolutions']:8.3f} rev)"
     )
 
     print(f"\n  {display_name} Draconitic Harmonics:")

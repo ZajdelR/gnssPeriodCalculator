@@ -122,351 +122,359 @@ orbital_frequency             :    0.0027378 cpd ( 365.257 days)
 
 GPS FREQUENCIES
 ----------------------------------------
-orbital_frequency             :    2.0057014 cpd (   0.499 days)
-nodal_precession_frequency    :   -0.0001075 cpd (-9302.326 days)
-ground_repeat_frequency       :    1.0028507 cpd (   0.997 days)
-sun_arg_lat_frequency         :    2.0057014 cpd (   0.499 days)
-draconitic_frequency          :    0.0028453 cpd ( 351.457 days)
+orbital_frequency             :    2.0056754 cpd (   0.499 days)
+nodal_precession_frequency    :   -0.0001078 cpd (-9274.684 days)
+ground_repeat_frequency       :    1.0028456 cpd (   0.997 days)
+sun_arg_lat_frequency         :    2.0028298 cpd (   0.499 days)
+draconitic_frequency          :    0.0028456 cpd ( 351.417 days)
+satellite_revolution_period   :       11.966 hrs (   0.499 days)
+repeat_cycle_days             :        0.997 days (   2.000 rev)
 
   GPS Draconitic Harmonics:
-     1f_d^GPS               :    0.0028453 cpd ( 351.457 days)
-     2f_d^GPS               :    0.0056906 cpd ( 175.728 days)
-     3f_d^GPS               :    0.0085359 cpd ( 117.152 days)
-     4f_d^GPS               :    0.0113812 cpd (  87.864 days)
-     5f_d^GPS               :    0.0142265 cpd (  70.291 days)
-     6f_d^GPS               :    0.0170718 cpd (  58.576 days)
-     7f_d^GPS               :    0.0199171 cpd (  50.208 days)
-     8f_d^GPS               :    0.0227624 cpd (  43.932 days)
-     9f_d^GPS               :    0.0256077 cpd (  39.051 days)
-    10f_d^GPS               :    0.0284530 cpd (  35.146 days)
-    11f_d^GPS               :    0.0312983 cpd (  31.951 days)
-    12f_d^GPS               :    0.0341436 cpd (  29.288 days)
-    13f_d^GPS               :    0.0369889 cpd (  27.035 days)
-    14f_d^GPS               :    0.0398342 cpd (  25.104 days)
-    15f_d^GPS               :    0.0426795 cpd (  23.430 days)
+     1f_d                    :    0.0028456 cpd ( 351.417 days)
+     2f_d                    :    0.0056912 cpd ( 175.709 days)
+     3f_d                    :    0.0085369 cpd ( 117.139 days)
+     4f_d                    :    0.0113825 cpd (  87.854 days)
+     5f_d                    :    0.0142281 cpd (  70.283 days)
+     6f_d                    :    0.0170737 cpd (  58.570 days)
+     7f_d                    :    0.0199193 cpd (  50.202 days)
+     8f_d                    :    0.0227650 cpd (  43.927 days)
+     9f_d                    :    0.0256106 cpd (  39.046 days)
+    10f_d                    :    0.0284562 cpd (  35.142 days)
+    11f_d                    :    0.0313018 cpd (  31.947 days)
+    12f_d                    :    0.0341474 cpd (  29.285 days)
+    13f_d                    :    0.0369931 cpd (  27.032 days)
+    14f_d                    :    0.0398387 cpd (  25.101 days)
+    15f_d                    :    0.0426843 cpd (  23.428 days)
 
   GPS Orbital Peaks (Rebischung et al. 2024 method):
     all_peaks:
-      +1f_u-4f_d          :    0.0056798 cpd ( 176.063 days)
-      +1f_u-3f_d          :    0.0028345 cpd ( 352.796 days)
-      +1f_u-2f_d          :    0.0000108 cpd (92592.593 days)
-      +1f_u-1f_d          :    0.0028561 cpd ( 350.128 days)
-      +1f_u+0f_d          :    0.0057014 cpd ( 175.396 days)
-      +1f_u+1f_d          :    0.0085467 cpd ( 117.004 days)
-      +1f_u+2f_d          :    0.0113920 cpd (  87.781 days)
-      +1f_u+3f_d          :    0.0142373 cpd (  70.238 days)
-      +1f_u+4f_d          :    0.0170826 cpd (  58.539 days)
-      +2f_u-4f_d          :    0.0000216 cpd (46296.296 days)
-      +2f_u-3f_d          :    0.0028669 cpd ( 348.809 days)
-      +2f_u-2f_d          :    0.0057122 cpd ( 175.064 days)
-      +2f_u-1f_d          :    0.0085575 cpd ( 116.857 days)
-      +2f_u+0f_d          :    0.0114028 cpd (  87.698 days)
-      +2f_u+1f_d          :    0.0142481 cpd (  70.185 days)
-      +2f_u+2f_d          :    0.0170934 cpd (  58.502 days)
-      +2f_u+3f_d          :    0.0199387 cpd (  50.154 days)
-      +2f_u+4f_d          :    0.0227840 cpd (  43.890 days)
-      +3f_u-4f_d          :    0.0057230 cpd ( 174.734 days)
-      +3f_u-3f_d          :    0.0085683 cpd ( 116.709 days)
-      +3f_u-2f_d          :    0.0114136 cpd (  87.615 days)
-      +3f_u-1f_d          :    0.0142589 cpd (  70.132 days)
-      +3f_u+0f_d          :    0.0171042 cpd (  58.465 days)
-      +3f_u+1f_d          :    0.0199495 cpd (  50.127 days)
-      +3f_u+2f_d          :    0.0227948 cpd (  43.870 days)
-      +3f_u+3f_d          :    0.0256401 cpd (  39.001 days)
-      +3f_u+4f_d          :    0.0284854 cpd (  35.106 days)
-      +4f_u-4f_d          :    0.0114244 cpd (  87.532 days)
-      +4f_u-3f_d          :    0.0142697 cpd (  70.079 days)
-      +4f_u-2f_d          :    0.0171150 cpd (  58.428 days)
-      +4f_u-1f_d          :    0.0199603 cpd (  50.099 days)
-      +4f_u+0f_d          :    0.0228056 cpd (  43.849 days)
-      +4f_u+1f_d          :    0.0256509 cpd (  38.985 days)
-      +4f_u+2f_d          :    0.0284962 cpd (  35.092 days)
-      +4f_u+3f_d          :    0.0313415 cpd (  31.907 days)
-      +4f_u+4f_d          :    0.0341868 cpd (  29.251 days)
+      +1f_u-4f_d          :    0.0085527 cpd ( 116.923 days)
+      +1f_u-3f_d          :    0.0057070 cpd ( 175.222 days)
+      +1f_u-2f_d          :    0.0028614 cpd ( 349.476 days)
+      +1f_u-1f_d          :    0.0000158 cpd (63277.845 days)
+      +1f_u+0f_d          :    0.0028298 cpd ( 353.380 days)
+      +1f_u+1f_d          :    0.0056754 cpd ( 176.198 days)
+      +1f_u+2f_d          :    0.0085211 cpd ( 117.356 days)
+      +1f_u+3f_d          :    0.0113667 cpd (  87.976 days)
+      +1f_u+4f_d          :    0.0142123 cpd (  70.362 days)
+      +2f_u-4f_d          :    0.0057228 cpd ( 174.738 days)
+      +2f_u-3f_d          :    0.0028772 cpd ( 347.557 days)
+      +2f_u-2f_d          :    0.0000316 cpd (31638.923 days)
+      +2f_u-1f_d          :    0.0028140 cpd ( 355.364 days)
+      +2f_u+0f_d          :    0.0056596 cpd ( 176.690 days)
+      +2f_u+1f_d          :    0.0085053 cpd ( 117.574 days)
+      +2f_u+2f_d          :    0.0113509 cpd (  88.099 days)
+      +2f_u+3f_d          :    0.0141965 cpd (  70.440 days)
+      +2f_u+4f_d          :    0.0170421 cpd (  58.678 days)
+      +3f_u-4f_d          :    0.0028930 cpd ( 345.658 days)
+      +3f_u-3f_d          :    0.0000474 cpd (21092.615 days)
+      +3f_u-2f_d          :    0.0027982 cpd ( 357.371 days)
+      +3f_u-1f_d          :    0.0056438 cpd ( 177.185 days)
+      +3f_u+0f_d          :    0.0084895 cpd ( 117.793 days)
+      +3f_u+1f_d          :    0.0113351 cpd (  88.222 days)
+      +3f_u+2f_d          :    0.0141807 cpd (  70.518 days)
+      +3f_u+3f_d          :    0.0170263 cpd (  58.733 days)
+      +3f_u+4f_d          :    0.0198719 cpd (  50.322 days)
+      +4f_u-4f_d          :    0.0000632 cpd (15819.461 days)
+      +4f_u-3f_d          :    0.0027824 cpd ( 359.401 days)
+      +4f_u-2f_d          :    0.0056280 cpd ( 177.682 days)
+      +4f_u-1f_d          :    0.0084736 cpd ( 118.013 days)
+      +4f_u+0f_d          :    0.0113193 cpd (  88.345 days)
+      +4f_u+1f_d          :    0.0141649 cpd (  70.597 days)
+      +4f_u+2f_d          :    0.0170105 cpd (  58.787 days)
+      +4f_u+3f_d          :    0.0198561 cpd (  50.362 days)
+      +4f_u+4f_d          :    0.0227017 cpd (  44.049 days)
 
   GPS Orbital Signals (Zajdel et al. 2022 method):
-    n-4_m1      :    2.0054314 cpd (  11.968 hrs) -> aliased:  184.115 days
-    n-3_m1      :    1.0026947 cpd (  23.936 hrs) -> aliased:  371.093 days
-    n-2_m1      :    0.0000419 cpd (23868.680 days) -> aliased: 23868.680 days
-    n-1_m1      :    1.0027785 cpd (  23.934 hrs) -> aliased:  359.902 days
-    n0_m1       :    2.0055152 cpd (  11.967 hrs) -> aliased:  181.318 days
-    n1_m1       :    3.0082518 cpd (   7.978 hrs) -> aliased:  121.186 days
-    n2_m1       :    4.0109884 cpd (   5.984 hrs) -> aliased:   91.005 days
-    n-4_m2      :    0.0000838 cpd (11934.340 days) -> aliased: 11934.340 days
-    n-3_m2      :    1.0028204 cpd (  23.933 hrs) -> aliased:  354.556 days
-    n-2_m2      :    2.0055571 cpd (  11.967 hrs) -> aliased:  179.951 days
-    n-1_m2      :    3.0082937 cpd (   7.978 hrs) -> aliased:  120.573 days
-    n0_m2       :    4.0110303 cpd (   5.984 hrs) -> aliased:   90.659 days
-    n1_m2       :    5.0137670 cpd (   4.787 hrs) -> aliased:   72.638 days
-    n2_m2       :    6.0165036 cpd (   3.989 hrs) -> aliased:   60.593 days
-    n-2_m3      :    4.0110722 cpd (   5.983 hrs) -> aliased:   90.316 days
-    n-1_m3      :    5.0138089 cpd (   4.787 hrs) -> aliased:   72.417 days
-    n0_m3       :    6.0165455 cpd (   3.989 hrs) -> aliased:   60.439 days
-    n1_m3       :    7.0192821 cpd (   3.419 hrs) -> aliased:   51.861 days
-    n-1_m4      :    7.0193240 cpd (   3.419 hrs) -> aliased:   51.749 days
-    n0_m4       :    8.0220607 cpd (   2.992 hrs) -> aliased:   45.330 days
-    n1_m4       :    9.0247973 cpd (   2.659 hrs) -> aliased:   40.327 days
+    n-4_m1      :    2.0052711 cpd (  11.968 hrs) -> aliased:  189.714 days
+    n-3_m1      :    1.0025345 cpd (  23.939 hrs) -> aliased:  394.560 days
+    n-2_m1      :    0.0002022 cpd (4946.414 days) -> aliased: 4946.414 days
+    n-1_m1      :    1.0029388 cpd (  23.930 hrs) -> aliased:  340.275 days
+    n0_m1       :    2.0056754 cpd (  11.966 hrs) -> aliased:  176.198 days
+    n1_m1       :    3.0084121 cpd (   7.978 hrs) -> aliased:  118.877 days
+    n2_m1       :    4.0111487 cpd (   5.983 hrs) -> aliased:   89.696 days
+    n-4_m2      :    0.0004043 cpd (2473.207 days) -> aliased: 2473.207 days
+    n-3_m2      :    1.0031410 cpd (  23.925 hrs) -> aliased:  318.373 days
+    n-2_m2      :    2.0058776 cpd (  11.965 hrs) -> aliased:  170.137 days
+    n-1_m2      :    3.0086142 cpd (   7.977 hrs) -> aliased:  116.087 days
+    n0_m2       :    4.0113509 cpd (   5.983 hrs) -> aliased:   88.099 days
+    n1_m2       :    5.0140875 cpd (   4.787 hrs) -> aliased:   70.985 days
+    n2_m2       :    6.0168241 cpd (   3.989 hrs) -> aliased:   59.438 days
+    n-2_m3      :    4.0115530 cpd (   5.983 hrs) -> aliased:   86.557 days
+    n-1_m3      :    5.0142897 cpd (   4.786 hrs) -> aliased:   69.981 days
+    n0_m3       :    6.0170263 cpd (   3.989 hrs) -> aliased:   58.733 days
+    n1_m3       :    7.0197629 cpd (   3.419 hrs) -> aliased:   50.600 days
+    n-1_m4      :    7.0199651 cpd (   3.419 hrs) -> aliased:   50.087 days
+    n0_m4       :    8.0227017 cpd (   2.992 hrs) -> aliased:   44.049 days
+    n1_m4       :    9.0254384 cpd (   2.659 hrs) -> aliased:   39.311 days
 
 GLONASS FREQUENCIES
 ----------------------------------------
-orbital_frequency             :    2.1310182 cpd (   0.469 days)
-nodal_precession_frequency    :   -0.0000922 cpd (-10845.987 days)
-ground_repeat_frequency       :    0.1253540 cpd (   7.977 days)
-sun_arg_lat_frequency         :    2.1281882 cpd (   0.470 days)
-draconitic_frequency          :    0.0028300 cpd ( 353.357 days)
+orbital_frequency             :    2.1345367 cpd (   0.468 days)
+nodal_precession_frequency    :   -0.0000925 cpd (-10811.009 days)
+ground_repeat_frequency       :    0.1253538 cpd (   7.977 days)
+sun_arg_lat_frequency         :    2.1317064 cpd (   0.469 days)
+draconitic_frequency          :    0.0028303 cpd ( 353.320 days)
+satellite_revolution_period   :       11.244 hrs (   0.468 days)
+repeat_cycle_days             :        7.977 days (  17.028 rev)
 
   GLONASS Draconitic Harmonics:
-     1f_d^GLONASS            :    0.0028300 cpd ( 353.357 days)
-     2f_d^GLONASS            :    0.0056600 cpd ( 176.678 days)
-     3f_d^GLONASS            :    0.0084900 cpd ( 117.786 days)
-     4f_d^GLONASS            :    0.0113200 cpd (  88.339 days)
-     5f_d^GLONASS            :    0.0141500 cpd (  70.671 days)
-     6f_d^GLONASS            :    0.0169800 cpd (  58.893 days)
-     7f_d^GLONASS            :    0.0198100 cpd (  50.480 days)
-     8f_d^GLONASS            :    0.0226400 cpd (  44.170 days)
-     9f_d^GLONASS            :    0.0254700 cpd (  39.262 days)
-    10f_d^GLONASS            :    0.0283000 cpd (  35.336 days)
-    11f_d^GLONASS            :    0.0311300 cpd (  32.123 days)
-    12f_d^GLONASS            :    0.0339600 cpd (  29.446 days)
-    13f_d^GLONASS            :    0.0367900 cpd (  27.181 days)
-    14f_d^GLONASS            :    0.0396200 cpd (  25.240 days)
-    15f_d^GLONASS            :    0.0424500 cpd (  23.557 days)
+     1f_d                    :    0.0028303 cpd ( 353.320 days)
+     2f_d                    :    0.0056606 cpd ( 176.660 days)
+     3f_d                    :    0.0084909 cpd ( 117.773 days)
+     4f_d                    :    0.0113212 cpd (  88.330 days)
+     5f_d                    :    0.0141515 cpd (  70.664 days)
+     6f_d                    :    0.0169818 cpd (  58.887 days)
+     7f_d                    :    0.0198121 cpd (  50.474 days)
+     8f_d                    :    0.0226424 cpd (  44.165 days)
+     9f_d                    :    0.0254727 cpd (  39.258 days)
+    10f_d                    :    0.0283030 cpd (  35.332 days)
+    11f_d                    :    0.0311333 cpd (  32.120 days)
+    12f_d                    :    0.0339636 cpd (  29.443 days)
+    13f_d                    :    0.0367939 cpd (  27.178 days)
+    14f_d                    :    0.0396242 cpd (  25.237 days)
+    15f_d                    :    0.0424545 cpd (  23.555 days)
 
   GLONASS Orbital Peaks (Rebischung et al. 2024 method):
     all_peaks:
-      +1f_u-4f_d          :    0.1168682 cpd (   8.557 days)
-      +1f_u-3f_d          :    0.1196982 cpd (   8.354 days)
-      +1f_u-2f_d          :    0.1225282 cpd (   8.161 days)
-      +1f_u-1f_d          :    0.1253582 cpd (   7.977 days)
-      +1f_u+0f_d          :    0.1281882 cpd (   7.801 days)
-      +1f_u+1f_d          :    0.1310182 cpd (   7.633 days)
-      +1f_u+2f_d          :    0.1338482 cpd (   7.471 days)
-      +1f_u+3f_d          :    0.1366782 cpd (   7.316 days)
-      +1f_u+4f_d          :    0.1395082 cpd (   7.168 days)
-      +2f_u-4f_d          :    0.2450564 cpd (   4.081 days)
-      +2f_u-3f_d          :    0.2478864 cpd (   4.034 days)
-      +2f_u-2f_d          :    0.2507164 cpd (   3.989 days)
-      +2f_u-1f_d          :    0.2535464 cpd (   3.944 days)
-      +2f_u+0f_d          :    0.2563764 cpd (   3.901 days)
-      +2f_u+1f_d          :    0.2592064 cpd (   3.858 days)
-      +2f_u+2f_d          :    0.2620364 cpd (   3.816 days)
-      +2f_u+3f_d          :    0.2648664 cpd (   3.775 days)
-      +2f_u+4f_d          :    0.2676964 cpd (   3.736 days)
-      +3f_u-4f_d          :    0.3732446 cpd (   2.679 days)
-      +3f_u-3f_d          :    0.3760746 cpd (   2.659 days)
-      +3f_u-2f_d          :    0.3789046 cpd (   2.639 days)
-      +3f_u-1f_d          :    0.3817346 cpd (   2.620 days)
-      +3f_u+0f_d          :    0.3845646 cpd (   2.600 days)
-      +3f_u+1f_d          :    0.3873946 cpd (   2.581 days)
-      +3f_u+2f_d          :    0.3902246 cpd (   2.563 days)
-      +3f_u+3f_d          :    0.3930546 cpd (   2.544 days)
-      +3f_u+4f_d          :    0.3958846 cpd (   2.526 days)
-      +4f_u-4f_d          :    0.4985672 cpd (   2.006 days)
-      +4f_u-3f_d          :    0.4957372 cpd (   2.017 days)
-      +4f_u-2f_d          :    0.4929072 cpd (   2.029 days)
-      +4f_u-1f_d          :    0.4900772 cpd (   2.040 days)
-      +4f_u+0f_d          :    0.4872472 cpd (   2.052 days)
-      +4f_u+1f_d          :    0.4844172 cpd (   2.064 days)
-      +4f_u+2f_d          :    0.4815872 cpd (   2.076 days)
-      +4f_u+3f_d          :    0.4787572 cpd (   2.089 days)
-      +4f_u+4f_d          :    0.4759272 cpd (   2.101 days)
+      +1f_u-4f_d          :    0.1203852 cpd (   8.307 days)
+      +1f_u-3f_d          :    0.1232155 cpd (   8.116 days)
+      +1f_u-2f_d          :    0.1260458 cpd (   7.934 days)
+      +1f_u-1f_d          :    0.1288761 cpd (   7.759 days)
+      +1f_u+0f_d          :    0.1317064 cpd (   7.593 days)
+      +1f_u+1f_d          :    0.1345367 cpd (   7.433 days)
+      +1f_u+2f_d          :    0.1373670 cpd (   7.280 days)
+      +1f_u+3f_d          :    0.1401973 cpd (   7.133 days)
+      +1f_u+4f_d          :    0.1430276 cpd (   6.992 days)
+      +2f_u-4f_d          :    0.2520916 cpd (   3.967 days)
+      +2f_u-3f_d          :    0.2549219 cpd (   3.923 days)
+      +2f_u-2f_d          :    0.2577522 cpd (   3.880 days)
+      +2f_u-1f_d          :    0.2605825 cpd (   3.838 days)
+      +2f_u+0f_d          :    0.2634128 cpd (   3.796 days)
+      +2f_u+1f_d          :    0.2662431 cpd (   3.756 days)
+      +2f_u+2f_d          :    0.2690734 cpd (   3.716 days)
+      +2f_u+3f_d          :    0.2719037 cpd (   3.678 days)
+      +2f_u+4f_d          :    0.2747340 cpd (   3.640 days)
+      +3f_u-4f_d          :    0.3837980 cpd (   2.606 days)
+      +3f_u-3f_d          :    0.3866283 cpd (   2.586 days)
+      +3f_u-2f_d          :    0.3894586 cpd (   2.568 days)
+      +3f_u-1f_d          :    0.3922889 cpd (   2.549 days)
+      +3f_u+0f_d          :    0.3951192 cpd (   2.531 days)
+      +3f_u+1f_d          :    0.3979495 cpd (   2.513 days)
+      +3f_u+2f_d          :    0.4007798 cpd (   2.495 days)
+      +3f_u+3f_d          :    0.4036101 cpd (   2.478 days)
+      +3f_u+4f_d          :    0.4064404 cpd (   2.460 days)
+      +4f_u-4f_d          :    0.4844956 cpd (   2.064 days)
+      +4f_u-3f_d          :    0.4816653 cpd (   2.076 days)
+      +4f_u-2f_d          :    0.4788350 cpd (   2.088 days)
+      +4f_u-1f_d          :    0.4760047 cpd (   2.101 days)
+      +4f_u+0f_d          :    0.4731744 cpd (   2.113 days)
+      +4f_u+1f_d          :    0.4703441 cpd (   2.126 days)
+      +4f_u+2f_d          :    0.4675138 cpd (   2.139 days)
+      +4f_u+3f_d          :    0.4646835 cpd (   2.152 days)
+      +4f_u+4f_d          :    0.4618532 cpd (   2.165 days)
 
   GLONASS Orbital Signals (Zajdel et al. 2022 method):
-    n-4_m1      :    1.8802647 cpd (  12.764 hrs) -> aliased:    8.352 days
-    n-3_m1      :    0.8775281 cpd (   1.140 days) -> aliased:    8.165 days
-    n-2_m1      :    0.1252085 cpd (   7.987 days) -> aliased:    7.987 days
-    n-1_m1      :    1.1279452 cpd (  21.278 hrs) -> aliased:    7.816 days
-    n0_m1       :    2.1306818 cpd (  11.264 hrs) -> aliased:    7.652 days
-    n1_m1       :    3.1334185 cpd (   7.659 hrs) -> aliased:    7.495 days
-    n2_m1       :    4.1361551 cpd (   5.802 hrs) -> aliased:    7.345 days
-    n-4_m2      :    0.2504171 cpd (   3.993 days) -> aliased:    3.993 days
-    n-3_m2      :    1.2531537 cpd (  19.152 hrs) -> aliased:    3.950 days
-    n-2_m2      :    2.2558904 cpd (  10.639 hrs) -> aliased:    3.908 days
-    n-1_m2      :    3.2586270 cpd (   7.365 hrs) -> aliased:    3.867 days
-    n0_m2       :    4.2613636 cpd (   5.632 hrs) -> aliased:    3.826 days
-    n1_m2       :    5.2641003 cpd (   4.559 hrs) -> aliased:    3.786 days
-    n2_m2       :    6.2668369 cpd (   3.830 hrs) -> aliased:    3.748 days
-    n-2_m3      :    4.3865722 cpd (   5.471 hrs) -> aliased:    2.587 days
-    n-1_m3      :    5.3893088 cpd (   4.453 hrs) -> aliased:    2.569 days
-    n0_m3       :    6.3920455 cpd (   3.755 hrs) -> aliased:    2.551 days
-    n1_m3       :    7.3947821 cpd (   3.246 hrs) -> aliased:    2.533 days
-    n-1_m4      :    7.5199906 cpd (   3.191 hrs) -> aliased:    2.083 days
-    n0_m4       :    8.5227273 cpd (   2.816 hrs) -> aliased:    2.095 days
-    n1_m4       :    9.5254639 cpd (   2.520 hrs) -> aliased:    2.107 days
+    n-4_m1      :    1.8764098 cpd (  12.790 hrs) -> aliased:    8.091 days
+    n-3_m1      :    0.8736732 cpd (   1.145 days) -> aliased:    7.916 days
+    n-2_m1      :    0.1290634 cpd (   7.748 days) -> aliased:    7.748 days
+    n-1_m1      :    1.1318001 cpd (  21.205 hrs) -> aliased:    7.587 days
+    n0_m1       :    2.1345367 cpd (  11.244 hrs) -> aliased:    7.433 days
+    n1_m1       :    3.1372733 cpd (   7.650 hrs) -> aliased:    7.285 days
+    n2_m1       :    4.1400100 cpd (   5.797 hrs) -> aliased:    7.142 days
+    n-4_m2      :    0.2581269 cpd (   3.874 days) -> aliased:    3.874 days
+    n-3_m2      :    1.2608635 cpd (  19.035 hrs) -> aliased:    3.833 days
+    n-2_m2      :    2.2636001 cpd (  10.603 hrs) -> aliased:    3.794 days
+    n-1_m2      :    3.2663368 cpd (   7.348 hrs) -> aliased:    3.755 days
+    n0_m2       :    4.2690734 cpd (   5.622 hrs) -> aliased:    3.716 days
+    n1_m2       :    5.2718100 cpd (   4.553 hrs) -> aliased:    3.679 days
+    n2_m2       :    6.2745467 cpd (   3.825 hrs) -> aliased:    3.642 days
+    n-2_m3      :    4.3981368 cpd (   5.457 hrs) -> aliased:    2.512 days
+    n-1_m3      :    5.4008735 cpd (   4.444 hrs) -> aliased:    2.495 days
+    n0_m3       :    6.4036101 cpd (   3.748 hrs) -> aliased:    2.478 days
+    n1_m3       :    7.4063467 cpd (   3.240 hrs) -> aliased:    2.461 days
+    n-1_m4      :    7.5354102 cpd (   3.185 hrs) -> aliased:    2.152 days
+    n0_m4       :    8.5381468 cpd (   2.811 hrs) -> aliased:    2.165 days
+    n1_m4       :    9.5408834 cpd (   2.515 hrs) -> aliased:    2.178 days
 
 GALILEO FREQUENCIES
 ----------------------------------------
-orbital_frequency             :    1.7047500 cpd (   0.587 days)
-nodal_precession_frequency    :   -0.0000707 cpd (-14144.272 days)
-ground_repeat_frequency       :    0.1015706 cpd (   9.845 days)
-sun_arg_lat_frequency         :    1.7019700 cpd (   0.588 days)
-draconitic_frequency          :    0.0028104 cpd ( 355.821 days)
+orbital_frequency             :    1.7047676 cpd (   0.587 days)
+nodal_precession_frequency    :   -0.0000719 cpd (-13912.191 days)
+ground_repeat_frequency       :    0.1002810 cpd (   9.972 days)
+sun_arg_lat_frequency         :    1.7019580 cpd (   0.588 days)
+draconitic_frequency          :    0.0028097 cpd ( 355.912 days)
+satellite_revolution_period   :       14.078 hrs (   0.587 days)
+repeat_cycle_days             :        9.972 days (  17.000 rev)
 
   Galileo Draconitic Harmonics:
-     1f_d^Galileo            :    0.0028104 cpd ( 355.821 days)
-     2f_d^Galileo            :    0.0056208 cpd ( 177.911 days)
-     3f_d^Galileo            :    0.0084312 cpd ( 118.607 days)
-     4f_d^Galileo            :    0.0112416 cpd (  88.955 days)
-     5f_d^Galileo            :    0.0140520 cpd (  71.164 days)
-     6f_d^Galileo            :    0.0168624 cpd (  59.304 days)
-     7f_d^Galileo            :    0.0196728 cpd (  50.832 days)
-     8f_d^Galileo            :    0.0224832 cpd (  44.478 days)
-     9f_d^Galileo            :    0.0252936 cpd (  39.536 days)
-    10f_d^Galileo            :    0.0281040 cpd (  35.582 days)
-    11f_d^Galileo            :    0.0309144 cpd (  32.347 days)
-    12f_d^Galileo            :    0.0337248 cpd (  29.652 days)
-    13f_d^Galileo            :    0.0365352 cpd (  27.371 days)
-    14f_d^Galileo            :    0.0393456 cpd (  25.416 days)
-    15f_d^Galileo            :    0.0421560 cpd (  23.721 days)
+     1f_d                    :    0.0028097 cpd ( 355.912 days)
+     2f_d                    :    0.0056194 cpd ( 177.956 days)
+     3f_d                    :    0.0084290 cpd ( 118.637 days)
+     4f_d                    :    0.0112387 cpd (  88.978 days)
+     5f_d                    :    0.0140484 cpd (  71.182 days)
+     6f_d                    :    0.0168581 cpd (  59.319 days)
+     7f_d                    :    0.0196678 cpd (  50.845 days)
+     8f_d                    :    0.0224774 cpd (  44.489 days)
+     9f_d                    :    0.0252871 cpd (  39.546 days)
+    10f_d                    :    0.0280968 cpd (  35.591 days)
+    11f_d                    :    0.0309065 cpd (  32.356 days)
+    12f_d                    :    0.0337162 cpd (  29.659 days)
+    13f_d                    :    0.0365258 cpd (  27.378 days)
+    14f_d                    :    0.0393355 cpd (  25.422 days)
+    15f_d                    :    0.0421452 cpd (  23.727 days)
 
   Galileo Orbital Peaks (Rebischung et al. 2024 method):
     all_peaks:
-      +1f_u-4f_d          :    0.3092716 cpd (   3.233 days)
-      +1f_u-3f_d          :    0.3064612 cpd (   3.263 days)
-      +1f_u-2f_d          :    0.3036508 cpd (   3.293 days)
-      +1f_u-1f_d          :    0.3008404 cpd (   3.324 days)
-      +1f_u+0f_d          :    0.2980300 cpd (   3.355 days)
-      +1f_u+1f_d          :    0.2952196 cpd (   3.387 days)
-      +1f_u+2f_d          :    0.2924092 cpd (   3.420 days)
-      +1f_u+3f_d          :    0.2895988 cpd (   3.453 days)
-      +1f_u+4f_d          :    0.2867884 cpd (   3.487 days)
-      +2f_u-4f_d          :    0.3926984 cpd (   2.546 days)
-      +2f_u-3f_d          :    0.3955088 cpd (   2.528 days)
-      +2f_u-2f_d          :    0.3983192 cpd (   2.511 days)
-      +2f_u-1f_d          :    0.4011296 cpd (   2.493 days)
-      +2f_u+0f_d          :    0.4039400 cpd (   2.476 days)
-      +2f_u+1f_d          :    0.4067504 cpd (   2.459 days)
-      +2f_u+2f_d          :    0.4095608 cpd (   2.442 days)
-      +2f_u+3f_d          :    0.4123712 cpd (   2.425 days)
-      +2f_u+4f_d          :    0.4151816 cpd (   2.409 days)
-      +3f_u-4f_d          :    0.0946684 cpd (  10.563 days)
-      +3f_u-3f_d          :    0.0974788 cpd (  10.259 days)
-      +3f_u-2f_d          :    0.1002892 cpd (   9.971 days)
-      +3f_u-1f_d          :    0.1030996 cpd (   9.699 days)
-      +3f_u+0f_d          :    0.1059100 cpd (   9.442 days)
-      +3f_u+1f_d          :    0.1087204 cpd (   9.198 days)
-      +3f_u+2f_d          :    0.1115308 cpd (   8.966 days)
-      +3f_u+3f_d          :    0.1143412 cpd (   8.746 days)
-      +3f_u+4f_d          :    0.1171516 cpd (   8.536 days)
-      +4f_u-4f_d          :    0.2033616 cpd (   4.917 days)
-      +4f_u-3f_d          :    0.2005512 cpd (   4.986 days)
-      +4f_u-2f_d          :    0.1977408 cpd (   5.057 days)
-      +4f_u-1f_d          :    0.1949304 cpd (   5.130 days)
-      +4f_u+0f_d          :    0.1921200 cpd (   5.205 days)
-      +4f_u+1f_d          :    0.1893096 cpd (   5.282 days)
-      +4f_u+2f_d          :    0.1864992 cpd (   5.362 days)
-      +4f_u+3f_d          :    0.1836888 cpd (   5.444 days)
-      +4f_u+4f_d          :    0.1808784 cpd (   5.529 days)
+      +1f_u-4f_d          :    0.3092807 cpd (   3.233 days)
+      +1f_u-3f_d          :    0.3064711 cpd (   3.263 days)
+      +1f_u-2f_d          :    0.3036614 cpd (   3.293 days)
+      +1f_u-1f_d          :    0.3008517 cpd (   3.324 days)
+      +1f_u+0f_d          :    0.2980420 cpd (   3.355 days)
+      +1f_u+1f_d          :    0.2952324 cpd (   3.387 days)
+      +1f_u+2f_d          :    0.2924227 cpd (   3.420 days)
+      +1f_u+3f_d          :    0.2896130 cpd (   3.453 days)
+      +1f_u+4f_d          :    0.2868033 cpd (   3.487 days)
+      +2f_u-4f_d          :    0.3926772 cpd (   2.547 days)
+      +2f_u-3f_d          :    0.3954869 cpd (   2.529 days)
+      +2f_u-2f_d          :    0.3982966 cpd (   2.511 days)
+      +2f_u-1f_d          :    0.4011063 cpd (   2.493 days)
+      +2f_u+0f_d          :    0.4039159 cpd (   2.476 days)
+      +2f_u+1f_d          :    0.4067256 cpd (   2.459 days)
+      +2f_u+2f_d          :    0.4095353 cpd (   2.442 days)
+      +2f_u+3f_d          :    0.4123450 cpd (   2.425 days)
+      +2f_u+4f_d          :    0.4151547 cpd (   2.409 days)
+      +3f_u-4f_d          :    0.0946352 cpd (  10.567 days)
+      +3f_u-3f_d          :    0.0974449 cpd (  10.262 days)
+      +3f_u-2f_d          :    0.1002546 cpd (   9.975 days)
+      +3f_u-1f_d          :    0.1030642 cpd (   9.703 days)
+      +3f_u+0f_d          :    0.1058739 cpd (   9.445 days)
+      +3f_u+1f_d          :    0.1086836 cpd (   9.201 days)
+      +3f_u+2f_d          :    0.1114933 cpd (   8.969 days)
+      +3f_u+3f_d          :    0.1143029 cpd (   8.749 days)
+      +3f_u+4f_d          :    0.1171126 cpd (   8.539 days)
+      +4f_u-4f_d          :    0.2034068 cpd (   4.916 days)
+      +4f_u-3f_d          :    0.2005972 cpd (   4.985 days)
+      +4f_u-2f_d          :    0.1977875 cpd (   5.056 days)
+      +4f_u-1f_d          :    0.1949778 cpd (   5.129 days)
+      +4f_u+0f_d          :    0.1921681 cpd (   5.204 days)
+      +4f_u+1f_d          :    0.1893584 cpd (   5.281 days)
+      +4f_u+2f_d          :    0.1865488 cpd (   5.361 days)
+      +4f_u+3f_d          :    0.1837391 cpd (   5.443 days)
+      +4f_u+4f_d          :    0.1809294 cpd (   5.527 days)
 
   Galileo Orbital Signals (Zajdel et al. 2022 method):
-    n-4_m1      :    2.3060378 cpd (  10.407 hrs) -> aliased:    3.268 days
-    n-3_m1      :    1.3033012 cpd (  18.415 hrs) -> aliased:    3.297 days
-    n-2_m1      :    0.3005646 cpd (   3.327 days) -> aliased:    3.327 days
-    n-1_m1      :    0.7021721 cpd (   1.424 days) -> aliased:    3.358 days
-    n0_m1       :    1.7049087 cpd (  14.077 hrs) -> aliased:    3.389 days
-    n1_m1       :    2.7076454 cpd (   8.864 hrs) -> aliased:    3.421 days
-    n2_m1       :    3.7103820 cpd (   6.468 hrs) -> aliased:    3.453 days
-    n-4_m2      :    0.6011291 cpd (   1.664 days) -> aliased:    2.507 days
-    n-3_m2      :    0.4016075 cpd (   2.490 days) -> aliased:    2.490 days
-    n-2_m2      :    1.4043442 cpd (  17.090 hrs) -> aliased:    2.473 days
-    n-1_m2      :    2.4070808 cpd (   9.971 hrs) -> aliased:    2.457 days
-    n0_m2       :    3.4098174 cpd (   7.039 hrs) -> aliased:    2.440 days
-    n1_m2       :    4.4125541 cpd (   5.439 hrs) -> aliased:    2.424 days
-    n2_m2       :    5.4152907 cpd (   4.432 hrs) -> aliased:    2.408 days
-    n-2_m3      :    3.1092529 cpd (   7.719 hrs) -> aliased:    9.153 days
-    n-1_m3      :    4.1119895 cpd (   5.837 hrs) -> aliased:    8.929 days
-    n0_m3       :    5.1147261 cpd (   4.692 hrs) -> aliased:    8.716 days
-    n1_m3       :    6.1174628 cpd (   3.923 hrs) -> aliased:    8.513 days
-    n-1_m4      :    5.8168982 cpd (   4.126 hrs) -> aliased:    5.461 days
-    n0_m4       :    6.8196349 cpd (   3.519 hrs) -> aliased:    5.544 days
-    n1_m4       :    7.8223715 cpd (   3.068 hrs) -> aliased:    5.630 days
+    n-4_m1      :    2.3061789 cpd (  10.407 hrs) -> aliased:    3.266 days
+    n-3_m1      :    1.3034423 cpd (  18.413 hrs) -> aliased:    3.296 days
+    n-2_m1      :    0.3007056 cpd (   3.326 days) -> aliased:    3.326 days
+    n-1_m1      :    0.7020310 cpd (   1.424 days) -> aliased:    3.356 days
+    n0_m1       :    1.7047676 cpd (  14.078 hrs) -> aliased:    3.387 days
+    n1_m1       :    2.7075043 cpd (   8.864 hrs) -> aliased:    3.419 days
+    n2_m1       :    3.7102409 cpd (   6.469 hrs) -> aliased:    3.451 days
+    n-4_m2      :    0.6014112 cpd (   1.663 days) -> aliased:    2.509 days
+    n-3_m2      :    0.4013254 cpd (   2.492 days) -> aliased:    2.492 days
+    n-2_m2      :    1.4040620 cpd (  17.093 hrs) -> aliased:    2.475 days
+    n-1_m2      :    2.4067987 cpd (   9.972 hrs) -> aliased:    2.458 days
+    n0_m2       :    3.4095353 cpd (   7.039 hrs) -> aliased:    2.442 days
+    n1_m2       :    4.4122719 cpd (   5.439 hrs) -> aliased:    2.426 days
+    n2_m2       :    5.4150086 cpd (   4.432 hrs) -> aliased:    2.410 days
+    n-2_m3      :    3.1088297 cpd (   7.720 hrs) -> aliased:    9.189 days
+    n-1_m3      :    4.1115663 cpd (   5.837 hrs) -> aliased:    8.963 days
+    n0_m3       :    5.1143029 cpd (   4.693 hrs) -> aliased:    8.749 days
+    n1_m3       :    6.1170396 cpd (   3.923 hrs) -> aliased:    8.544 days
+    n-1_m4      :    5.8163340 cpd (   4.126 hrs) -> aliased:    5.445 days
+    n0_m4       :    6.8190706 cpd (   3.520 hrs) -> aliased:    5.527 days
+    n1_m4       :    7.8218072 cpd (   3.068 hrs) -> aliased:    5.612 days
 
-BDS-3 MEO FREQUENCIES
+BDS-3 (MEO) FREQUENCIES
 ----------------------------------------
-orbital_frequency             :    1.8592320 cpd (   0.538 days)
-nodal_precession_frequency    :   -0.0000900 cpd (-11111.111 days)
-ground_repeat_frequency       :    0.1449480 cpd (   6.899 days)
-sun_arg_lat_frequency         :    1.8563820 cpd (   0.539 days)
-draconitic_frequency          :    0.0028150 cpd ( 355.240 days)
+orbital_frequency             :    1.8623289 cpd (   0.537 days)
+nodal_precession_frequency    :   -0.0000906 cpd (-11035.359 days)
+ground_repeat_frequency       :    0.1432612 cpd (   6.980 days)
+sun_arg_lat_frequency         :    1.8595005 cpd (   0.538 days)
+draconitic_frequency          :    0.0028284 cpd ( 353.555 days)
+satellite_revolution_period   :       12.887 hrs (   0.537 days)
+repeat_cycle_days             :        6.980 days (  13.000 rev)
 
-  BDS-3 MEO Draconitic Harmonics:
-     1f_d^BDS-3 MEO          :    0.0028150 cpd ( 355.240 days)
-     2f_d^BDS-3 MEO          :    0.0056300 cpd ( 177.620 days)
-     3f_d^BDS-3 MEO          :    0.0084450 cpd ( 118.413 days)
-     4f_d^BDS-3 MEO          :    0.0112600 cpd (  88.810 days)
-     5f_d^BDS-3 MEO          :    0.0140750 cpd (  71.048 days)
-     6f_d^BDS-3 MEO          :    0.0168900 cpd (  59.207 days)
-     7f_d^BDS-3 MEO          :    0.0197050 cpd (  50.749 days)
-     8f_d^BDS-3 MEO          :    0.0225200 cpd (  44.405 days)
-     9f_d^BDS-3 MEO          :    0.0253350 cpd (  39.471 days)
-    10f_d^BDS-3 MEO          :    0.0281500 cpd (  35.524 days)
-    11f_d^BDS-3 MEO          :    0.0309650 cpd (  32.295 days)
-    12f_d^BDS-3 MEO          :    0.0337800 cpd (  29.603 days)
-    13f_d^BDS-3 MEO          :    0.0365950 cpd (  27.326 days)
-    14f_d^BDS-3 MEO          :    0.0394100 cpd (  25.374 days)
-    15f_d^BDS-3 MEO          :    0.0422250 cpd (  23.683 days)
+  BDS-3 (MEO) Draconitic Harmonics:
+     1f_d                    :    0.0028284 cpd ( 353.555 days)
+     2f_d                    :    0.0056568 cpd ( 176.777 days)
+     3f_d                    :    0.0084853 cpd ( 117.852 days)
+     4f_d                    :    0.0113137 cpd (  88.389 days)
+     5f_d                    :    0.0141421 cpd (  70.711 days)
+     6f_d                    :    0.0169705 cpd (  58.926 days)
+     7f_d                    :    0.0197989 cpd (  50.508 days)
+     8f_d                    :    0.0226273 cpd (  44.194 days)
+     9f_d                    :    0.0254558 cpd (  39.284 days)
+    10f_d                    :    0.0282842 cpd (  35.355 days)
+    11f_d                    :    0.0311126 cpd (  32.141 days)
+    12f_d                    :    0.0339410 cpd (  29.463 days)
+    13f_d                    :    0.0367694 cpd (  27.197 days)
+    14f_d                    :    0.0395978 cpd (  25.254 days)
+    15f_d                    :    0.0424263 cpd (  23.570 days)
 
-  BDS-3 MEO Orbital Peaks (Rebischung et al. 2024 method):
+  BDS-3 (MEO) Orbital Peaks (Rebischung et al. 2024 method):
     all_peaks:
-      +1f_u-4f_d          :    0.1548780 cpd (   6.457 days)
-      +1f_u-3f_d          :    0.1520630 cpd (   6.576 days)
-      +1f_u-2f_d          :    0.1492480 cpd (   6.700 days)
-      +1f_u-1f_d          :    0.1464330 cpd (   6.829 days)
-      +1f_u+0f_d          :    0.1436180 cpd (   6.963 days)
-      +1f_u+1f_d          :    0.1408030 cpd (   7.102 days)
-      +1f_u+2f_d          :    0.1379880 cpd (   7.247 days)
-      +1f_u+3f_d          :    0.1351730 cpd (   7.398 days)
-      +1f_u+4f_d          :    0.1323580 cpd (   7.555 days)
-      +2f_u-4f_d          :    0.2984960 cpd (   3.350 days)
-      +2f_u-3f_d          :    0.2956810 cpd (   3.382 days)
-      +2f_u-2f_d          :    0.2928660 cpd (   3.415 days)
-      +2f_u-1f_d          :    0.2900510 cpd (   3.448 days)
-      +2f_u+0f_d          :    0.2872360 cpd (   3.481 days)
-      +2f_u+1f_d          :    0.2844210 cpd (   3.516 days)
-      +2f_u+2f_d          :    0.2816060 cpd (   3.551 days)
-      +2f_u+3f_d          :    0.2787910 cpd (   3.587 days)
-      +2f_u+4f_d          :    0.2759760 cpd (   3.624 days)
-      +3f_u-4f_d          :    0.4421140 cpd (   2.262 days)
-      +3f_u-3f_d          :    0.4392990 cpd (   2.276 days)
-      +3f_u-2f_d          :    0.4364840 cpd (   2.291 days)
-      +3f_u-1f_d          :    0.4336690 cpd (   2.306 days)
-      +3f_u+0f_d          :    0.4308540 cpd (   2.321 days)
-      +3f_u+1f_d          :    0.4280390 cpd (   2.336 days)
-      +3f_u+2f_d          :    0.4252240 cpd (   2.352 days)
-      +3f_u+3f_d          :    0.4224090 cpd (   2.367 days)
-      +3f_u+4f_d          :    0.4195940 cpd (   2.383 days)
-      +4f_u-4f_d          :    0.4142680 cpd (   2.414 days)
-      +4f_u-3f_d          :    0.4170830 cpd (   2.398 days)
-      +4f_u-2f_d          :    0.4198980 cpd (   2.382 days)
-      +4f_u-1f_d          :    0.4227130 cpd (   2.366 days)
-      +4f_u+0f_d          :    0.4255280 cpd (   2.350 days)
-      +4f_u+1f_d          :    0.4283430 cpd (   2.335 days)
-      +4f_u+2f_d          :    0.4311580 cpd (   2.319 days)
-      +4f_u+3f_d          :    0.4339730 cpd (   2.304 days)
-      +4f_u+4f_d          :    0.4367880 cpd (   2.289 days)
+      +1f_u-4f_d          :    0.1518132 cpd (   6.587 days)
+      +1f_u-3f_d          :    0.1489848 cpd (   6.712 days)
+      +1f_u-2f_d          :    0.1461564 cpd (   6.842 days)
+      +1f_u-1f_d          :    0.1433280 cpd (   6.977 days)
+      +1f_u+0f_d          :    0.1404995 cpd (   7.117 days)
+      +1f_u+1f_d          :    0.1376711 cpd (   7.264 days)
+      +1f_u+2f_d          :    0.1348427 cpd (   7.416 days)
+      +1f_u+3f_d          :    0.1320143 cpd (   7.575 days)
+      +1f_u+4f_d          :    0.1291859 cpd (   7.741 days)
+      +2f_u-4f_d          :    0.2923128 cpd (   3.421 days)
+      +2f_u-3f_d          :    0.2894843 cpd (   3.454 days)
+      +2f_u-2f_d          :    0.2866559 cpd (   3.489 days)
+      +2f_u-1f_d          :    0.2838275 cpd (   3.523 days)
+      +2f_u+0f_d          :    0.2809991 cpd (   3.559 days)
+      +2f_u+1f_d          :    0.2781707 cpd (   3.595 days)
+      +2f_u+2f_d          :    0.2753422 cpd (   3.632 days)
+      +2f_u+3f_d          :    0.2725138 cpd (   3.670 days)
+      +2f_u+4f_d          :    0.2696854 cpd (   3.708 days)
+      +3f_u-4f_d          :    0.4328123 cpd (   2.310 days)
+      +3f_u-3f_d          :    0.4299839 cpd (   2.326 days)
+      +3f_u-2f_d          :    0.4271555 cpd (   2.341 days)
+      +3f_u-1f_d          :    0.4243270 cpd (   2.357 days)
+      +3f_u+0f_d          :    0.4214986 cpd (   2.372 days)
+      +3f_u+1f_d          :    0.4186702 cpd (   2.389 days)
+      +3f_u+2f_d          :    0.4158418 cpd (   2.405 days)
+      +3f_u+3f_d          :    0.4130134 cpd (   2.421 days)
+      +3f_u+4f_d          :    0.4101850 cpd (   2.438 days)
+      +4f_u-4f_d          :    0.4266882 cpd (   2.344 days)
+      +4f_u-3f_d          :    0.4295166 cpd (   2.328 days)
+      +4f_u-2f_d          :    0.4323450 cpd (   2.313 days)
+      +4f_u-1f_d          :    0.4351734 cpd (   2.298 days)
+      +4f_u+0f_d          :    0.4380018 cpd (   2.283 days)
+      +4f_u+1f_d          :    0.4408302 cpd (   2.268 days)
+      +4f_u+2f_d          :    0.4436587 cpd (   2.254 days)
+      +4f_u+3f_d          :    0.4464871 cpd (   2.240 days)
+      +4f_u+4f_d          :    0.4493155 cpd (   2.226 days)
 
-  BDS-3 MEO Orbital Signals (Zajdel et al. 2022 method):
-    n-4_m1      :    2.1517145 cpd (  11.154 hrs) -> aliased:    6.591 days
-    n-3_m1      :    1.1489779 cpd (  20.888 hrs) -> aliased:    6.712 days
-    n-2_m1      :    0.1462413 cpd (   6.838 days) -> aliased:    6.838 days
-    n-1_m1      :    0.8564954 cpd (   1.168 days) -> aliased:    6.968 days
-    n0_m1       :    1.8592320 cpd (  12.909 hrs) -> aliased:    7.104 days
-    n1_m1       :    2.8619686 cpd (   8.386 hrs) -> aliased:    7.245 days
-    n2_m1       :    3.8647053 cpd (   6.210 hrs) -> aliased:    7.391 days
-    n-4_m2      :    0.2924825 cpd (   3.419 days) -> aliased:    3.419 days
-    n-3_m2      :    0.7102541 cpd (   1.408 days) -> aliased:    3.451 days
-    n-2_m2      :    1.7129907 cpd (  14.011 hrs) -> aliased:    3.484 days
-    n-1_m2      :    2.7157274 cpd (   8.837 hrs) -> aliased:    3.518 days
-    n0_m2       :    3.7184640 cpd (   6.454 hrs) -> aliased:    3.552 days
-    n1_m2       :    4.7212006 cpd (   5.083 hrs) -> aliased:    3.587 days
-    n2_m2       :    5.7239373 cpd (   4.193 hrs) -> aliased:    3.622 days
-    n-2_m3      :    3.5722227 cpd (   6.719 hrs) -> aliased:    2.338 days
-    n-1_m3      :    4.5749594 cpd (   5.246 hrs) -> aliased:    2.353 days
-    n0_m3       :    5.5776960 cpd (   4.303 hrs) -> aliased:    2.368 days
-    n1_m3       :    6.5804326 cpd (   3.647 hrs) -> aliased:    2.383 days
-    n-1_m4      :    6.4341914 cpd (   3.730 hrs) -> aliased:    2.303 days
-    n0_m4       :    7.4369280 cpd (   3.227 hrs) -> aliased:    2.289 days
-    n1_m4       :    8.4396646 cpd (   2.844 hrs) -> aliased:    2.274 days
+  BDS-3 (MEO) Orbital Signals (Zajdel et al. 2022 method):
+    n-4_m1      :    2.1486177 cpd (  11.170 hrs) -> aliased:    6.729 days
+    n-3_m1      :    1.1458810 cpd (  20.945 hrs) -> aliased:    6.855 days
+    n-2_m1      :    0.1431444 cpd (   6.986 days) -> aliased:    6.986 days
+    n-1_m1      :    0.8595922 cpd (   1.163 days) -> aliased:    7.122 days
+    n0_m1       :    1.8623289 cpd (  12.887 hrs) -> aliased:    7.264 days
+    n1_m1       :    2.8650655 cpd (   8.377 hrs) -> aliased:    7.411 days
+    n2_m1       :    3.8678021 cpd (   6.205 hrs) -> aliased:    7.564 days
+    n-4_m2      :    0.2862888 cpd (   3.493 days) -> aliased:    3.493 days
+    n-3_m2      :    0.7164478 cpd (   1.396 days) -> aliased:    3.527 days
+    n-2_m2      :    1.7191845 cpd (  13.960 hrs) -> aliased:    3.561 days
+    n-1_m2      :    2.7219211 cpd (   8.817 hrs) -> aliased:    3.596 days
+    n0_m2       :    3.7246578 cpd (   6.444 hrs) -> aliased:    3.632 days
+    n1_m2       :    4.7273944 cpd (   5.077 hrs) -> aliased:    3.668 days
+    n2_m2       :    5.7301310 cpd (   4.188 hrs) -> aliased:    3.706 days
+    n-2_m3      :    3.5815134 cpd (   6.701 hrs) -> aliased:    2.390 days
+    n-1_m3      :    4.5842500 cpd (   5.235 hrs) -> aliased:    2.405 days
+    n0_m3       :    5.5869866 cpd (   4.296 hrs) -> aliased:    2.421 days
+    n1_m3       :    6.5897233 cpd (   3.642 hrs) -> aliased:    2.437 days
+    n-1_m4      :    6.4465789 cpd (   3.723 hrs) -> aliased:    2.239 days
+    n0_m4       :    7.4493155 cpd (   3.222 hrs) -> aliased:    2.226 days
+    n1_m4       :    8.4520521 cpd (   2.840 hrs) -> aliased:    2.212 days
 
 TIDAL FREQUENCIES
 ----------------------------------------
@@ -474,7 +482,7 @@ TIDAL FREQUENCIES
 OO_1                          :    0.9294198 cpd (   1.076 days)
 O_1                           :    0.9295357 cpd (   1.076 days)
 2N_2                          :    1.8596904 cpd (   0.538 days)
-μ_2                           :    1.8645473 cpd (   0.536 days)
+mu_2                          :    1.8645473 cpd (   0.536 days)
 M_2                           :    1.9322734 cpd (   0.518 days)
 M_m                           :    0.0362920 cpd (  27.554 days)
 M_f                           :    0.0732027 cpd (  13.661 days)
@@ -496,52 +504,52 @@ ANNUAL HARMONICS
 
 ALIAS FREQUENCIES
 ----------------------------------------
-145_545_bds_3_meo             :    0.0597006 cpd (  16.750 days)
+145_545_bds_3_meo             :    0.0698214 cpd (  14.322 days)
 145_545_daily                 :    0.0706114 cpd (  14.162 days)
-145_545_galileo               :    0.0152532 cpd (  65.560 days)
-145_545_glonass               :    0.0519106 cpd (  19.264 days)
-145_545_gps                   :    0.0734621 cpd (  13.612 days)
-2N_2_bds_3_meo                :    0.0246336 cpd (  40.595 days)
+145_545_galileo               :    0.0268599 cpd (  37.230 days)
+145_545_glonass               :    0.0519121 cpd (  19.263 days)
+145_545_gps                   :    0.0734570 cpd (  13.613 days)
+2N_2_bds_3_meo                :    0.0027052 cpd ( 369.654 days)
 2N_2_daily                    :    0.1403096 cpd (   7.127 days)
-2N_2_galileo                  :    0.0314196 cpd (  31.827 days)
-2N_2_glonass                  :    0.0206196 cpd (  48.498 days)
-2N_2_gps                      :    0.1460110 cpd (   6.849 days)
-M_2_bds_3_meo                 :    0.0479494 cpd (  20.855 days)
+2N_2_galileo                  :    0.0456480 cpd (  21.907 days)
+2N_2_glonass                  :    0.0206164 cpd (  48.505 days)
+2N_2_gps                      :    0.1460008 cpd (   6.849 days)
+M_2_bds_3_meo                 :    0.0698778 cpd (  14.311 days)
 M_2_daily                     :    0.0677266 cpd (  14.765 days)
-M_2_galileo                   :    0.0024320 cpd ( 411.184 days)
-M_2_glonass                   :    0.0519634 cpd (  19.244 days)
-M_2_gps                       :    0.0734280 cpd (  13.619 days)
-M_f_bds_3_meo                 :    0.0717453 cpd (  13.938 days)
+M_2_galileo                   :    0.0269350 cpd (  37.126 days)
+M_2_glonass                   :    0.0519666 cpd (  19.243 days)
+M_2_gps                       :    0.0734178 cpd (  13.621 days)
+M_f_bds_3_meo                 :    0.0700585 cpd (  14.274 days)
 M_f_daily                     :    0.0732027 cpd (  13.661 days)
-M_f_galileo                   :    0.0283679 cpd (  35.251 days)
-M_f_glonass                   :    0.0521513 cpd (  19.175 days)
+M_f_galileo                   :    0.0270783 cpd (  36.930 days)
+M_f_glonass                   :    0.0521511 cpd (  19.175 days)
 M_f_gps                       :    0.0732027 cpd (  13.661 days)
 M_m_bds_3_meo                 :    0.0362920 cpd (  27.554 days)
 M_m_daily                     :    0.0362920 cpd (  27.554 days)
 M_m_galileo                   :    0.0362920 cpd (  27.554 days)
 M_m_glonass                   :    0.0362920 cpd (  27.554 days)
 M_m_gps                       :    0.0362920 cpd (  27.554 days)
-OO_1_bds_3_meo                :    0.0597318 cpd (  16.742 days)
+OO_1_bds_3_meo                :    0.0698526 cpd (  14.316 days)
 OO_1_daily                    :    0.0705802 cpd (  14.168 days)
-OO_1_galileo                  :    0.0152844 cpd (  65.426 days)
-OO_1_glonass                  :    0.0519418 cpd (  19.252 days)
-OO_1_gps                      :    0.0734309 cpd (  13.618 days)
-O_1_bds_3_meo                 :    0.0598477 cpd (  16.709 days)
+OO_1_galileo                  :    0.0268911 cpd (  37.187 days)
+OO_1_glonass                  :    0.0519433 cpd (  19.252 days)
+OO_1_gps                      :    0.0734258 cpd (  13.619 days)
+O_1_bds_3_meo                 :    0.0699685 cpd (  14.292 days)
 O_1_daily                     :    0.0704643 cpd (  14.192 days)
-O_1_galileo                   :    0.0154003 cpd (  64.934 days)
-O_1_glonass                   :    0.0520577 cpd (  19.209 days)
-O_1_gps                       :    0.0733150 cpd (  13.640 days)
-μ_2_bds_3_meo                 :    0.0197767 cpd (  50.565 days)
-μ_2_daily                     :    0.1354527 cpd (   7.383 days)
-μ_2_galileo                   :    0.0362765 cpd (  27.566 days)
-μ_2_glonass                   :    0.0157627 cpd (  63.441 days)
-μ_2_gps                       :    0.1411541 cpd (   7.084 days)
+O_1_galileo                   :    0.0270070 cpd (  37.027 days)
+O_1_glonass                   :    0.0520592 cpd (  19.209 days)
+O_1_gps                       :    0.0733099 cpd (  13.641 days)
+mu_2_bds_3_meo                :    0.0021517 cpd ( 464.756 days)
+mu_2_daily                    :    0.1354527 cpd (   7.383 days)
+mu_2_galileo                  :    0.0407911 cpd (  24.515 days)
+mu_2_glonass                  :    0.0157595 cpd (  63.454 days)
+mu_2_gps                      :    0.1411439 cpd (   7.085 days)
 
 SUMMARY STATISTICS
 ----------------------------------------
 Total number of frequencies: 618
-Frequency range: 0.0000108 to 572848.3230030 cpd
-Period range: 0.000 to 92592.593 days
+Frequency range: 0.0000158 to 118713.9372390 cpd
+Period range: 0.000 to 63277.845 days
 
 Frequencies by category:
   GPS: 72 frequencies
@@ -563,7 +571,7 @@ Frequencies by category:
   TIDES: 8 frequencies
   ANNUAL: 12 frequencies
   ALIASES: 40 frequencies
-==================================================================================================================
+================================================================================
 ```
 
 ### JSON Export
