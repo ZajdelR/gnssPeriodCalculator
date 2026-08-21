@@ -9,12 +9,20 @@ import os
 import re
 import sys
 
-from gnss_frequencies import (
-    create_gnss_frequencies,
-    cpd_to_days,
-    get_frequency_summary,
-    load_constellation_definitions,
-)
+try:
+    from .gnss_frequencies import (
+        create_gnss_frequencies,
+        cpd_to_days,
+        get_frequency_summary,
+        load_constellation_definitions,
+    )
+except ImportError:
+    from gnss_frequencies import (
+        create_gnss_frequencies,
+        cpd_to_days,
+        get_frequency_summary,
+        load_constellation_definitions,
+    )
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -243,25 +251,30 @@ def print_usage_examples():
     print("USAGE EXAMPLES")
     print("=" * 80)
     print("1. Import and use the library:")
-    print("   from gnss_frequencies import create_gnss_frequencies, cpd_to_days")
+    print("   from gnss_period_calculator import create_gnss_frequencies, cpd_to_days")
     print("   frequencies = create_gnss_frequencies()")
     print("   gps_draconitic = frequencies['gps']['draconitic_frequency']")
     print()
     print("2. Calculate orbital periods:")
-    print("   from gnss_frequencies import calculate_orbital_period")
+    print("   from gnss_period_calculator import calculate_orbital_period")
     print("   period = calculate_orbital_period(n=-2, m=1, T_S=11.967, T_E=23.9345)")
     print()
-    print("3. Calculate subdaily aliasing:")
-    print("   from gnss_frequencies import calculate_subdaily_aliasing")
+    print("3. Calculate periods from altitude, inclination, and eccentricity:")
+    print("   from gnss_period_calculator import calculate_orbital_periods_from_altitude")
+    print("   periods = calculate_orbital_periods_from_altitude(20200, 55, 0.01)")
+    print("   print(periods['orbital_period_hours'])")
+    print()
+    print("4. Calculate subdaily aliasing:")
+    print("   from gnss_period_calculator import calculate_subdaily_aliasing")
     print("   aliased = calculate_subdaily_aliasing(freq_cpd=2.0057, sampling_interval_hours=24)")
     print()
-    print("4. Load saved frequencies from JSON:")
+    print("5. Load saved frequencies from JSON:")
     print("   import json")
     print("   with open('gnss_frequencies.json', 'r') as f:")
     print("       loaded_frequencies = json.load(f)")
     print()
-    print("5. Get frequency summary:")
-    print("   from gnss_frequencies import get_frequency_summary")
+    print("6. Get frequency summary:")
+    print("   from gnss_period_calculator import get_frequency_summary")
     print("   summary = get_frequency_summary()")
     print("   print(f'Total frequencies: {summary[\"total_frequencies\"]}')")
     print()

@@ -79,6 +79,58 @@ def calculate_orbital_period(n, m, T_S, T_E):
     return abs(1.0 / denominator)
 
 
+def calculate_orbital_periods_from_altitude(altitude_km, inclination_deg, eccentricity=0.0):
+    """
+    Calculate basic orbital periods from altitude, inclination, and eccentricity.
+
+    ``altitude_km`` is treated as mean altitude above Earth's equatorial radius,
+    so the semi-major axis is ``EARTH_EQUATORIAL_RADIUS_KM + altitude_km``.
+    Inclination and eccentricity affect the J2 nodal precession terms, while the
+    Keplerian revolution period depends on the semi-major axis.
+    """
+    if altitude_km <= -EARTH_EQUATORIAL_RADIUS_KM:
+        raise ValueError("altitude_km must produce a positive semi-major axis")
+    if not 0 <= eccentricity < 1:
+        raise ValueError("eccentricity must be in the range [0, 1)")
+
+    semi_major_axis_km = EARTH_EQUATORIAL_RADIUS_KM + altitude_km
+    inclination_rad = math.radians(inclination_deg)
+    mean_motion_rad_s = math.sqrt(EARTH_GRAVITATIONAL_PARAMETER_KM3_S2 / semi_major_axis_km ** 3)
+    orbital_frequency_cpd = mean_motion_rad_s * SECONDS_PER_DAY / (2.0 * math.pi)
+
+    semi_latus_rectum_km = semi_major_axis_km * (1.0 - eccentricity ** 2)
+    nodal_precession_rad_s = (
+        -1.5
+        * EARTH_J2
+        * (EARTH_EQUATORIAL_RADIUS_KM / semi_latus_rectum_km) ** 2
+        * mean_motion_rad_s
+        * math.cos(inclination_rad)
+    )
+    nodal_precession_frequency_cpd = nodal_precession_rad_s * SECONDS_PER_DAY / (2.0 * math.pi)
+    draconitic_frequency_cpd = orbital_frequency_cpd - nodal_precession_frequency_cpd
+
+    revolution_period_days = cpd_to_days(orbital_frequency_cpd)
+    draconitic_period_days = cpd_to_days(draconitic_frequency_cpd)
+    nodal_precession_period_days = (
+        cpd_to_days(abs(nodal_precession_frequency_cpd))
+        if nodal_precession_frequency_cpd != 0
+        else float("inf")
+    )
+
+    return {
+        "semi_major_axis_km": semi_major_axis_km,
+        "orbital_frequency_cpd": orbital_frequency_cpd,
+        "orbital_period_seconds": revolution_period_days * SECONDS_PER_DAY,
+        "orbital_period_hours": revolution_period_days * 24.0,
+        "orbital_period_days": revolution_period_days,
+        "nodal_precession_frequency_cpd": nodal_precession_frequency_cpd,
+        "nodal_precession_period_days": nodal_precession_period_days,
+        "draconitic_frequency_cpd": draconitic_frequency_cpd,
+        "draconitic_period_hours": draconitic_period_days * 24.0,
+        "draconitic_period_days": draconitic_period_days,
+    }
+
+
 def calculate_draconitic_harmonics(base_freq, max_harmonic=12):
     """Calculate draconitic frequency harmonics."""
     return {i: i * base_freq for i in range(1, max_harmonic + 1)}

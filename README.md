@@ -26,14 +26,20 @@ This repository provides a complete framework for identifying and analyzing char
 ## Installation
 
 ### Requirements
-- Python 3.6 or higher
+- Python 3.8 or higher
 - Standard library modules: `math`, `json`, `os`
 
-### Quick Start
+### Install From This Repository
 ```bash
 git clone https://github.com/yourusername/gnss-frequencies.git
 cd gnss-frequencies
-python main.py
+python -m pip install .
+```
+
+For development, install it in editable mode:
+
+```bash
+python -m pip install -e .
 ```
 
 No additional dependencies required - uses only Python standard library.
@@ -56,7 +62,7 @@ gnss-frequencies/
 
 ### Basic Usage
 ```python
-from gnss_frequencies import create_gnss_frequencies
+from gnss_period_calculator import create_gnss_frequencies
 
 # Generate complete frequency dictionary
 frequencies = create_gnss_frequencies()
@@ -69,7 +75,10 @@ tidal_m2 = frequencies['tides']['M_2']
 
 ### Running the Complete Analysis
 ```bash
-# Generate full report and save to JSON
+# After installation, generate full report and save to JSON/CSV
+gnss-period-calculator
+
+# From a source checkout, this still works
 python main.py
 
 # Run comprehensive examples
@@ -78,11 +87,19 @@ python examples/basic_usage.py
 
 ### Library Functions
 ```python
-from gnss_frequencies import (
+from gnss_period_calculator import (
+    calculate_orbital_periods_from_altitude,
     calculate_orbital_period,
     calculate_subdaily_aliasing,
     cpd_to_days,
     get_frequency_summary
+)
+
+# Calculate periods from orbital geometry
+periods = calculate_orbital_periods_from_altitude(
+    altitude_km=20200,
+    inclination_deg=55,
+    eccentricity=0.01,
 )
 
 # Calculate specific orbital period
@@ -752,6 +769,17 @@ Calculates orbital periods using Zajdel et al. (2022) equation (7).
 **Returns:**
 - `float`: Orbital period in hours
 
+#### `calculate_orbital_periods_from_altitude(altitude_km, inclination_deg, eccentricity=0.0)`
+Calculates Keplerian and J2-adjusted orbital periods from satellite altitude and orbital shape.
+
+**Parameters:**
+- `altitude_km` (float): Mean altitude above Earth's equatorial radius, in kilometers
+- `inclination_deg` (float): Orbital inclination in degrees
+- `eccentricity` (float): Orbital eccentricity, from 0 inclusive to 1 exclusive
+
+**Returns:**
+- `dict`: Semi-major axis, orbital period, nodal precession period, draconitic period, and matching frequencies
+
 #### `calculate_subdaily_aliasing(freq_cpd, sampling_interval_hours=24)`
 Calculates aliased frequencies using Zajdel et al. (2022) equation (8).
 
@@ -807,7 +835,8 @@ Contributions are welcome! Please feel free to submit issues, feature requests, 
 ```bash
 git clone https://github.com/yourusername/gnss-frequencies.git
 cd gnss-frequencies
-python main.py  # Test installation
+python -m pip install -e .
+gnss-period-calculator  # Test installed command
 python examples/basic_usage.py  # Run examples
 ```
 

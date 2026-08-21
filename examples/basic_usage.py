@@ -10,24 +10,34 @@ Date: [Current Date]
 """
 
 import json
-import sys
 import os
+import sys
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-# Add parent directory to path to import gnss_frequencies
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from gnss_frequencies import (
-    create_gnss_frequencies,
-    calculate_orbital_period,
-    calculate_subdaily_aliasing,
-    cpd_to_days,
-    days_to_cpd,
-    get_frequency_summary
-)
+try:
+    from gnss_period_calculator import (
+        create_gnss_frequencies,
+        calculate_orbital_periods_from_altitude,
+        calculate_orbital_period,
+        calculate_subdaily_aliasing,
+        cpd_to_days,
+        days_to_cpd,
+        get_frequency_summary,
+    )
+except ImportError:
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from gnss_frequencies import (
+        create_gnss_frequencies,
+        calculate_orbital_periods_from_altitude,
+        calculate_orbital_period,
+        calculate_subdaily_aliasing,
+        cpd_to_days,
+        days_to_cpd,
+        get_frequency_summary,
+    )
 
 
 def example_1_basic_frequency_access():
@@ -250,6 +260,24 @@ def example_7_summary_statistics():
             print(f"  {category.upper()}: {counts}")
 
 
+def example_8_periods_from_altitude():
+    """Example 8: Calculate orbital periods from altitude and geometry."""
+    print("\n" + "=" * 60)
+    print("EXAMPLE 8: Periods From Altitude")
+    print("=" * 60)
+
+    periods = calculate_orbital_periods_from_altitude(
+        altitude_km=20200,
+        inclination_deg=55,
+        eccentricity=0.01,
+    )
+
+    print(f"Semi-major axis: {periods['semi_major_axis_km']:.3f} km")
+    print(f"Orbital period: {periods['orbital_period_hours']:.3f} hours")
+    print(f"Draconitic period: {periods['draconitic_period_hours']:.3f} hours")
+    print(f"Nodal precession period: {periods['nodal_precession_period_days']:.3f} days")
+
+
 def main():
     """Run all examples."""
     print("GNSS Frequencies Library - Usage Examples")
@@ -263,6 +291,7 @@ def main():
     example_5_frequency_search()
     example_6_json_export_import()
     example_7_summary_statistics()
+    example_8_periods_from_altitude()
 
     print("\n" + "=" * 60)
     print("All examples completed successfully!")
